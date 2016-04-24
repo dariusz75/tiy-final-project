@@ -19,11 +19,11 @@ The idea is to create (design and code) a web site where London based Junior Dev
 13. As a Employer I want to have his CV downloaded so I can hare it to my team members.
 
 ##UX Design
-http://adobe.ly/1T4glMm
+
+<a href="http://adobe.ly/1T4glMm" target="_blank">Prototype</a>
 
 ##Technologies to be used
 
-<a href="http://example.com/" target="_blank">Hello, world!</a>
 * HTML5
 * CSS3
 * Bootstrap
