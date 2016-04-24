@@ -22,6 +22,8 @@ The idea is to create (design and code) a web site where London based Junior Dev
 http://adobe.ly/1T4glMm
 
 ##Technologies to be used
+
+<a href="http://example.com/" target="_blank">Hello, world!</a>
 * HTML5
 * CSS3
 * Bootstrap
