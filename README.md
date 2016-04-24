@@ -1,6 +1,10 @@
 # tiy-final-projects
 
 ##The idea
+
+*click below*
+<a href="example.com" target="_blank">New Tab</a>
+
 The idea is to create (design and code) a web site where London based Junior Developers can advertise and share their skills so London companies can hire them directly.
 
 ##User stories
