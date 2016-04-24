@@ -36,9 +36,10 @@ The idea is to create (design and code) a web site where London based Junior Dev
 * Expressjs
 * MongoDB
 * Mongoose
-*  Adobe Experience Design
-*  Adobe Photoshop
-*  Adobe Illustrator
+* Responsive Design
+* Adobe Experience Design
+* Adobe Photoshop
+* Adobe Illustrator
 
 
 
