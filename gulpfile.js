@@ -1,29 +1,32 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var source = require('vinyl-source-stream');
-var browserify = require('browserify');
-var watchify = require('watchify');
-var reactify = require('reactify');
+var gulpSass = require('gulp-sass');
+var gulpBrowser = require("gulp-browser");
+var gulpReact = require('gulp-react');
+
 
 gulp.task('default', function() {
-	var bundler = watchify(browserify({
-		entries: ['./src/app.jsx'],
-		transform: [reactify],
-		extensions: ['.jsx'],
-		debug: true,
-		cache: {},
-		packageCache: {},
-		fullPaths: true
-	}));
+	gulp.watch('./css/styles.scss', ['convertSASStoCSS']);
+	gulp.watch('./src/*.js', ['createMainJSfile']);
+	gulp.watch('./src/*.jsx', ['convertJSXtoJS']);
+	});
 
-	function build(file) {
-		if (file) gutil.log('Recompiling ' + file);
-		return bundler
-			.bundle()
-			.on('error', gutil.log.bind(gutil, 'Browserify Error'))
-			.pipe(source('main.js'))
-			.pipe(gulp.dest('./'));
-	};
-	build();
-	bundler.on('update', build);
+gulp.task('createMainJSfile',function() {
+        return gulp.src('./src/*.js')
+            .pipe(gulpBrowser.browserify())
+            .pipe(gulp.dest("./"));
+    });
+
+gulp.task('convertSASStoCSS', function () {
+  return gulp.src('./css/styles.scss')
+    .pipe(gulpSass().on('error', gulpSass.logError))
+    .pipe(gulp.dest('./css'));
 });
+
+gulp.task('convertJSXtoJS', function () {
+	return gulp.src('./src/*.jsx')
+		.pipe(gulpReact())
+		.pipe(gulp.dest('./src'));
+}); 
+
+
+	
