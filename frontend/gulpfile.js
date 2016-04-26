@@ -28,7 +28,7 @@ gulp.task('createMainJSfile',function () {
 gulp.task('convertSASStoCSS', function () {
   return gulp.src('./source/sass/styles.scss')
     .pipe(gulpSass().on('error', gulpSass.logError))
-    .pipe(gulp.dest('./build/css/styles.css'));
+    .pipe(gulp.dest('./build/css'));
 });
 
 

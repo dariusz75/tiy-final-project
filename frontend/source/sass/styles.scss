@@ -8,11 +8,11 @@
 $green-main: #219E76; 
 $green-darker: #5D947C;
 $green-darkest: #688677;
-$grey-dark: #282A28
+$grey-dark: #282A28;
 
 
 body {
 	background-color: $green-main;
-	@include quicksand(300, 15px);
+	@include quicksand(300, 10px);
 }
 
