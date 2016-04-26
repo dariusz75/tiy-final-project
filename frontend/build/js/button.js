@@ -7,10 +7,9 @@ module.exports = React.createClass({
 		return React.createElement(
 			"button",
 			{ className: "btn btn-primary", type: "button" },
-			this.props.title,
 			React.createElement(
-				"span",
-				{ className: "badge" },
+				"p",
+				null,
 				"TEST"
 			)
 		);
