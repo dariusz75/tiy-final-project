@@ -5,7 +5,7 @@ var ThumbnailList = require('./thumbnail-list');
 var options = {
 	thumbnailData: [{
 		id: 'object1',
-		title: 'See tutorials ',
+		title: 'TEST message 10',
 		number: 32,
 		header: 'Learn React',
 		descritption: 'React is a new fantastic framework for building fast, dynamic pages React is a new fantastic framework for building fast, dynamic pages',

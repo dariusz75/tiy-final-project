@@ -11,7 +11,7 @@ module.exports = React.createClass({
 			React.createElement(
 				"span",
 				{ className: "badge" },
-				this.props.number
+				"TEST"
 			)
 		);
 	}

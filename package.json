@@ -18,10 +18,12 @@
     "gulp-html-minifier": "^0.1.8",
     "gulp-htmlmin": "^1.3.0",
     "gulp-react": "^3.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "gulp-util": "^3.0.7",
     "gulp-winify": "^0.1.2-alpha.3",
     "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "scripts": {
