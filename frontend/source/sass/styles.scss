@@ -1,0 +1,18 @@
+// Quicksand weights: 300, 400, 600, 700
+@mixin quicksand($weight, $size) {
+	font-weight: $weight;
+	font-size: $size;
+	font-family: 'Quicksand', sans-serif;
+}
+
+$green-main: #219E76; 
+$green-darker: #5D947C;
+$green-darkest: #688677;
+$grey-dark: #282A28
+
+
+body {
+	background-color: $green-main;
+	@include quicksand(300, 15px);
+}
+
