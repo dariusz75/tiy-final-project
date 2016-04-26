@@ -1,5 +1,5 @@
 {
-  "name": "tiy-final-projects",
+  "name": "tiy-final-project",
   "version": "1.0.0",
   "description": "##The idea The idea is to create (design and code) a web site where London based Junior Developers can advertise and share their skills so London companies can hire them directly.",
   "main": "main.js",
@@ -17,18 +17,21 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-winify": "^0.1.2-alpha.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dariusz75/tiy-final-projects.git"
+    "url": "git+https://github.com/dariusz75/tiy-final-project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dariusz75/tiy-final-projects/issues"
+    "url": "https://github.com/dariusz75/tiy-final-project/issues"
   },
-  "homepage": "https://github.com/dariusz75/tiy-final-projects#readme"
+  "homepage": "https://github.com/dariusz75/tiy-final-project#readme"
 }
