@@ -10,8 +10,11 @@ body {
 .blue-dark {
   background-color: #286090; }
 
-.green-darkest {
-  background-color: #688677; }
+.green-darker {
+  background-color: #5D947C; }
+
+.green-bright {
+  background-color: #13A538; }
 
 .fullwidth {
   width: 100%; }
@@ -25,6 +28,15 @@ body {
   font-family: 'Quicksand', sans-serif;
   padding: 10px 0 0 0;
   margin: 10px 0; }
+
+.btn {
+  -webkit-transition: background-color 500ms ease-out 0.2s;
+  -moz-transition: background-color 500ms ease-out 0.2s;
+  -o-transition: background-color 500ms ease-out 0.2s;
+  transition: background-color 500ms ease-out 0.2s; }
+
+.btn:hover {
+  background-color: #688677; }
 
 .navbar-brand {
   font-weight: 700;
@@ -64,3 +76,37 @@ footer a {
   font-weight: 700;
   font-size: 1.5rem;
   font-family: 'Quicksand', sans-serif; }
+
+/* ############# HOVER EFFECT ################ */
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale; }
+
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }

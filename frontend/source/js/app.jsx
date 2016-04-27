@@ -8,8 +8,8 @@ var element = React.createElement(Button);
 	var FinalComponent = React.createClass({
 		render: function() {
 		return <div>
-			  		<Button addClass="green-darkest fullwidth no-border button-text-style" text="Register as a Developer" />
-			  		<Button addClass="blue-dark fullwidth no-border button-text-style" text="Register as an Employer" />	
+			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Developer" />
+			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />	
 			  	 </div>		  
 	}
 });
