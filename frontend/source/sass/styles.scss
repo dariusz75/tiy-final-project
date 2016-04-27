@@ -10,6 +10,7 @@ $green-brighter: #0FD980;
 $green-main: #219E76; 
 $green-darker: #5D947C;
 $green-darkest: #688677;
+$blue-dark: #286090;
 $grey-dark: #282A28;
 
 html { 
@@ -20,9 +21,31 @@ body {
 	background-color: $green-brighter;
 	/* Margin to make sticky footer */
 	margin-bottom: 50px;
+	margin-top: 50px;
 	
 }
 
+.blue-dark {
+	background-color: $blue-dark;
+}
+
+.green-darkest {
+	background-color: $green-darkest;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.no-border{
+	border-style: none; 
+}
+
+.button-text-style {
+	@include quicksand(700, 2.5rem);
+	padding: 10px 0 0 0;
+	margin: 10px 0;
+}
 
 .navbar-brand {
 	@include quicksand(700, 2.5rem);
@@ -38,11 +61,11 @@ body {
 .homepage-info p {
 	@include quicksand(400, 2.5rem);
 	text-align: center;
-	padding: 0 5%;
+	padding: 0 5% 20px 5%;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here and do the same in the body selector */

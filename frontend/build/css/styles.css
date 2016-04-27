@@ -4,7 +4,27 @@ html {
 body {
   background-color: #0FD980;
   /* Margin to make sticky footer */
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  margin-top: 50px; }
+
+.blue-dark {
+  background-color: #286090; }
+
+.green-darkest {
+  background-color: #688677; }
+
+.fullwidth {
+  width: 100%; }
+
+.no-border {
+  border-style: none; }
+
+.button-text-style {
+  font-weight: 700;
+  font-size: 2.5rem;
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 0 0 0;
+  margin: 10px 0; }
 
 .navbar-brand {
   font-weight: 700;
@@ -23,10 +43,10 @@ body {
   font-size: 2.5rem;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  padding: 0 5%; }
+  padding: 0 5% 20px 5%; }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here and do the same in the body selector */

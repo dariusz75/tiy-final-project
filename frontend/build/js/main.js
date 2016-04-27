@@ -4,10 +4,22 @@ var ReactDOM = require('react-dom');
 var Button = require('./button');
 
 var parentElement = document.querySelector('.target');
-
 var element = React.createElement(Button);
 
-ReactDOM.render(element, parentElement);
+var FinalComponent = React.createClass({
+	displayName: 'FinalComponent',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(Button, { addClass: 'green-darkest fullwidth no-border button-text-style', text: 'Register as a Developer' }),
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style', text: 'Register as an Employer' })
+		);
+	}
+});
+
+ReactDOM.render(React.createElement(FinalComponent, null), parentElement);
 },{"./button":2,"react":167,"react-dom":4}],2:[function(require,module,exports){
 var React = require('react');
 
@@ -17,11 +29,11 @@ module.exports = React.createClass({
 	render: function () {
 		return React.createElement(
 			"button",
-			{ className: "btn btn-primary", type: "button" },
+			{ className: "btn btn-primary " + this.props.addClass, type: "button" },
 			React.createElement(
 				"p",
 				null,
-				"TEST"
+				this.props.text
 			)
 		);
 	}

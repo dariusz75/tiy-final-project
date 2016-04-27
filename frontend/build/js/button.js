@@ -6,11 +6,11 @@ module.exports = React.createClass({
 	render: function () {
 		return React.createElement(
 			"button",
-			{ className: "btn btn-primary", type: "button" },
+			{ className: "btn btn-primary " + this.props.addClass, type: "button" },
 			React.createElement(
 				"p",
 				null,
-				"TEST"
+				this.props.text
 			)
 		);
 	}
