@@ -1,10 +1,34 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Button = require('./button');
-var Checkbox = require('./check-box');
+var Checkboxes = require('./check-box');
+var Miniprofile = require('./miniprofile');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
+
+var candidatesDetails = {
+	candidatesData: [
+	{
+		id: '01',
+		firstName: 'John',
+		surname: 'Smith',
+		jobTitle: 'Frontend Developer'
+	},
+	{
+		id: '02',
+		firstName: 'Michael',
+		surname: 'Jordan',
+		jobTitle: 'Backend Developer'
+	},	
+	{
+		id: '03',
+		firstName: 'Rob',
+		surname: 'Johnson',
+		jobTitle: 'UI Designer'
+	}
+	]
+};
 
 var skillsOptions = {
 	skillsData:[
@@ -48,7 +72,8 @@ var skillsOptions = {
 		return <div>
 			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Developer" />
 			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />	
-			  		<Checkbox skillsData={skillsOptions.skillsData}/>
+			  		<Checkboxes skillsData={skillsOptions.skillsData} />
+			  		<Miniprofile candidatesData={candidatesDetails.candidatesData}/>
 			  	 </div>		  
 	}
 });
