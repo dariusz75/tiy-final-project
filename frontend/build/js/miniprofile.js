@@ -7,24 +7,33 @@ var Miniprofile = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			null,
+			{ className: 'miniprofile-wrapper row img-rounded ' },
 			React.createElement(
 				'div',
-				null,
+				{ className: 'row' },
 				React.createElement(
-					'p',
-					null,
-					this.props.firstName,
-					' ',
-					this.props.surname
+					'div',
+					{ className: 'col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xlg-8' },
+					React.createElement(
+						'p',
+						null,
+						this.props.firstName,
+						' ',
+						this.props.surname
+					),
+					React.createElement(
+						'p',
+						null,
+						this.props.jobTitle
+					)
 				),
-				React.createElement(
-					'p',
-					null,
-					this.props.jobTitle
-				)
+				React.createElement('img', { className: ' profile-photo col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xlg-4 img-responsive', src: this.props.imageSource })
 			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'See full profile' })
+			React.createElement(
+				'div',
+				{ className: 'row' },
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'See full profile' })
+			)
 		);
 	}
 });
@@ -34,11 +43,11 @@ var ListOfMiniprofiles = React.createClass({
 
 	render: function () {
 		var list = this.props.candidatesData.map(function (candidate) {
-			return React.createElement(Miniprofile, { firstName: candidate.firstName, surname: candidate.surname, jobTitle: candidate.jobTitle, key: candidate.id });
+			return React.createElement(Miniprofile, { imageSource: candidate.photoSrc, firstName: candidate.firstName, surname: candidate.surname, jobTitle: candidate.jobTitle, key: candidate.id });
 		});
 		return React.createElement(
 			'div',
-			{ className: 'list-container img-rounded col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xlg-3' },
+			{ className: 'img-rounded col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
 			list
 		);
 	}

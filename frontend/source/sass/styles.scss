@@ -27,6 +27,10 @@ body {
 	
 }
 
+.row {
+  margin: 0;
+}
+
 .blue-dark {
 	background-color: $blue-dark;
 }
@@ -93,6 +97,21 @@ body {
           padding-left: 5px;
     }
   }
+}
+
+.miniprofile-wrapper {
+  background-color: $green-pale;
+  padding: 10px;
+  margin-bottom: 20px;
+    button {
+      margin-top: 10px;
+    }
+    p:first-of-type {
+      @include quicksand(700, 2.5rem);
+    }
+    p {
+      @include quicksand(700, 2rem);
+    }
 }
 
 
