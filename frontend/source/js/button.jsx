@@ -1,9 +1,11 @@
 var React = require('react');
 
-module.exports = React.createClass({
+var Button = React.createClass({
 		render: function() {
 			return 	<button className={"btn btn-primary "+this.props.addClass} type="button">
-  						<p>{this.props.text}</p>
-							</button>
+  						{this.props.text}
+					</button>;
 		}
 	});
+
+module.exports = Button;
