@@ -67,6 +67,18 @@ body {
   font-size: 2rem;
   font-family: 'Quicksand', sans-serif; }
 
+.registration-developer-wrapper {
+  background-color: #5EEFAA;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif; }
+  .registration-developer-wrapper button {
+    font-weight: 700;
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif; }
+
 .list-container {
   background-color: #5EEFAA;
   padding-top: 10px; }

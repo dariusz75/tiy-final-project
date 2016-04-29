@@ -5,6 +5,7 @@ var Checkboxes = require('./check-box');
 var Miniprofile = require('./miniprofile');
 var RegistrationEmailPasswordDeveloper = require('./registration-email-password-developer');
 var RegistrationEmailPasswordEmployer = require('./registration-email-password-employer');
+var RegistrationDetailsDeveloper = require('./registration-details-developer');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
@@ -75,9 +76,10 @@ var skillsOptions = {
 	var FinalComponent = React.createClass({
 		render: function() {
 		return <div>
-			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Developer" />
-			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />	
+			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Developer" />	
 			  		<RegistrationEmailPasswordDeveloper />
+			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />
+			  		<RegistrationDetailsDeveloper />
 			  		<RegistrationEmailPasswordEmployer />
 			  		<Checkboxes skillsData={skillsOptions.skillsData} />
 			  		<Miniprofile candidatesData={candidatesDetails.candidatesData}/>

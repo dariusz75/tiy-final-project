@@ -92,6 +92,16 @@ body {
   @include quicksand(400, 2rem);
 }
 
+.registration-developer-wrapper {
+  background-color: $green-pale;
+  padding: 10px;
+  margin-bottom: 20px;
+  @include quicksand(400, 2rem);
+    button {
+     @include quicksand(700, 1.8rem); 
+    }
+}
+
 .list-container {
   background-color: $green-pale;
   padding-top: 10px;

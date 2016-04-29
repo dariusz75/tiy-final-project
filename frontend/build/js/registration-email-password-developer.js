@@ -56,7 +56,8 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 				)
 			),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT' })
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT' }),
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
 		);
 	}
 });
