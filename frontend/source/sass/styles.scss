@@ -53,7 +53,6 @@ body {
 
 .button-text-style {
 	@include quicksand(700, 2.5rem);
-	padding: 10px 0 0 0;
 	margin: 10px 0;
 }
 
@@ -84,6 +83,13 @@ body {
 	@include quicksand(400, 2.5rem);
 	text-align: center;
 	padding: 0 5% 20px 5%;
+}
+
+.registration-email-password-wrapper {
+  background-color: $green-pale;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  @include quicksand(400, 2rem);
 }
 
 .list-container {

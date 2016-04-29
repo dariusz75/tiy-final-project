@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var Button = require('./button');
 var Checkboxes = require('./check-box');
 var Miniprofile = require('./miniprofile');
+var RegistrationEmailPassword = require('./registration-email-password');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
@@ -64,8 +65,9 @@ var FinalComponent = React.createClass({
 		return React.createElement(
 			'div',
 			null,
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer' }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer' }),
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer' }),
+			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer' }),
+			React.createElement(RegistrationEmailPassword, null),
 			React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
 			React.createElement(Miniprofile, { candidatesData: candidatesDetails.candidatesData })
 		);
