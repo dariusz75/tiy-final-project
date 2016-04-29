@@ -87,7 +87,7 @@ body {
 
 .registration-email-password-wrapper {
   background-color: $green-pale;
-  padding-top: 10px;
+  padding: 10px;
   margin-bottom: 20px;
   @include quicksand(400, 2rem);
 }

@@ -1,8 +1,8 @@
 var React = require('react');
 var Button = require('./button');
 
-var RegistrationEmailPassword = React.createClass({
-	displayName: 'RegistrationEmailPassword',
+var RegistrationEmailPasswordEmployer = React.createClass({
+	displayName: 'RegistrationEmailPasswordEmployer',
 
 	render: function () {
 		return React.createElement(
@@ -56,9 +56,9 @@ var RegistrationEmailPassword = React.createClass({
 					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 				)
 			),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT' })
+			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE' })
 		);
 	}
 });
 
-module.exports = RegistrationEmailPassword;
+module.exports = RegistrationEmailPasswordEmployer;

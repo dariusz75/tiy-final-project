@@ -1,7 +1,7 @@
 var React = require('react');
 var Button = require('./button');
 
-var RegistrationEmailPassword = React.createClass({
+var RegistrationEmailPasswordDeveloper = React.createClass({
 		render: function() {
 			return <div className="row img-rounded registration-email-password-wrapper">
 							<div className="row">
@@ -29,4 +29,4 @@ var RegistrationEmailPassword = React.createClass({
 		}
 	});		
 
-module.exports = RegistrationEmailPassword;
+module.exports = RegistrationEmailPasswordDeveloper;
