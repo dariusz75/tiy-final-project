@@ -3,10 +3,11 @@ var gulpSass = require('gulp-sass');
 var gulpBrowser = require('gulp-browser');
 var gulpBabel = require('gulp-babel');
 var vinylSourceStream = require('vinyl-source-stream');
+var htmlmin = require('gulp-htmlmin');
 var browserify = require('browserify');
 
 
-gulp.task('default', ['convertJSXtoJS', 'browserify', 'convertSASStoCSS', 'watch']);
+gulp.task('default', ['convertJSXtoJS', 'browserify', 'convertSASStoCSS', 'minifyHTML', 'watch']);
 
 gulp.task('convertJSXtoJS', function () {
     gulp.src('./source/js/*.jsx')
@@ -29,9 +30,15 @@ gulp.task('convertSASStoCSS', function () {
     .pipe(gulp.dest('./build/css'));
 });
 
+gulp.task('minifyHTML', function() {
+  return gulp.src('./source/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./build'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('./source/js/*.jsx', ['convertJSXtoJS', 'browserify']);
-    //gulp.watch('./build/js/*.js', ['createMainJSfile']);
+    gulp.watch('./source/index.html', ['minifyHTML']);
     gulp.watch('./source/sass/styles.scss', ['convertSASStoCSS']);
     });
 
