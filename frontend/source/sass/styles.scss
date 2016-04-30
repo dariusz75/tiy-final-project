@@ -100,7 +100,32 @@ body {
     button {
      @include quicksand(700, 1.8rem); 
     }
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+    }
+    .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+    }
+    input[readonly] {
+    background-color: white !important;
+    cursor: text !important;
+    }
+    
 }
+
+
 
 .list-container {
   background-color: $green-pale;
@@ -114,6 +139,8 @@ body {
     }
   }
 }
+
+
 
 .miniprofile-wrapper {
   background-color: $green-pale;
@@ -190,3 +217,5 @@ footer a {
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
+
+

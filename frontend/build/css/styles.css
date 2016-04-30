@@ -78,6 +78,25 @@ body {
     font-weight: 700;
     font-size: 1.8rem;
     font-family: 'Quicksand', sans-serif; }
+  .registration-developer-wrapper .btn-file {
+    position: relative;
+    overflow: hidden; }
+  .registration-developer-wrapper .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block; }
+  .registration-developer-wrapper input[readonly] {
+    background-color: white !important;
+    cursor: text !important; }
 
 .list-container {
   background-color: #5EEFAA;
