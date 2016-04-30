@@ -117,15 +117,13 @@ body {
     background: red;
     cursor: inherit;
     display: block;
-    }
-    input[readonly] {
-    background-color: white !important;
-    cursor: text !important;
-    }
-    
+    }   
 }
 
-
+.file-input {
+  background-color: white;
+  border: solid 1px #CCC;
+}
 
 .list-container {
   background-color: $green-pale;

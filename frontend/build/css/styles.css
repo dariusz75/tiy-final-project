@@ -94,9 +94,10 @@ body {
     background: red;
     cursor: inherit;
     display: block; }
-  .registration-developer-wrapper input[readonly] {
-    background-color: white !important;
-    cursor: text !important; }
+
+.file-input {
+  background-color: white;
+  border: solid 1px #CCC; }
 
 .list-container {
   background-color: #5EEFAA;
