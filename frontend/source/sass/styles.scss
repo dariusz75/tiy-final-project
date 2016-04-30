@@ -129,6 +129,10 @@ body {
   border: solid 1px #CCC;
 }
 
+textarea.form-control {
+   height: 200px;
+}
+
 .list-container {
   background-color: $green-pale;
   padding-top: 10px;

@@ -7,7 +7,7 @@ var RegistrationEmailPasswordDeveloper = require('./registration-email-password-
 var RegistrationEmailPasswordEmployer = require('./registration-email-password-employer');
 var RegistrationDetailsDeveloper = require('./registration-details-developer');
 var RegistrationSkillsDeveloper = require('./registration-skills-developer');
-
+var RegistrationAboutMeDeveloper = require('./registration-about-me-developer');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
@@ -83,6 +83,7 @@ var skillsOptions = {
 			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />
 			  		<RegistrationDetailsDeveloper />
 			  		<RegistrationSkillsDeveloper />
+			  		<RegistrationAboutMeDeveloper />
 			  		<RegistrationEmailPasswordEmployer />
 			  		<Checkboxes skillsData={skillsOptions.skillsData} />
 			  		<Miniprofile candidatesData={candidatesDetails.candidatesData}/>

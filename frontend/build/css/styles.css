@@ -102,6 +102,9 @@ body {
   background-color: white;
   border: solid 1px #CCC; }
 
+textarea.form-control {
+  height: 200px; }
+
 .list-container {
   background-color: #5EEFAA;
   padding-top: 10px; }
