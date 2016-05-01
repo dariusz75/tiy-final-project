@@ -10,6 +10,7 @@ body {
 .row {
   margin: 0; }
 
+/* ###### HELPERS ####### */
 .blue-dark {
   background-color: #286090; }
 
@@ -28,6 +29,10 @@ body {
 .no-border {
   border-style: none; }
 
+.bold {
+  font-weight: 700; }
+
+/* ###### BUTTONS ####### */
 .button-text-style {
   font-weight: 700;
   font-size: 2.5rem;
@@ -43,11 +48,13 @@ body {
 .btn:hover {
   background-color: #688677; }
 
+/* ###### NAVIGATION ####### */
 .navbar-brand {
   font-weight: 700;
   font-size: 2.5rem;
   font-family: 'Quicksand', sans-serif; }
 
+/* ###### HOMEPAGE ####### */
 .homepage-info h1 {
   font-weight: 400;
   font-size: 4rem;
@@ -62,6 +69,7 @@ body {
   text-align: center;
   padding: 0 5% 20px 5%; }
 
+/* ###### REGISTRATION ####### */
 .registration-email-password-wrapper {
   background-color: #5EEFAA;
   padding: 10px;
@@ -117,6 +125,7 @@ textarea.form-control {
       display: inline-block;
       padding-left: 5px; }
 
+/* ###### MINIPROFILE ####### */
 .miniprofile-wrapper {
   background-color: #5EEFAA;
   padding: 10px;
@@ -132,6 +141,18 @@ textarea.form-control {
     font-size: 2rem;
     font-family: 'Quicksand', sans-serif; }
 
+/* ###### EMPLOYER PANEL ####### */
+#candidate-link {
+  background-color: white; }
+  #candidate-link p {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0;
+    padding: 5px 0 5px 0; }
+  #candidate-link p:nth-child(even) {
+    float: right; }
+
+/* ###### FOOTER ####### */
 footer {
   position: fixed;
   bottom: 0;

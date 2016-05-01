@@ -24,8 +24,8 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 	  							<input type="text" className="form-control" id="usr"></input>
 								</div>
 							</div>	
-							<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="NEXT" />
-							<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />	
+							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="NEXT" />
+							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />	
 						 </div>;
 		}
 	});		
