@@ -5,7 +5,13 @@ var FullProfileDeveloper = React.createClass({
 		render: function() {
 			return <div className="row img-rounded registration-developer-wrapper">													
 							<p className="bold text-center">CANDIDATE'S PROFILE</p>
-								<div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<div className="basic-details-wrapper img-rounded">
+								<p>John Smith</p>
+								<p>Frontend Developer</p>
+								<p>john@hotmail.com</p>
+								<p>07708473329</p>
+								</div>
 									<div className="full-profile-skills-list img-rounded ">
 										<p>Skills:</p>
 										<ul>
@@ -21,7 +27,7 @@ var FullProfileDeveloper = React.createClass({
 								</div>
 									
 								
-									<div className="border righthand-side-wrapper col-xs-12 col-sm-9 col-md-9 col-lg-9">
+									<div className="border img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8">
 										<div className="border col-xs-12 col-sm-6 col-md-6 col-lg-6">
 											<ul>
 												<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-linkedin-square" aria-hidden="true"></i>
@@ -40,9 +46,18 @@ var FullProfileDeveloper = React.createClass({
 										<div className="border col-xs-12 col-sm-3 col-md-3 col-lg-3">
 											<p> 3333333 </p>
 										</div>
-									</div>
-								
-							
+										<div className="about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+											sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+											Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+											nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+											reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+											pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+											ui officia deserunt mollit anim id est laborum.
+											</p>
+										</div>
+									</div>										
 	  					<div>
 	  						<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BOOKMARK THIS PROFILE" />
 								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BACK TO LIST OF TALENTS" />

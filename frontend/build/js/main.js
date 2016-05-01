@@ -156,8 +156,46 @@ var Button = React.createClass({
 
 module.exports = Button;
 },{"react":176}],4:[function(require,module,exports){
+var React = require('react');
 
-},{}],5:[function(require,module,exports){
+var SingleCheckBox = React.createClass({
+	displayName: "SingleCheckBox",
+
+	render: function () {
+		return React.createElement(
+			"div",
+			null,
+			React.createElement(
+				"label",
+				null,
+				React.createElement("input", { type: "checkbox", value: this.props.value }),
+				React.createElement(
+					"p",
+					null,
+					this.props.title
+				)
+			)
+		);
+	}
+});
+
+var FullList = React.createClass({
+	displayName: "FullList",
+
+	render: function () {
+		var list = this.props.skillsData.map(function (listProps) {
+			return React.createElement(SingleCheckBox, { value: listProps.value, title: listProps.title, key: listProps.value });
+		});
+		return React.createElement(
+			"div",
+			{ className: "list-container img-rounded col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xlg-3" },
+			list
+		);
+	}
+});
+
+module.exports = FullList;
+},{"react":176}],5:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button');
 
@@ -175,7 +213,31 @@ var FullProfileDeveloper = React.createClass({
 			),
 			React.createElement(
 				'div',
-				{ className: 'col-xs-12 col-sm-3 col-md-3 col-lg-3' },
+				{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+				React.createElement(
+					'div',
+					{ className: 'basic-details-wrapper img-rounded' },
+					React.createElement(
+						'p',
+						null,
+						'John Smith'
+					),
+					React.createElement(
+						'p',
+						null,
+						'Frontend Developer'
+					),
+					React.createElement(
+						'p',
+						null,
+						'john@hotmail.com'
+					),
+					React.createElement(
+						'p',
+						null,
+						'07708473329'
+					)
+				),
 				React.createElement(
 					'div',
 					{ className: 'full-profile-skills-list img-rounded ' },
@@ -227,7 +289,7 @@ var FullProfileDeveloper = React.createClass({
 			),
 			React.createElement(
 				'div',
-				{ className: 'border righthand-side-wrapper col-xs-12 col-sm-9 col-md-9 col-lg-9' },
+				{ className: 'border img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
 				React.createElement(
 					'div',
 					{ className: 'border col-xs-12 col-sm-6 col-md-6 col-lg-6' },
@@ -291,6 +353,15 @@ var FullProfileDeveloper = React.createClass({
 						'p',
 						null,
 						' 3333333 '
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12' },
+					React.createElement(
+						'p',
+						null,
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa ui officia deserunt mollit anim id est laborum.'
 					)
 				)
 			),

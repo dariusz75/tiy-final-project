@@ -186,6 +186,17 @@ textarea.form-control {
     }
 }
 /* ###### FULL PROFILE ####### */
+.basic-details-wrapper {
+  width: 100%;
+  height: 175px;
+  background-color: white;
+  margin-bottom: 20px;
+  p {
+    padding-left: 10px;
+    @include quicksand(700, 2rem);
+  }
+}
+
 .full-profile-skills-list {
   background-color: white;
   
@@ -233,7 +244,12 @@ textarea.form-control {
   }
 }
 
-
+.about-me-wrapper {
+  background-color: white;
+  p {
+    @include quicksand(400, 2rem);
+  }
+}
 
 /* ###### EMPLOYER PANEL ####### */
 #candidate-link {
