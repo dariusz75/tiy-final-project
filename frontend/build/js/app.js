@@ -9,6 +9,7 @@ var RegistrationDetailsDeveloper = require('./registration-details-developer');
 var RegistrationSkillsDeveloper = require('./registration-skills-developer');
 var RegistrationAboutMeDeveloper = require('./registration-about-me-developer');
 var BackendPanelEmployer = require('./backend-panel-employer');
+var FullProfileDeveloper = require('./full-profile-developer');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
@@ -78,6 +79,7 @@ var FinalComponent = React.createClass({
 			React.createElement(RegistrationDetailsDeveloper, null),
 			React.createElement(RegistrationSkillsDeveloper, null),
 			React.createElement(RegistrationAboutMeDeveloper, null),
+			React.createElement(FullProfileDeveloper, null),
 			React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
 			React.createElement(Miniprofile, { candidatesData: candidatesDetails.candidatesData })
 		);

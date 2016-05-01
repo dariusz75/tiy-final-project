@@ -23,14 +23,26 @@ body {
 .margin-top {
   margin-top: 10px; }
 
+.padding-right {
+  padding-right: 5px; }
+
+.padding-left {
+  padding-left: 10px; }
+
 .fullwidth {
   width: 100%; }
 
 .no-border {
   border-style: none; }
 
+.border {
+  border: solid black 2px; }
+
 .bold {
   font-weight: 700; }
+
+.text-center {
+  text-align: center; }
 
 /* ###### BUTTONS ####### */
 .button-text-style {
@@ -140,6 +152,47 @@ textarea.form-control {
     font-weight: 700;
     font-size: 2rem;
     font-family: 'Quicksand', sans-serif; }
+
+/* ###### FULL PROFILE ####### */
+.full-profile-skills-list {
+  background-color: white;
+  margin-bottom: 20px; }
+  .full-profile-skills-list p:first-of-type {
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family: 'Quicksand', sans-serif;
+    padding-left: 5px; }
+  .full-profile-skills-list p {
+    font-weight: 700;
+    font-size: 2rem;
+    font-family: 'Quicksand', sans-serif; }
+
+.righthand-side-wrapper {
+  background-color: white;
+  padding: 10px 0 0 0; }
+  .righthand-side-wrapper ul {
+    padding: 0; }
+    .righthand-side-wrapper ul li {
+      background-color: #0B7ED3;
+      list-style-type: none;
+      margin-bottom: 15px; }
+      .righthand-side-wrapper ul li i {
+        padding: 0 10px 0 10px;
+        color: white; }
+      .righthand-side-wrapper ul li a {
+        font-weight: 700;
+        font-size: 2.3rem;
+        font-family: 'Quicksand', sans-serif;
+        color: white;
+        text-decoration: none; }
+  .righthand-side-wrapper .cv p {
+    font-weight: 700;
+    font-size: 2.3rem;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: #0B7ED3; }
+  .righthand-side-wrapper .cv .cv-icon {
+    text-align: center; }
 
 /* ###### EMPLOYER PANEL ####### */
 #candidate-link {

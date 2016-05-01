@@ -48,6 +48,14 @@ body {
   margin-top: 10px; 
 }
 
+.padding-right {
+  padding-right: 5px;
+}
+
+.padding-left {
+  padding-left: 10px;
+}
+
 .fullwidth {
 	width: 100%;
 }
@@ -56,8 +64,16 @@ body {
 	border-style: none; 
 }
 
+.border {
+  border: solid black 2px;
+}
+
 .bold {
   font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* ###### BUTTONS ####### */
@@ -169,6 +185,55 @@ textarea.form-control {
       @include quicksand(700, 2rem);
     }
 }
+/* ###### FULL PROFILE ####### */
+.full-profile-skills-list {
+  background-color: white;
+  
+  margin-bottom: 20px;
+    
+    p:first-of-type {
+      @include quicksand(700, 2.5rem);
+      padding-left: 5px;
+    }
+    p {
+      @include quicksand(700, 2rem);
+    }
+}
+
+.righthand-side-wrapper {
+  background-color: white;
+  padding: 10px 0 0 0;
+    ul {
+      padding: 0;
+      li {
+        background-color: $blue-bright;
+        list-style-type: none;
+        margin-bottom: 15px;
+        i {
+          padding: 0 10px 0 10px;
+          color: white;
+        }
+        a {
+          @include quicksand(700, 2.3rem);
+          color: white;
+          text-decoration: none;
+        }
+    }
+  }
+  .cv {
+    p {
+      @include quicksand(700, 2.3rem);
+      text-align: center;
+      color: $blue-bright;
+    }
+    .cv-icon {
+      text-align: center;
+
+    }
+  }
+}
+
+
 
 /* ###### EMPLOYER PANEL ####### */
 #candidate-link {
