@@ -91,10 +91,10 @@ var FullProfileDeveloper = React.createClass({
 			),
 			React.createElement(
 				'div',
-				{ className: 'border img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
+				{ className: 'img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
 				React.createElement(
 					'div',
-					{ className: 'border col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
 					React.createElement(
 						'ul',
 						null,
@@ -127,35 +127,23 @@ var FullProfileDeveloper = React.createClass({
 								React.createElement('i', { className: 'fa fa-desktop', 'aria-hidden': 'true' }),
 								'Portfolio'
 							)
-						)
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'border cv col-xs-12 col-sm-3 col-md-3 col-lg-3' },
-					React.createElement(
-						'p',
-						null,
-						' Download CV'
-					),
-					React.createElement(
-						'a',
-						{ href: '#', target: '_blank' },
+						),
 						React.createElement(
-							'div',
-							{ className: 'cv-icon' },
-							React.createElement('i', { className: 'fa fa-file-pdf-o fa-4x', 'aria-hidden': 'true' })
+							'li',
+							{ className: 'img-rounded' },
+							React.createElement(
+								'a',
+								{ href: '#', target: '_blank' },
+								React.createElement('i', { className: 'fa fa-file-pdf-o', 'aria-hidden': 'true' }),
+								'Download CV'
+							)
 						)
 					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'border col-xs-12 col-sm-3 col-md-3 col-lg-3' },
-					React.createElement(
-						'p',
-						null,
-						' 3333333 '
-					)
+					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+					React.createElement('img', { className: 'img-rounded', src: 'images/photo1.jpg', alt: 'Smiley face', height: '180' })
 				),
 				React.createElement(
 					'div',

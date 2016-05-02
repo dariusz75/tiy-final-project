@@ -71,10 +71,10 @@ var FinalComponent = React.createClass({
 		return React.createElement(
 			'div',
 			null,
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Employer' }),
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer' }),
 			React.createElement(RegistrationEmailPasswordEmployer, null),
 			React.createElement(BackendPanelEmployer, null),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Developer' }),
+			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer' }),
 			React.createElement(RegistrationEmailPasswordDeveloper, null),
 			React.createElement(RegistrationDetailsDeveloper, null),
 			React.createElement(RegistrationSkillsDeveloper, null),

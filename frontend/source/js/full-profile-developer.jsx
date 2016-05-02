@@ -27,8 +27,8 @@ var FullProfileDeveloper = React.createClass({
 								</div>
 									
 								
-									<div className="border img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8">
-										<div className="border col-xs-12 col-sm-6 col-md-6 col-lg-6">
+									<div className="img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8">
+										<div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 											<ul>
 												<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-linkedin-square" aria-hidden="true"></i>
 						 						LinkedIn</a></li>
@@ -36,15 +36,13 @@ var FullProfileDeveloper = React.createClass({
 						 						Github</a></li>
 						 						<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-desktop" aria-hidden="true"></i>
 						 						Portfolio</a></li>
+						 						<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-file-pdf-o" aria-hidden="true"></i>
+						 						Download CV</a></li>
 											</ul>
 										</div>
-										<div className="border cv col-xs-12 col-sm-3 col-md-3 col-lg-3">
-											<p> Download CV</p>
-											<a href="#" target="_blank" ><div className="cv-icon"><i className="fa fa-file-pdf-o fa-4x" aria-hidden="true"></i></div>
-						 						</a>
-										</div>
-										<div className="border col-xs-12 col-sm-3 col-md-3 col-lg-3">
-											<p> 3333333 </p>
+										<div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+											<img className="img-rounded" src="images/photo1.jpg" alt="Smiley face" height="180" ></img>
+
 										</div>
 										<div className="about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12">
 											<p>

@@ -80,10 +80,10 @@ var skillsOptions = {
 	var FinalComponent = React.createClass({
 		render: function() {
 		return <div>
-			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Employer" />	
+			  		<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Employer" />	
 			  		<RegistrationEmailPasswordEmployer />
 			  		<BackendPanelEmployer />
-			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as an Developer" />
+			  		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Register as a Developer" />
 			  		<RegistrationEmailPasswordDeveloper />
 			  		<RegistrationDetailsDeveloper />
 			  		<RegistrationSkillsDeveloper />
