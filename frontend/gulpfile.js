@@ -10,7 +10,7 @@ var browserify = require('browserify');
 gulp.task('default', ['convertJSXtoJS', 'browserify', 'convertSASStoCSS', 'minifyHTML', 'watch']);
 
 gulp.task('convertJSXtoJS', function () {
-    gulp.src('./source/js/*.jsx')
+    gulp.src('./source/js/components/*.jsx')
         .pipe(gulpBabel({
             presets: ['react']
         }))
@@ -37,7 +37,7 @@ gulp.task('minifyHTML', function() {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./source/js/*.jsx', ['convertJSXtoJS', 'browserify']);
+    gulp.watch('./source/js/components/*.jsx', ['convertJSXtoJS', 'browserify']);
     gulp.watch('./source/index.html', ['minifyHTML']);
     gulp.watch('./source/sass/styles.scss', ['convertSASStoCSS']);
     });

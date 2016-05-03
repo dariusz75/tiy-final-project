@@ -1,6 +1,7 @@
 var React = require('react');
 var Button = require('./button');
 
+
 var Miniprofile = React.createClass({
 		render: function() {
 			return <div className="miniprofile-wrapper row img-rounded ">
