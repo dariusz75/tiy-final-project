@@ -10,6 +10,9 @@ body {
 .row {
   margin: 0; }
 
+.target {
+  margin-top: 30px; }
+
 /* ###### HELPERS ####### */
 .blue-dark {
   background-color: #286090; }
@@ -72,11 +75,11 @@ body {
   font-size: 4rem;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  padding: 20px 5%; }
+  padding: 20px 5% 10px 5%; }
 
 .homepage-info p {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding: 0 5% 20px 5%; }
@@ -126,20 +129,22 @@ textarea.form-control {
   height: 200px; }
 
 .list-container {
-  background-color: #5EEFAA;
-  padding-top: 10px; }
+  background-color: #0FD980;
+  padding-top: 10px;
+  margin-bottom: 10px; }
   .list-container label {
     font-weight: 700;
     font-size: 2rem;
     font-family: 'Quicksand', sans-serif;
-    padding-left: 5px; }
+    padding-left: 5px;
+    padding-bottom: 0; }
     .list-container label p {
       display: inline-block;
       padding-left: 5px; }
 
 /* ###### MINIPROFILE ####### */
 .miniprofile-wrapper {
-  background-color: #5EEFAA;
+  background-color: #0FD980;
   padding: 10px;
   margin-bottom: 20px; }
   .miniprofile-wrapper button {
@@ -222,6 +227,10 @@ textarea.form-control {
     padding: 5px 0 5px 0; }
   #candidate-link p:nth-child(even) {
     float: right; }
+
+/* ####### PUBLIC PROFILE ######## */
+.skills-check label {
+  padding-bottom: 0; }
 
 /* ###### FOOTER ####### */
 footer {

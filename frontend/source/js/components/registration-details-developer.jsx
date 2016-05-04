@@ -1,5 +1,5 @@
 var React = require('react');
-var Button = require('./button');
+var Button = require('./button.jsx');
 
 
 var RegistrationDetailsDeveloper = React.createClass({

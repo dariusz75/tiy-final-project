@@ -7,22 +7,18 @@ var htmlmin = require('gulp-htmlmin');
 var browserify = require('browserify');
 
 
-gulp.task('default', ['convertJSXtoJS', 'browserify', 'convertSASStoCSS', 'minifyHTML', 'watch']);
+gulp.task('default', ['convertJSXtoJS', 'convertSASStoCSS', 'minifyHTML', 'watch']);
+
 
 gulp.task('convertJSXtoJS', function () {
-    gulp.src('./source/js/components/*.jsx')
-        .pipe(gulpBabel({
-            presets: ['react']
-        }))
-        .pipe(gulp.dest('./build/js'))
-});
-
-gulp.task('browserify', function () {
-  return browserify('./build/js/app.js')
+  return browserify('./source/js/app.jsx')
+        .transform('babelify', { presets: ['react'] })
         .bundle()
         .pipe(vinylSourceStream('main.js'))
         .pipe(gulp.dest('./build/js/'));
 });
+
+
 
 gulp.task('convertSASStoCSS', function () {
   return gulp.src('./source/sass/styles.scss')
@@ -36,8 +32,10 @@ gulp.task('minifyHTML', function() {
     .pipe(gulp.dest('./build'));
 });
 
+
+
 gulp.task('watch', function () {
-    gulp.watch('./source/js/components/*.jsx', ['convertJSXtoJS', 'browserify']);
+    gulp.watch('./source/js/components/*.jsx', ['convertJSXtoJS']);
     gulp.watch('./source/index.html', ['minifyHTML']);
     gulp.watch('./source/sass/styles.scss', ['convertSASStoCSS']);
     });

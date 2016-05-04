@@ -1,5 +1,5 @@
 var React = require('react');
-var Button = require('./button');
+var Button = require('./button.jsx');
 
 
 var FullProfileDeveloper = React.createClass({
@@ -38,7 +38,7 @@ var FullProfileDeveloper = React.createClass({
 						 						<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-desktop" aria-hidden="true"></i>
 						 						Portfolio</a></li>
 						 						<li className="img-rounded"><a href="#" target="_blank" ><i className="fa fa-file-pdf-o" aria-hidden="true"></i>
-						 						Download CV</a></li>
+						 						CV</a></li>
 											</ul>
 										</div>
 										<div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">

@@ -1,6 +1,6 @@
 var React = require('react');
-var Button = require('./button');
-var Checkboxes = require('./check-box');
+var Button = require('./button.jsx');
+var Checkboxes = require('./check-box.jsx');
 
 
 var skillsOptions = {
