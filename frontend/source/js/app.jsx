@@ -12,16 +12,18 @@ var RegistrationSkillsDeveloper = require('./components/registration-skills-deve
 var RegistrationAboutMeDeveloper = require('./components/registration-about-me-developer.jsx');
 var BackendPanelEmployer = require('./components/backend-panel-employer.jsx');
 var FullProfileDeveloper = require('./components/full-profile-developer.jsx');
+var LogIn = require('./components/log-in.jsx');
+var Contact = require('./components/contact.jsx');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 
-
 	var FinalComponent = React.createClass({
 		render: function() {
 		return 	<div>
-			  			<FindSection />	 
+			  			<Contact />
+			  				 
 			  		</div>;	  
 	}
 });

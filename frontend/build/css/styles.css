@@ -232,6 +232,20 @@ textarea.form-control {
 .skills-check label {
   padding-bottom: 0; }
 
+/* ###### CONTACT US ###### */
+.well {
+  border: none;
+  background-color: #5EEFAA; }
+
+.contact .header {
+  color: #36A0FF;
+  font-size: 27px;
+  padding: 10px; }
+
+.contact .bigicon {
+  font-size: 35px;
+  color: #36A0FF; }
+
 /* ###### FOOTER ####### */
 footer {
   position: fixed;

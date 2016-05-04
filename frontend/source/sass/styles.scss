@@ -279,6 +279,27 @@ textarea.form-control {
 }
 }
 
+
+/* ###### CONTACT US ###### */
+
+
+.well {
+  border: none;
+  background-color: $green-pale;
+}
+
+.contact{
+  .header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+  }
+  .bigicon {
+  font-size: 35px;
+  color: #36A0FF;
+  }
+}
+
 /* ###### FOOTER ####### */
 footer {
   position: fixed;
