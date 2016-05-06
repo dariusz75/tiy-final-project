@@ -2,14 +2,24 @@ var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
 
-var views = [	'Homepage', 
+var CurrentPage = 'Homepage';
+var Pages = [	'Homepage', 
 							'RegistrationEmailPasswordDeveloper', 
 							'RegistrationDetailsDeveloper',
 							'RegistrationSkillsDeveloper',
 							'RegistrationAboutMeDeveloper',
 							'RegistrationEmailPasswordEmployer',
-							'FindSection'
+							'FindSection',
+							'BackendPanelEmployer',
+							'FullProfileDeveloper',
+							'LogIn',
+							'Contact'
+						];
 
-			]
+var getCurrentPage = {
+  getMessage: function () {
+    return CurrentPage;
+  }
+};
 
-module.exports = views;
+module.exports = Pages;

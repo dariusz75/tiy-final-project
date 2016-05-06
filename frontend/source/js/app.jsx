@@ -14,21 +14,15 @@ var BackendPanelEmployer = require('./components/backend-panel-employer.jsx');
 var FullProfileDeveloper = require('./components/full-profile-developer.jsx');
 var LogIn = require('./components/log-in.jsx');
 var Contact = require('./components/contact.jsx');
+var Application = require('./components/application.jsx');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 
-	var FinalComponent = React.createClass({
-		render: function() {
-		return 	<div>
-			  			<Contact />
-			  				 
-			  		</div>;	  
-	}
-});
+	
+ReactDOM.render(<Application />, parentElement);
 
-ReactDOM.render(<FinalComponent />, parentElement);
 
 /*
 <Homepage />
