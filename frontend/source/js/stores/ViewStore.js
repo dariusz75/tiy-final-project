@@ -41,13 +41,16 @@ function removeChangeListener(handleChangeEvent) {
 }
 
 ViewStore = objectAssign({}, ViewStore, EventEmitter.prototype);
-console.log(ViewStore);
 
 function handleAction(action) {
 	if (action.type === 'change_page_to_register_email_password_developer') {
 		setCurrentPage('RegistrationEmailPasswordDeveloper');
 	} else if (action.type === 'change_page_to_register_email_password_employer') {
 		setCurrentPage('RegistrationEmailPasswordEmployer');
+	}	else if (action.type === 'change_page_to_homepage_when_done') {
+		setCurrentPage('Homepage');
+	} else if (action.type === 'change_page_to_homepage_when_cancelled') {
+		setCurrentPage('Homepage');
 	}
 }
 
