@@ -8,8 +8,16 @@ function changePageToRegisterEmailPasswordDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToRegisterEmailPasswordEmployer() {
+	var action = {
+		type: 'change_page_to_register_email_password_employer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
-	changePageToRegisterEmailPasswordDeveloper: changePageToRegisterEmailPasswordDeveloper
+	changePageToRegisterEmailPasswordDeveloper: changePageToRegisterEmailPasswordDeveloper,
+	changePageToRegisterEmailPasswordEmployer: changePageToRegisterEmailPasswordEmployer
 };
 
 },{"../dispatcher/Dispatcher.js":18}],2:[function(require,module,exports){
@@ -57,6 +65,12 @@ var React = require('react');
 var ViewStore = require('../stores/ViewStore.js');
 var Homepage = require('./homepage.jsx');
 var RegistrationEmailPasswordDeveloper = require('./registration-email-password-developer.jsx');
+var RegistrationEmailPasswordEmployer = require('./registration-email-password-employer.jsx');
+var RegistrationDetailsDeveloper = require('./registration-details-developer.jsx');
+var RegistrationSkillsDeveloper = require('./registration-skills-developer.jsx');
+var RegistrationAboutMeDeveloper = require('./registration-about-me-developer.jsx');
+var BackendPanelEmployer = require('./backend-panel-employer.jsx');
+var FullProfileDeveloper = require('./full-profile-developer.jsx');
 
 var Application = React.createClass({
   displayName: 'Application',
@@ -83,13 +97,25 @@ var Application = React.createClass({
       return React.createElement(Homepage, null);
     } else if (this.state.renderedPage === 'RegistrationEmailPasswordDeveloper') {
       return React.createElement(RegistrationEmailPasswordDeveloper, null);
+    } else if (this.state.renderedPage === 'RegistrationEmailPasswordEmployer') {
+      return React.createElement(RegistrationEmailPasswordEmployer, null);
+    } else if (this.state.renderedPage === 'RegistrationDetailsDeveloper') {
+      return React.createElement(RegistrationDetailsDeveloper, null);
+    } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
+      return React.createElement(RegistrationSkillsDeveloper, null);
+    } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
+      return React.createElement(RegistrationAboutMeDeveloper, null);
+    } else if (this.state.renderedPage === 'BackendPanelEmployer') {
+      return React.createElement(BackendPanelEmployer, null);
+    } else if (this.state.renderedPage === 'FullProfileDeveloper') {
+      return React.createElement(FullProfileDeveloper, null);
     }
   }
 });
 
 module.exports = Application;
 
-},{"../stores/ViewStore.js":21,"./homepage.jsx":10,"./registration-email-password-developer.jsx":15,"react":191}],4:[function(require,module,exports){
+},{"../stores/ViewStore.js":21,"./backend-panel-employer.jsx":4,"./full-profile-developer.jsx":9,"./homepage.jsx":10,"./registration-about-me-developer.jsx":13,"./registration-details-developer.jsx":14,"./registration-email-password-developer.jsx":15,"./registration-email-password-employer.jsx":16,"./registration-skills-developer.jsx":17,"react":191}],4:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 
@@ -522,7 +548,9 @@ var Homepage = React.createClass({
 	handleRegisterAsADeveloperClick: function () {
 		HomepageActionCreators.changePageToRegisterEmailPasswordDeveloper();
 	},
-
+	handleRegisterAsAnEmployerClick: function () {
+		HomepageActionCreators.changePageToRegisterEmailPasswordEmployer();
+	},
 	render: function () {
 		return React.createElement(
 			'div',
@@ -542,7 +570,7 @@ var Homepage = React.createClass({
 				)
 			),
 			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer' })
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer', onClick: this.handleRegisterAsAnEmployerClick })
 		);
 	}
 });
@@ -1191,9 +1219,10 @@ ViewStore = objectAssign({}, ViewStore, EventEmitter.prototype);
 console.log(ViewStore);
 
 function handleAction(action) {
-	console.log('working!');
 	if (action.type === 'change_page_to_register_email_password_developer') {
 		setCurrentPage('RegistrationEmailPasswordDeveloper');
+	} else if (action.type === 'change_page_to_register_email_password_employer') {
+		setCurrentPage('RegistrationEmailPasswordEmployer');
 	}
 }
 

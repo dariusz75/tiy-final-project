@@ -44,9 +44,10 @@ ViewStore = objectAssign({}, ViewStore, EventEmitter.prototype);
 console.log(ViewStore);
 
 function handleAction(action) {
-	console.log('working!');
 	if (action.type === 'change_page_to_register_email_password_developer') {
 		setCurrentPage('RegistrationEmailPasswordDeveloper');
+	} else if (action.type === 'change_page_to_register_email_password_employer') {
+		setCurrentPage('RegistrationEmailPasswordEmployer');
 	}
 }
 

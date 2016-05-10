@@ -7,6 +7,14 @@ function changePageToRegisterEmailPasswordDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToRegisterEmailPasswordEmployer() {
+	var action = {
+		type: 'change_page_to_register_email_password_employer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
-	changePageToRegisterEmailPasswordDeveloper: changePageToRegisterEmailPasswordDeveloper
+	changePageToRegisterEmailPasswordDeveloper: changePageToRegisterEmailPasswordDeveloper,
+	changePageToRegisterEmailPasswordEmployer: changePageToRegisterEmailPasswordEmployer
 };
