@@ -23,13 +23,6 @@ module.exports = {
 },{"../dispatcher/Dispatcher.js":22}],2:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher.js');
 
-function changePageToHomepageWhenDone() {
-	var action = {
-		type: 'change_page_to_homepage_when_done'
-	};
-	Dispatcher.dispatch(action);
-}
-
 function changePageToHomepageWhenCancelled() {
 	var action = {
 		type: 'change_page_to_homepage_when_cancelled'
@@ -66,7 +59,6 @@ function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
 }
 
 module.exports = {
-	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
@@ -77,9 +69,9 @@ module.exports = {
 },{"../dispatcher/Dispatcher.js":22}],3:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher.js');
 
-function changePageToHomepageWhenDone() {
+function changePageToYouHaveRegisteredMessageWhenDone() {
 	var action = {
-		type: 'change_page_to_homepage_when_done'
+		type: 'change_page_to_you_have_registered_message_when_click_create_profile'
 	};
 	Dispatcher.dispatch(action);
 }
@@ -92,7 +84,7 @@ function changePageToHomepageWhenCancelled() {
 }
 
 module.exports = {
-	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
+	changePageToYouHaveRegisteredMessageWhenDone: changePageToYouHaveRegisteredMessageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled
 };
 
@@ -175,10 +167,6 @@ var Application = React.createClass({
       return React.createElement(FullProfileDeveloper, null);
     } else if (this.state.renderedPage === 'BackendPanelDeveloper') {
       return React.createElement(BackendPanelDeveloper, null);
-    } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
-      return React.createElement(RegistrationSkillsDeveloper, null);
-    } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
-      return React.createElement(RegistrationAboutMeDeveloper, null);
     } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
       return React.createElement(YouHaveRegisteredMessage, null);
     }
@@ -1095,7 +1083,7 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 	displayName: 'RegistrationEmailPasswordEmployer',
 
 	handleDoneEmployerClick: function () {
-		RegistrationEmployerActionCreators.changePageToHomepageWhenDone();
+		RegistrationEmployerActionCreators.changePageToYouHaveRegisteredMessageWhenDone();
 	},
 
 	handleCancelEmployerClick: function () {

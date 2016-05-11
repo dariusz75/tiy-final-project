@@ -49,10 +49,6 @@ var Application = React.createClass({
       return <FullProfileDeveloper />;
     } else if (this.state.renderedPage === 'BackendPanelDeveloper') {
       return <BackendPanelDeveloper />;
-    } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
-      return <RegistrationSkillsDeveloper />;
-    } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
-      return <RegistrationAboutMeDeveloper />;
     } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
       return <YouHaveRegisteredMessage />;
     }

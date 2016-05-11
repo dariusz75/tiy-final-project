@@ -5,7 +5,7 @@ var RegistrationEmployerActionCreators = require('../actions/RegistrationEmploye
 
 var RegistrationEmailPasswordEmployer = React.createClass({
 		handleDoneEmployerClick: function () {
-				RegistrationEmployerActionCreators.changePageToHomepageWhenDone();
+				RegistrationEmployerActionCreators.changePageToYouHaveRegisteredMessageWhenDone();
 		},
 
 		handleCancelEmployerClick: function () {

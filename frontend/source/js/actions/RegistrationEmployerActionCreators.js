@@ -1,8 +1,8 @@
 var Dispatcher = require('../dispatcher/Dispatcher.js');
 									
-function changePageToHomepageWhenDone() {
+function changePageToYouHaveRegisteredMessageWhenDone() {
 	var action = {
-		type: 'change_page_to_homepage_when_done'
+		type: 'change_page_to_you_have_registered_message_when_click_create_profile'
 	};
 	Dispatcher.dispatch(action);
 }
@@ -15,6 +15,6 @@ function changePageToHomepageWhenCancelled() {
 }
 
 module.exports = {
-	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
+	changePageToYouHaveRegisteredMessageWhenDone: changePageToYouHaveRegisteredMessageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled
 };
