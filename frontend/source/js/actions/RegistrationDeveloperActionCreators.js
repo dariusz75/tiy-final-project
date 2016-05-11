@@ -35,10 +35,18 @@ function changeToRegistrationSkillsDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changeToAboutMeDeveloper() {
+	var action = {
+		type: 'change_to_about_me_developer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
 	changePageToBackendPanelDeveloperWhenCreateProfile: changePageToBackendPanelDeveloperWhenCreateProfile,
-	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper
+	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
+	changeToAboutMeDeveloper: changeToAboutMeDeveloper
 };

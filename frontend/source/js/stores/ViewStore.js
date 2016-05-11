@@ -58,6 +58,8 @@ function handleAction(action) {
 		setCurrentPage('BackendPanelDeveloper');
 	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
+	} else if (action.type === 'change_to_about_me_developer') {
+		setCurrentPage('RegistrationAboutMeDeveloper')
 	}
 }
 

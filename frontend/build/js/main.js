@@ -58,12 +58,20 @@ function changeToRegistrationSkillsDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changeToAboutMeDeveloper() {
+	var action = {
+		type: 'change_to_about_me_developer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
 	changePageToBackendPanelDeveloperWhenCreateProfile: changePageToBackendPanelDeveloperWhenCreateProfile,
-	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper
+	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
+	changeToAboutMeDeveloper: changeToAboutMeDeveloper
 };
 
 },{"../dispatcher/Dispatcher.js":21}],3:[function(require,module,exports){
@@ -167,6 +175,8 @@ var Application = React.createClass({
       return React.createElement(BackendPanelDeveloper, null);
     } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
       return React.createElement(RegistrationSkillsDeveloper, null);
+    } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
+      return React.createElement(RegistrationAboutMeDeveloper, null);
     }
   }
 });
@@ -846,6 +856,10 @@ var RegistrationDetailsDeveloper = React.createClass({
 														RegistrationDeveloperActionCreators.changeToRegistrationSkillsDeveloper();
 							},
 
+							handleAboutMeClick: function () {
+														RegistrationDeveloperActionCreators.changeToAboutMeDeveloper();
+							},
+
 							handleCreateProfileClick: function () {
 														RegistrationDeveloperActionCreators.changePageToBackendPanelDeveloperWhenCreateProfile();
 							},
@@ -874,7 +888,7 @@ var RegistrationDetailsDeveloper = React.createClass({
 																												React.createElement(
 																																			'div',
 																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeClick })
 																												)
 																					),
 																					React.createElement(
@@ -1371,6 +1385,8 @@ function handleAction(action) {
 		setCurrentPage('BackendPanelDeveloper');
 	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
+	} else if (action.type === 'change_to_about_me_developer') {
+		setCurrentPage('RegistrationAboutMeDeveloper');
 	}
 }
 

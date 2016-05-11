@@ -50,6 +50,8 @@ var Application = React.createClass({
       return <BackendPanelDeveloper />;
     } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
       return <RegistrationSkillsDeveloper />;
+    } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
+      return <RegistrationAboutMeDeveloper />;
     }
 
 	}
