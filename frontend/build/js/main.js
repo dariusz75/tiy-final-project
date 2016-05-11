@@ -1200,6 +1200,10 @@ var RegistrationSkillsDeveloper = React.createClass({
 		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
 	},
 
+	handleAboutMeDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changeToAboutMeDeveloper();
+	},
+
 	handleCreateProfileClick: function () {
 		RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 	},
@@ -1228,7 +1232,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeDeveloperClick })
 				)
 			),
 			React.createElement(

@@ -46,6 +46,10 @@ var RegistrationSkillsDeveloper = React.createClass({
 			RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
 		},
 
+		handleAboutMeDeveloperClick: function () {
+			RegistrationDeveloperActionCreators.changeToAboutMeDeveloper();
+		},
+
 		handleCreateProfileClick: function () {
 				RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 		},
@@ -64,7 +68,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 	  							<Button addClass="active-link fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" />
 	  						</div>
 	  						<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" />
+	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" onClick={this.handleAboutMeDeveloperClick} />
 	  						</div>
 							</div>
 							<div className="row">
