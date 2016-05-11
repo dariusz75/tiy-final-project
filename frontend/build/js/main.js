@@ -44,13 +44,6 @@ function changePageToRegistrationSkillsDeveloperWhenNext() {
 	Dispatcher.dispatch(action);
 }
 
-function changePageToBackendPanelDeveloperWhenCreateProfile() {
-	var action = {
-		type: 'change_page_to_backend_panel_developer_when_create_profile'
-	};
-	Dispatcher.dispatch(action);
-}
-
 function changeToRegistrationSkillsDeveloper() {
 	var action = {
 		type: 'change_to_registration_skills_developer'
@@ -65,13 +58,20 @@ function changeToAboutMeDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
+	var action = {
+		type: 'change_page_to_you_have_registered_message_when_click_create_profile'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
-	changePageToBackendPanelDeveloperWhenCreateProfile: changePageToBackendPanelDeveloperWhenCreateProfile,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
-	changeToAboutMeDeveloper: changeToAboutMeDeveloper
+	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
+	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile
 };
 
 },{"../dispatcher/Dispatcher.js":22}],3:[function(require,module,exports){
@@ -179,6 +179,8 @@ var Application = React.createClass({
       return React.createElement(RegistrationSkillsDeveloper, null);
     } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
       return React.createElement(RegistrationAboutMeDeveloper, null);
+    } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
+      return React.createElement(YouHaveRegisteredMessage, null);
     }
   }
 });
@@ -863,7 +865,7 @@ var RegistrationDetailsDeveloper = React.createClass({
 							},
 
 							handleCreateProfileClick: function () {
-														RegistrationDeveloperActionCreators.changePageToBackendPanelDeveloperWhenCreateProfile();
+														RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 							},
 
 							handleCancelDeveloperClick: function () {
@@ -1428,8 +1430,8 @@ function handleAction(action) {
 		setCurrentPage('Homepage');
 	} else if (action.type === 'change_page_to_registration_skills_developer_when_next') {
 		setCurrentPage('RegistrationDetailsDeveloper');
-	} else if (action.type === 'change_page_to_backend_panel_developer_when_create_profile') {
-		setCurrentPage('BackendPanelDeveloper');
+	} else if (action.type === 'change_page_to_you_have_registered_message_when_click_create_profile') {
+		setCurrentPage('YouHaveRegisteredMessage');
 	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
 	} else if (action.type === 'change_to_about_me_developer') {

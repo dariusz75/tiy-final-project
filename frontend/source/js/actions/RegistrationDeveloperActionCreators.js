@@ -21,13 +21,6 @@ function changePageToRegistrationSkillsDeveloperWhenNext() {
 	Dispatcher.dispatch(action);
 }
 
-function changePageToBackendPanelDeveloperWhenCreateProfile() {
-	var action = {
-		type: 'change_page_to_backend_panel_developer_when_create_profile'
-	};
-	Dispatcher.dispatch(action);
-}
-
 function changeToRegistrationSkillsDeveloper() {
 	var action = {
 		type: 'change_to_registration_skills_developer'
@@ -42,11 +35,18 @@ function changeToAboutMeDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
+	var action = {
+		type: 'change_page_to_you_have_registered_message_when_click_create_profile'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
-	changePageToBackendPanelDeveloperWhenCreateProfile: changePageToBackendPanelDeveloperWhenCreateProfile,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
-	changeToAboutMeDeveloper: changeToAboutMeDeveloper
+	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
+	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile
 };

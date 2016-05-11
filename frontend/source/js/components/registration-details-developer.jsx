@@ -14,7 +14,7 @@ var RegistrationDetailsDeveloper = React.createClass({
 		},
 
 		handleCreateProfileClick: function () {
-				RegistrationDeveloperActionCreators.changePageToBackendPanelDeveloperWhenCreateProfile();
+				RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 		},
 
 		handleCancelDeveloperClick: function () {

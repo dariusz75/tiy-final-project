@@ -55,8 +55,8 @@ function handleAction(action) {
 		setCurrentPage('Homepage');
 	} else if (action.type === 'change_page_to_registration_skills_developer_when_next') {
 		setCurrentPage('RegistrationDetailsDeveloper');
-	} else if (action.type === 'change_page_to_backend_panel_developer_when_create_profile') {
-		setCurrentPage('BackendPanelDeveloper');
+	} else if (action.type === 'change_page_to_you_have_registered_message_when_click_create_profile') {
+		setCurrentPage('YouHaveRegisteredMessage');
 	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
 	} else if (action.type === 'change_to_about_me_developer') {

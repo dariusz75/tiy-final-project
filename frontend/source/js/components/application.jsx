@@ -53,6 +53,8 @@ var Application = React.createClass({
       return <RegistrationSkillsDeveloper />;
     } else if (this.state.renderedPage === 'RegistrationAboutMeDeveloper') {
       return <RegistrationAboutMeDeveloper />;
+    } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
+      return <YouHaveRegisteredMessage />;
     }
 
 	}
