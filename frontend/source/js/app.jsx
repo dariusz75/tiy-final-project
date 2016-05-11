@@ -10,6 +10,7 @@ var RegistrationEmailPasswordEmployer = require('./components/registration-email
 var RegistrationDetailsDeveloper = require('./components/registration-details-developer.jsx');
 var RegistrationSkillsDeveloper = require('./components/registration-skills-developer.jsx');
 var RegistrationAboutMeDeveloper = require('./components/registration-about-me-developer.jsx');
+var BackendPanelDeveloper = require('./components/backend-panel-developer.jsx');
 var BackendPanelEmployer = require('./components/backend-panel-employer.jsx');
 var FullProfileDeveloper = require('./components/full-profile-developer.jsx');
 var LogIn = require('./components/log-in.jsx');
@@ -20,22 +21,5 @@ var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 
-	
 ReactDOM.render(<Application />, parentElement);
 
-
-/*
-<Homepage />
-<RegistrationEmailPasswordDeveloper />
-<RegistrationDetailsDeveloper />
-<RegistrationSkillsDeveloper />
-<RegistrationAboutMeDeveloper />
-<FullProfileDeveloper />
-<RegistrationEmailPasswordEmployer />
-<BackendPanelEmployer />
-<Checkboxes skillsData={skillsOptions.skillsData} />
-<Miniprofile candidatesData={candidatesDetails.candidatesData}/>
-
-
-<FindSection skillsData={skillsOptions.skillsData} candidatesData={candidatesDetails.candidatesData}/>
-*/

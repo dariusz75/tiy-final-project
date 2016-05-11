@@ -48,7 +48,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" />
 	  						</div>
 								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" />
+	  							<Button addClass="active-link fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" />
 	  						</div>
 	  						<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" />
@@ -81,3 +81,4 @@ var RegistrationSkillsDeveloper = React.createClass({
 	});		
 
 module.exports = RegistrationSkillsDeveloper;
+				 

@@ -21,8 +21,24 @@ function changePageToRegistrationSkillsDeveloperWhenNext() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToBackendPanelDeveloperWhenCreateProfile() {
+	var action = {
+		type: 'change_page_to_backend_panel_developer_when_create_profile'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changeToRegistrationSkillsDeveloper() {
+	var action = {
+		type: 'change_to_registration_skills_developer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenDone: changePageToHomepageWhenDone,
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
-	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext
+	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
+	changePageToBackendPanelDeveloperWhenCreateProfile: changePageToBackendPanelDeveloperWhenCreateProfile,
+	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper
 };

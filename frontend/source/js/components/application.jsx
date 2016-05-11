@@ -7,6 +7,7 @@ var RegistrationDetailsDeveloper = require('./registration-details-developer.jsx
 var RegistrationSkillsDeveloper = require('./registration-skills-developer.jsx');
 var RegistrationAboutMeDeveloper = require('./registration-about-me-developer.jsx');
 var BackendPanelEmployer = require('./backend-panel-employer.jsx');
+var BackendPanelDeveloper = require('./backend-panel-developer.jsx');
 var FullProfileDeveloper = require('./full-profile-developer.jsx');
 
 
@@ -45,6 +46,10 @@ var Application = React.createClass({
       return <BackendPanelEmployer />;
     } else if (this.state.renderedPage === 'FullProfileDeveloper') {
       return <FullProfileDeveloper />;
+    } else if (this.state.renderedPage === 'BackendPanelDeveloper') {
+      return <BackendPanelDeveloper />;
+    } else if (this.state.renderedPage === 'RegistrationSkillsDeveloper') {
+      return <RegistrationSkillsDeveloper />;
     }
 
 	}

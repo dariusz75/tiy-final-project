@@ -12,6 +12,7 @@ $green-main: #219E76;
 $green-darker: #5D947C;
 $green-darkest: #688677;
 $blue-dark: #286090;
+$blue-active-link: #042B62;
 $blue-bright: #0B7ED3;
 $grey-dark: #282A28;
 
@@ -46,6 +47,10 @@ body {
 
 .green-bright {
 	background-color: $green-bright;
+}
+
+.active-link {
+  background-color: $blue-active-link;
 }
 
 .margin-top {

@@ -13,6 +13,7 @@ var pages = [	'Homepage',
 							'FindSection',
 							'BackendPanelEmployer',
 							'FullProfileDeveloper',
+							'BackendPanelDeveloper',
 							'LogIn',
 							'Contact'
 						];
@@ -52,6 +53,10 @@ function handleAction(action) {
 	} else if (action.type === 'change_page_to_homepage_when_cancelled') {
 		setCurrentPage('Homepage');
 	} else if (action.type === 'change_page_to_registration_skills_developer_when_next') {
+		setCurrentPage('RegistrationDetailsDeveloper');
+	} else if (action.type === 'change_page_to_backend_panel_developer_when_create_profile') {
+		setCurrentPage('BackendPanelDeveloper');
+	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
 	}
 }
