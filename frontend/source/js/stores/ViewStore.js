@@ -51,6 +51,8 @@ function handleAction(action) {
 		setCurrentPage('Homepage');
 	} else if (action.type === 'change_page_to_homepage_when_cancelled') {
 		setCurrentPage('Homepage');
+	} else if (action.type === 'change_page_to_registration_skills_developer_when_next') {
+		setCurrentPage('RegistrationSkillsDeveloper');
 	}
 }
 
