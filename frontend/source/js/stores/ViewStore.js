@@ -14,6 +14,7 @@ var pages = [	'Homepage',
 							'BackendPanelEmployer',
 							'FullProfileDeveloper',
 							'BackendPanelDeveloper',
+							'YouHaveRegisteredMessage',
 							'LogIn',
 							'Contact'
 						];

@@ -9,6 +9,7 @@ var RegistrationAboutMeDeveloper = require('./registration-about-me-developer.js
 var BackendPanelEmployer = require('./backend-panel-employer.jsx');
 var BackendPanelDeveloper = require('./backend-panel-developer.jsx');
 var FullProfileDeveloper = require('./full-profile-developer.jsx');
+var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 
 
 var Application = React.createClass({

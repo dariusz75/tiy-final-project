@@ -1,7 +1,7 @@
 var React = require('react');
 var Button = require('./button.jsx');
 var Checkboxes = require('./check-box.jsx');
-
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 var skillsOptions = {
 	skillsData:[
@@ -41,6 +41,15 @@ var skillsOptions = {
 }
 
 var RegistrationSkillsDeveloper = React.createClass({
+
+		handleCreateProfileClick: function () {
+				RegistrationDeveloperActionCreators.changePageToBackendPanelDeveloperWhenCreateProfile();
+		},
+
+		handleCancelDeveloperClick: function () {
+				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+		},
+
 		render: function() {
 			return <div className="row img-rounded registration-developer-wrapper">
 							<div className="row">
@@ -74,8 +83,8 @@ var RegistrationSkillsDeveloper = React.createClass({
 									</div>
 								</div>
 							</div>
-								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CREATE PROFILE" />
-						 		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />			
+								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CREATE PROFILE" onClick={this.handleCreateProfileClick} />
+						 		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" onClick={this.handleCancelDeveloperClick} />			
 						 </div>;
 		}
 	});		
