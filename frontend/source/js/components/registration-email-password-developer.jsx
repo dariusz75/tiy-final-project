@@ -6,7 +6,7 @@ var RegistrationDeveloperActionCreators = require('../actions/RegistrationDevelo
 var RegistrationEmailPasswordDeveloper = React.createClass({
 	
 		handleNextDeveloperClick: function () {
-					RegistrationDeveloperActionCreators.changePageToRegistrationSkillsDeveloperWhenNext();
+					RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
 		},
 
 		handleCancelDeveloperClick: function () {

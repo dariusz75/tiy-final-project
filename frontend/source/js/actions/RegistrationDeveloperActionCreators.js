@@ -7,9 +7,16 @@ function changePageToHomepageWhenCancelled() {
 	Dispatcher.dispatch(action);
 }
 
-function changePageToRegistrationSkillsDeveloperWhenNext() {
+function changePageToRegistrationDetailsDeveloperWhenNext() {
 	var action = {
 		type: 'change_page_to_registration_skills_developer_when_next'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToRegistrationDetailsDeveloper() {
+	var action = {
+		type: 'change_page_to_registration_skills_developer'
 	};
 	Dispatcher.dispatch(action);
 }
@@ -37,7 +44,8 @@ function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
 
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
-	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
+	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
+	changePageToRegistrationDetailsDeveloper: changePageToRegistrationDetailsDeveloper,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile

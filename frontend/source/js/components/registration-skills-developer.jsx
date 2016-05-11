@@ -42,6 +42,10 @@ var skillsOptions = {
 
 var RegistrationSkillsDeveloper = React.createClass({
 
+		handlePersonalDetailsDeveloperClick: function () {
+			RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
+		},
+
 		handleCreateProfileClick: function () {
 				RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 		},
@@ -54,7 +58,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 			return <div className="row img-rounded registration-developer-wrapper">
 							<div className="row">
 								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" />
+	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" onClick={this.handlePersonalDetailsDeveloperClick} />
 	  						</div>
 								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 	  							<Button addClass="active-link fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" />

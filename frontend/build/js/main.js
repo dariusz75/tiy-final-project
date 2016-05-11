@@ -30,9 +30,16 @@ function changePageToHomepageWhenCancelled() {
 	Dispatcher.dispatch(action);
 }
 
-function changePageToRegistrationSkillsDeveloperWhenNext() {
+function changePageToRegistrationDetailsDeveloperWhenNext() {
 	var action = {
 		type: 'change_page_to_registration_skills_developer_when_next'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToRegistrationDetailsDeveloper() {
+	var action = {
+		type: 'change_page_to_registration_skills_developer'
 	};
 	Dispatcher.dispatch(action);
 }
@@ -60,7 +67,8 @@ function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
 
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
-	changePageToRegistrationSkillsDeveloperWhenNext: changePageToRegistrationSkillsDeveloperWhenNext,
+	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
+	changePageToRegistrationDetailsDeveloper: changePageToRegistrationDetailsDeveloper,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile
@@ -1007,7 +1015,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 
 
 	handleNextDeveloperClick: function () {
-		RegistrationDeveloperActionCreators.changePageToRegistrationSkillsDeveloperWhenNext();
+		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
 	},
 
 	handleCancelDeveloperClick: function () {
@@ -1188,6 +1196,10 @@ var RegistrationSkillsDeveloper = React.createClass({
 	displayName: 'RegistrationSkillsDeveloper',
 
 
+	handlePersonalDetailsDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
+	},
+
 	handleCreateProfileClick: function () {
 		RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 	},
@@ -1206,7 +1218,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
 				),
 				React.createElement(
 					'div',
@@ -1417,6 +1429,8 @@ function handleAction(action) {
 	} else if (action.type === 'change_page_to_homepage_when_cancelled') {
 		setCurrentPage('Homepage');
 	} else if (action.type === 'change_page_to_registration_skills_developer_when_next') {
+		setCurrentPage('RegistrationDetailsDeveloper');
+	} else if (action.type === 'change_page_to_registration_skills_developer') {
 		setCurrentPage('RegistrationDetailsDeveloper');
 	} else if (action.type === 'change_page_to_you_have_registered_message_when_click_create_profile') {
 		setCurrentPage('YouHaveRegisteredMessage');
