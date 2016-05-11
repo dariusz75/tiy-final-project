@@ -43,7 +43,7 @@ var skillsOptions = {
 var RegistrationSkillsDeveloper = React.createClass({
 
 		handleCreateProfileClick: function () {
-				RegistrationDeveloperActionCreators.changePageToBackendPanelDeveloperWhenCreateProfile();
+				RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
 		},
 
 		handleCancelDeveloperClick: function () {
