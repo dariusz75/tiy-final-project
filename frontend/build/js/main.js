@@ -128,10 +128,26 @@ function changePageToOurPartners() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToContact() {
+	var action = {
+		type: 'change_page_to_contact'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToLogIn() {
+	var action = {
+		type: 'change_page_to_log_in'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepage: changePageToHomepage,
 	changePageToFindSection: changePageToFindSection,
-	changePageToOurPartners: changePageToOurPartners
+	changePageToOurPartners: changePageToOurPartners,
+	changePageToContact: changePageToContact,
+	changePageToLogIn: changePageToLogIn
 };
 
 },{"../dispatcher/Dispatcher.js":25}],5:[function(require,module,exports){
@@ -177,6 +193,8 @@ var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 var FindSection = require('./find-section.jsx');
 var TopBar = require('./top-bar.jsx');
 var OurPartners = require('./our-partners.jsx');
+var Contact = require('./contact.jsx');
+var LogIn = require('./log-in.jsx');
 
 var Application = React.createClass({
   displayName: 'Application',
@@ -223,13 +241,17 @@ var Application = React.createClass({
       return React.createElement(FindSection, null);
     } else if (this.state.renderedPage === 'OurPartners') {
       return React.createElement(OurPartners, null);
+    } else if (this.state.renderedPage === 'Contact') {
+      return React.createElement(Contact, null);
+    } else if (this.state.renderedPage === 'LogIn') {
+      return React.createElement(LogIn, null);
     }
   }
 });
 
 module.exports = Application;
 
-},{"../stores/ViewStore.js":28,"./backend-panel-developer.jsx":7,"./backend-panel-employer.jsx":8,"./find-section.jsx":12,"./full-profile-developer.jsx":13,"./homepage.jsx":14,"./our-partners.jsx":17,"./registration-about-me-developer.jsx":18,"./registration-details-developer.jsx":19,"./registration-email-password-developer.jsx":20,"./registration-email-password-employer.jsx":21,"./registration-skills-developer.jsx":22,"./top-bar.jsx":23,"./you-have-registered-message.jsx":24,"react":198}],7:[function(require,module,exports){
+},{"../stores/ViewStore.js":28,"./backend-panel-developer.jsx":7,"./backend-panel-employer.jsx":8,"./contact.jsx":11,"./find-section.jsx":12,"./full-profile-developer.jsx":13,"./homepage.jsx":14,"./log-in.jsx":15,"./our-partners.jsx":17,"./registration-about-me-developer.jsx":18,"./registration-details-developer.jsx":19,"./registration-email-password-developer.jsx":20,"./registration-email-password-employer.jsx":21,"./registration-skills-developer.jsx":22,"./top-bar.jsx":23,"./you-have-registered-message.jsx":24,"react":198}],7:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
@@ -1768,6 +1790,10 @@ function handleAction(action) {
 		setCurrentPage('FindSection');
 	} else if (action.type === 'change_page_to_our_partners') {
 		setCurrentPage('OurPartners');
+	} else if (action.type === 'change_page_to_contact') {
+		setCurrentPage('Contact');
+	} else if (action.type === 'change_page_to_log_in') {
+		setCurrentPage('LogIn');
 	}
 }
 

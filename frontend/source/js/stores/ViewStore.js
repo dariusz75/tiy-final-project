@@ -72,6 +72,10 @@ function handleAction(action) {
 		setCurrentPage('FindSection');
 	} else if (action.type === 'change_page_to_our_partners') {
 		setCurrentPage('OurPartners');
+	} else if (action.type === 'change_page_to_contact') {
+		setCurrentPage('Contact');
+	} else if (action.type === 'change_page_to_log_in') {
+		setCurrentPage('LogIn');
 	}
 }
 
