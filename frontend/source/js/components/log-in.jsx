@@ -1,6 +1,6 @@
 var React = require('react');
 var Button = require('./button.jsx');
-
+var TopBar = require('./top-bar.jsx');
 
 var LogIn = React.createClass({
 		render: function() {

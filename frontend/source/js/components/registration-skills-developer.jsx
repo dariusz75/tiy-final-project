@@ -2,6 +2,8 @@ var React = require('react');
 var Button = require('./button.jsx');
 var Checkboxes = require('./check-box.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
+
 
 var skillsOptions = {
 	skillsData:[

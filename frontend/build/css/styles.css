@@ -97,6 +97,15 @@ body {
   font-size: 2rem;
   font-family: 'Quicksand', sans-serif; }
 
+.general-wrapper {
+  background-color: #5EEFAA;
+  width: 90%;
+  padding: 10px;
+  margin: 30px auto 20px auto;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif; }
+
 .registration-developer-wrapper {
   background-color: #5EEFAA;
   padding: 10px;

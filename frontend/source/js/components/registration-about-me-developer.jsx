@@ -1,6 +1,7 @@
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 
 var RegistrationAboutMeDeveloper = React.createClass({

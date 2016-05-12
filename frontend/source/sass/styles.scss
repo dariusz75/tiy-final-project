@@ -130,7 +130,13 @@ body {
   @include quicksand(400, 2rem);
 }
 
-
+.general-wrapper {
+  background-color: $green-pale;
+  width: 90%;
+  padding: 10px;
+  margin: 30px auto 20px auto;
+  @include quicksand(400, 2rem);
+}
 
 .registration-developer-wrapper {
   background-color: $green-pale;

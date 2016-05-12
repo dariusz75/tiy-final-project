@@ -14,7 +14,7 @@ var Homepage = React.createClass({
 		render: function() {
 			return <div>
 							<TopBar />
-							<div className="row img-rounded registration-email-password-wrapper">
+							<div className="row img-rounded general-wrapper">
 								<div className="homepage-info">
 									<h1>Our Mission</h1>
 									<p>Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.</p>

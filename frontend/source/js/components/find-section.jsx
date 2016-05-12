@@ -1,6 +1,7 @@
 var React = require('react');
 var Checkboxes = require('./check-box.jsx');
 var Miniprofiles = require('./miniprofile.jsx');
+var TopBar = require('./top-bar.jsx');
 
 
 var FindSection = React.createClass({

@@ -129,7 +129,7 @@ var TopBar = require('./components/top-bar.jsx');
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
-ReactDOM.render(React.createElement(Homepage, null), parentElement);
+ReactDOM.render(React.createElement(BackendPanelDeveloper, null), parentElement);
 
 },{"./components/application.jsx":5,"./components/backend-panel-developer.jsx":6,"./components/backend-panel-employer.jsx":7,"./components/button.jsx":8,"./components/check-box.jsx":9,"./components/contact.jsx":10,"./components/find-section.jsx":11,"./components/full-profile-developer.jsx":12,"./components/homepage.jsx":13,"./components/log-in.jsx":14,"./components/miniprofile.jsx":15,"./components/registration-about-me-developer.jsx":16,"./components/registration-details-developer.jsx":17,"./components/registration-email-password-developer.jsx":18,"./components/registration-email-password-employer.jsx":19,"./components/registration-skills-developer.jsx":20,"./components/top-bar.jsx":21,"./components/you-have-registered-message.jsx":22,"react":196,"react-dom":33}],5:[function(require,module,exports){
 var React = require('react');
@@ -199,6 +199,7 @@ module.exports = Application;
 },{"../stores/ViewStore.js":26,"./backend-panel-developer.jsx":6,"./backend-panel-employer.jsx":7,"./find-section.jsx":11,"./full-profile-developer.jsx":12,"./homepage.jsx":13,"./registration-about-me-developer.jsx":16,"./registration-details-developer.jsx":17,"./registration-email-password-developer.jsx":18,"./registration-email-password-employer.jsx":19,"./registration-skills-developer.jsx":20,"./top-bar.jsx":21,"./you-have-registered-message.jsx":22,"react":196}],6:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var BackendPanelDeveloper = React.createClass({
 	displayName: 'BackendPanelDeveloper',
@@ -206,47 +207,53 @@ var BackendPanelDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
+					{ 'class': 'form-group' },
+					React.createElement(
+						'label',
+						{ className: 'margin-top', 'for': 'form-control' },
+						'Few sentences about yourself '
+					),
+					React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
 				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ 'class': 'form-group' },
-				React.createElement(
-					'label',
-					{ className: 'margin-top', 'for': 'form-control' },
-					'Few sentences about yourself '
-				),
-				React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SAVE' }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SAVE' }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+			)
 		);
 	}
 });
 
 module.exports = BackendPanelDeveloper;
 
-},{"./button.jsx":8,"react":196}],7:[function(require,module,exports){
+},{"./button.jsx":8,"./top-bar.jsx":21,"react":196}],7:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var BackendPanelEmployer = React.createClass({
 	displayName: 'BackendPanelEmployer',
@@ -296,7 +303,7 @@ var BackendPanelEmployer = React.createClass({
 
 module.exports = BackendPanelEmployer;
 
-},{"./button.jsx":8,"react":196}],8:[function(require,module,exports){
+},{"./button.jsx":8,"./top-bar.jsx":21,"react":196}],8:[function(require,module,exports){
 var React = require('react');
 
 var Button = React.createClass({
@@ -358,6 +365,7 @@ module.exports = Checkboxes;
 },{"../stores/SkillsStore.js":25,"react":196}],10:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var Contact = React.createClass({
 	displayName: 'Contact',
@@ -476,10 +484,11 @@ var Contact = React.createClass({
 
 module.exports = Contact;
 
-},{"./button.jsx":8,"react":196}],11:[function(require,module,exports){
+},{"./button.jsx":8,"./top-bar.jsx":21,"react":196}],11:[function(require,module,exports){
 var React = require('react');
 var Checkboxes = require('./check-box.jsx');
 var Miniprofiles = require('./miniprofile.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var FindSection = React.createClass({
 	displayName: 'FindSection',
@@ -496,9 +505,10 @@ var FindSection = React.createClass({
 
 module.exports = FindSection;
 
-},{"./check-box.jsx":9,"./miniprofile.jsx":15,"react":196}],12:[function(require,module,exports){
+},{"./check-box.jsx":9,"./miniprofile.jsx":15,"./top-bar.jsx":21,"react":196}],12:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var FullProfileDeveloper = React.createClass({
 	displayName: 'FullProfileDeveloper',
@@ -666,7 +676,7 @@ var FullProfileDeveloper = React.createClass({
 
 module.exports = FullProfileDeveloper;
 
-},{"./button.jsx":8,"react":196}],13:[function(require,module,exports){
+},{"./button.jsx":8,"./top-bar.jsx":21,"react":196}],13:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
@@ -688,7 +698,7 @@ var Homepage = React.createClass({
 			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row img-rounded registration-email-password-wrapper' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
 					{ className: 'homepage-info' },
@@ -715,6 +725,7 @@ module.exports = Homepage;
 },{"../actions/HomepageActionCreators.js":1,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],14:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var LogIn = React.createClass({
 	displayName: 'LogIn',
@@ -755,7 +766,7 @@ var LogIn = React.createClass({
 
 module.exports = LogIn;
 
-},{"./button.jsx":8,"react":196}],15:[function(require,module,exports){
+},{"./button.jsx":8,"./top-bar.jsx":21,"react":196}],15:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var candidatesDetails = require('../stores/MiniProfilesStore.js');
@@ -818,6 +829,7 @@ module.exports = ListOfMiniprofiles;
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationAboutMeDeveloper = React.createClass({
 	displayName: 'RegistrationAboutMeDeveloper',
@@ -880,10 +892,11 @@ var RegistrationAboutMeDeveloper = React.createClass({
 
 module.exports = RegistrationAboutMeDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],17:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],17:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationDetailsDeveloper = React.createClass({
 							displayName: 'RegistrationDetailsDeveloper',
@@ -1042,10 +1055,11 @@ var RegistrationDetailsDeveloper = React.createClass({
 
 module.exports = RegistrationDetailsDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],18:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],18:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationEmailPasswordDeveloper = React.createClass({
 	displayName: 'RegistrationEmailPasswordDeveloper',
@@ -1119,10 +1133,11 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 
 module.exports = RegistrationEmailPasswordDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],19:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],19:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationEmployerActionCreators = require('../actions/RegistrationEmployerActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationEmailPasswordEmployer = React.createClass({
 	displayName: 'RegistrationEmailPasswordEmployer',
@@ -1195,11 +1210,12 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 
 module.exports = RegistrationEmailPasswordEmployer;
 
-},{"../actions/RegistrationEmployerActionCreators.js":3,"./button.jsx":8,"react":196}],20:[function(require,module,exports){
+},{"../actions/RegistrationEmployerActionCreators.js":3,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],20:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var Checkboxes = require('./check-box.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var skillsOptions = {
 	skillsData: [{
@@ -1322,7 +1338,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 
 module.exports = RegistrationSkillsDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./check-box.jsx":9,"react":196}],21:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./check-box.jsx":9,"./top-bar.jsx":21,"react":196}],21:[function(require,module,exports){
 var React = require('react');
 
 var TopBar = React.createClass({
@@ -1429,6 +1445,7 @@ module.exports = TopBar;
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var YouHaveRegisteredMessage = React.createClass({
 	displayName: 'YouHaveRegisteredMessage',
@@ -1468,7 +1485,7 @@ var YouHaveRegisteredMessage = React.createClass({
 
 module.exports = YouHaveRegisteredMessage;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],23:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],23:[function(require,module,exports){
 var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
