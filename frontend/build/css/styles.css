@@ -90,8 +90,9 @@ body {
 /* ###### REGISTRATION ####### */
 .registration-email-password-wrapper {
   background-color: #5EEFAA;
+  width: 80%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 30px auto 20px auto;
   font-weight: 400;
   font-size: 2rem;
   font-family: 'Quicksand', sans-serif; }

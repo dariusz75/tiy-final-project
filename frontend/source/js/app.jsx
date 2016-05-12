@@ -23,6 +23,6 @@ var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 
-ReactDOM.render(<Application />, parentElement);
+ReactDOM.render(<Homepage />, parentElement);
 
 

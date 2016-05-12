@@ -129,7 +129,7 @@ var TopBar = require('./components/top-bar.jsx');
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
-ReactDOM.render(React.createElement(Application, null), parentElement);
+ReactDOM.render(React.createElement(Homepage, null), parentElement);
 
 },{"./components/application.jsx":5,"./components/backend-panel-developer.jsx":6,"./components/backend-panel-employer.jsx":7,"./components/button.jsx":8,"./components/check-box.jsx":9,"./components/contact.jsx":10,"./components/find-section.jsx":11,"./components/full-profile-developer.jsx":12,"./components/homepage.jsx":13,"./components/log-in.jsx":14,"./components/miniprofile.jsx":15,"./components/registration-about-me-developer.jsx":16,"./components/registration-details-developer.jsx":17,"./components/registration-email-password-developer.jsx":18,"./components/registration-email-password-employer.jsx":19,"./components/registration-skills-developer.jsx":20,"./components/top-bar.jsx":21,"./components/you-have-registered-message.jsx":22,"react":196,"react-dom":33}],5:[function(require,module,exports){
 var React = require('react');
@@ -669,6 +669,7 @@ module.exports = FullProfileDeveloper;
 },{"./button.jsx":8,"react":196}],13:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 var HomepageActionCreators = require('../actions/HomepageActionCreators.js');
 
 var Homepage = React.createClass({
@@ -683,30 +684,35 @@ var Homepage = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'homepage-info' },
+				{ className: 'row img-rounded registration-email-password-wrapper' },
 				React.createElement(
-					'h1',
-					null,
-					'Our Mission'
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'Our Mission'
+					),
+					React.createElement(
+						'p',
+						null,
+						'Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.'
+					)
 				),
-				React.createElement(
-					'p',
-					null,
-					'Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.'
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer', onClick: this.handleRegisterAsAnEmployerClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer', onClick: this.handleRegisterAsAnEmployerClick })
+			)
 		);
 	}
 });
 
 module.exports = Homepage;
 
-},{"../actions/HomepageActionCreators.js":1,"./button.jsx":8,"react":196}],14:[function(require,module,exports){
+},{"../actions/HomepageActionCreators.js":1,"./button.jsx":8,"./top-bar.jsx":21,"react":196}],14:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 
@@ -1326,83 +1332,87 @@ var TopBar = React.createClass({
 					render: function () {
 										return React.createElement(
 															"div",
-															{ "class": "navbar navbar-default navbar-fixed-top" },
+															{ className: "container" },
 															React.createElement(
 																				"div",
-																				{ "class": "container-fluid" },
+																				{ className: "navbar navbar-default navbar-fixed-top" },
 																				React.createElement(
 																									"div",
-																									{ "class": "navbar-header" },
+																									{ className: "container-fluid" },
 																									React.createElement(
-																														"button",
-																														{ type: "button", "class": "navbar-toggle", "data-toggle": "collapse", "data-target": "#navbar-content" },
-																														React.createElement("span", { "class": "icon-bar" }),
-																														React.createElement("span", { "class": "icon-bar" }),
-																														React.createElement("span", { "class": "icon-bar" })
+																														"div",
+																														{ className: "navbar-header" },
+																														React.createElement(
+																																			"button",
+																																			{ type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": "#navbar-content" },
+																																			React.createElement("span", { className: "icon-bar" }),
+																																			React.createElement("span", { className: "icon-bar" }),
+																																			React.createElement("span", { className: "icon-bar" })
+																														),
+																														React.createElement(
+																																			"a",
+																																			{ className: "navbar-brand", href: "#", "class": "scroll-link ", "data-id": "#" },
+																																			"LONDON SOFTWARE JUNIORS"
+																														)
 																									),
 																									React.createElement(
-																														"a",
-																														{ "class": "navbar-brand", href: "#", "class": "scroll-link ", "data-id": "#" },
-																														"LONDON SOFTWARE JUNIORS"
-																									)
-																				),
-																				React.createElement(
-																									"div",
-																									{ "class": "collapse navbar-collapse navbar-right", id: "navbar-content" },
-																									React.createElement(
-																														"ul",
-																														{ "class": "nav navbar-nav", id: "ul_navigation" },
+																														"div",
+																														{ className: "collapse navbar-collapse navbar-right", id: "navbar-content" },
 																														React.createElement(
-																																			"li",
-																																			{ "class": "active" },
+																																			"ul",
+																																			{ className: "nav navbar-nav", id: "ul_navigation" },
 																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "top", href: "#", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-book", "aria-hidden": "true" }),
-																																								"Our Mission"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-list", "aria-hidden": "true" }),
-																																								"List of Talents"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-thumbs-o-up", "aria-hidden": "true" }),
-																																								"Our Partners"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-envelope", "aria-hidden": "true" }),
-																																								"Contact Us"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"span",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "contact", href: "#contact", "class": "scroll-link" },
+																																								"li",
+																																								{ className: "active" },
 																																								React.createElement(
-																																													"button",
-																																													{ type: "button", "class": "btn btn-default navbar-btn" },
-																																													React.createElement("i", { "class": "fa fa-list-alt", "aria-hidden": "true" }),
-																																													"Log In"
+																																													"a",
+																																													{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "top", href: "#", className: "scroll-link" },
+																																													React.createElement("i", { className: "fa fa-book", "aria-hidden": "true" }),
+																																													"Our Mission"
+																																								)
+																																			),
+																																			React.createElement(
+																																								"li",
+																																								null,
+																																								React.createElement(
+																																													"a",
+																																													{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", className: "scroll-link" },
+																																													React.createElement("i", { className: "fa fa-list", "aria-hidden": "true" }),
+																																													"List of Talents"
+																																								)
+																																			),
+																																			React.createElement(
+																																								"li",
+																																								null,
+																																								React.createElement(
+																																													"a",
+																																													{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", className: "scroll-link" },
+																																													React.createElement("i", { className: "fa fa-thumbs-o-up", "aria-hidden": "true" }),
+																																													"Our Partners"
+																																								)
+																																			),
+																																			React.createElement(
+																																								"li",
+																																								null,
+																																								React.createElement(
+																																													"a",
+																																													{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", className: "scroll-link" },
+																																													React.createElement("i", { className: "fa fa-envelope", "aria-hidden": "true" }),
+																																													"Contact Us"
+																																								)
+																																			),
+																																			React.createElement(
+																																								"li",
+																																								null,
+																																								React.createElement(
+																																													"span",
+																																													{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "contact", href: "#contact", className: "scroll-link" },
+																																													React.createElement(
+																																																		"button",
+																																																		{ type: "button", className: "btn btn-default navbar-btn" },
+																																																		React.createElement("i", { className: "fa fa-list-alt", "aria-hidden": "true" }),
+																																																		"Log In"
+																																													)
 																																								)
 																																			)
 																														)

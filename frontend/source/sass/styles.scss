@@ -124,10 +124,13 @@ body {
 /* ###### REGISTRATION ####### */
 .registration-email-password-wrapper {
   background-color: $green-pale;
+  width: 80%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 30px auto 20px auto;
   @include quicksand(400, 2rem);
 }
+
+
 
 .registration-developer-wrapper {
   background-color: $green-pale;
