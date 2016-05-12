@@ -65,6 +65,8 @@ function handleAction(action) {
 		setCurrentPage('RegistrationAboutMeDeveloper');
 	} else if (action.type === 'change_page_to_find_section_when_go_to_list_of_talents') {
 		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_homepage') {
+		setCurrentPage('Homepage');
 	}
 }
 
