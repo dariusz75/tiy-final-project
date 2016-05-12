@@ -1,8 +1,18 @@
 var React = require('react');
-var Button = require('./button');
+var Button = require('./button.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 
 var RegistrationEmailPasswordDeveloper = React.createClass({
+	
+		handleNextDeveloperClick: function () {
+					RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
+		},
+
+		handleCancelDeveloperClick: function () {
+				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+		},
+
 		render: function() {
 			return <div className="row img-rounded registration-email-password-wrapper">
 							<div className="row">
@@ -25,8 +35,8 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 	  							<input type="text" className="form-control" id="usr"></input>
 								</div>
 							</div>	
-							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="NEXT" />
-							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />	
+							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="NEXT" onClick={this.handleNextDeveloperClick} />
+							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" onClick={this.handleCancelDeveloperClick} />	
 						 </div>;
 		}
 	});		

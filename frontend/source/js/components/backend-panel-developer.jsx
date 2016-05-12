@@ -1,5 +1,5 @@
 var React = require('react');
-var Button = require('./button');
+var Button = require('./button.jsx');
 
 var BackendPanelDeveloper = React.createClass({
 		render: function() {
@@ -19,7 +19,7 @@ var BackendPanelDeveloper = React.createClass({
 									<label className="margin-top" for="form-control">Few sentences about yourself </label>
     							<textarea className="form-control" placeholder="Max 300 characters"></textarea>
 								</div>
-								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CREATE PROFILE" />
+								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SAVE" />
 						 		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />			
 						 </div>;
 		}

@@ -1,19 +1,37 @@
 var React = require('react');
-var Button = require('./button');
+var Button = require('./button.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 
 var RegistrationDetailsDeveloper = React.createClass({
+
+		handleSkillsAndExperienceClick: function () {
+				RegistrationDeveloperActionCreators.changeToRegistrationSkillsDeveloper();
+		},
+
+		handleAboutMeClick: function () {
+				RegistrationDeveloperActionCreators.changeToAboutMeDeveloper();
+		},
+
+		handleCreateProfileClick: function () {
+				RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
+		},
+
+		handleCancelDeveloperClick: function () {
+				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+		},
+
 		render: function() {
 			return <div className="row img-rounded registration-developer-wrapper">
 							<div className="row">
 								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" />
+	  							<Button addClass="active-link fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" />
 	  						</div>
 								<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" />
+	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" onClick={this.handleSkillsAndExperienceClick} />
 	  						</div>
 	  						<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" />
+	  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" onClick={this.handleAboutMeClick} />
 	  						</div>
 							</div>
 							<div className="row">
@@ -60,8 +78,8 @@ var RegistrationDetailsDeveloper = React.createClass({
             			</span>
         				</div>
 							</div>
-								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CREATE PROFILE" />
-						 		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" />			
+								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CREATE PROFILE" onClick={this.handleCreateProfileClick} />
+						 		<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" onClick={this.handleCancelDeveloperClick} />			
 						 </div>;
 		}
 	});		

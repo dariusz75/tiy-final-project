@@ -1,18 +1,19 @@
 var React = require('react');
+var listOfSkills = require('../stores/SkillsStore.js');
 
 
 var SingleCheckBox = React.createClass({
 		render: function() {
-			return <div>
+			return <div className="skills-check">
     					<label><input type="checkbox" value={this.props.value}></input><p>{this.props.title}</p></label>
   					 </div>;	
 		}
 	});
 
 
-var FullList = React.createClass({
+var Checkboxes = React.createClass({
 		render: function() {
-			var list = this.props.skillsData.map(function(listProps){
+			var list = listOfSkills.skillsData.map(function(listProps){
 				return <SingleCheckBox value={listProps.value} title={listProps.title} key={listProps.value}/>
 			});
 			return 	<div className="list-container img-rounded col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xlg-3">
@@ -21,4 +22,4 @@ var FullList = React.createClass({
 		}
 	});
 
-module.exports = FullList;
+module.exports = Checkboxes;
