@@ -11,6 +11,7 @@ var BackendPanelDeveloper = require('./backend-panel-developer.jsx');
 var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 var FindSection = require('./find-section.jsx');
+var TopBar = require('./top-bar.jsx');
 
 
 var Application = React.createClass({

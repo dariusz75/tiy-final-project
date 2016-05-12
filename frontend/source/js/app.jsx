@@ -17,10 +17,12 @@ var LogIn = require('./components/log-in.jsx');
 var Contact = require('./components/contact.jsx');
 var YouHaveRegisteredMessage = require('./components/you-have-registered-message.jsx');
 var Application = require('./components/application.jsx');
+var TopBar = require('./components/top-bar.jsx');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 
 ReactDOM.render(<Application />, parentElement);
+
 
