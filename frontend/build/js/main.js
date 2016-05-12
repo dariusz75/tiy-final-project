@@ -798,9 +798,15 @@ module.exports = ListOfMiniprofiles;
 },{"../stores/MiniProfilesStore.js":23,"./button.jsx":8,"react":195}],16:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 var RegistrationAboutMeDeveloper = React.createClass({
 	displayName: 'RegistrationAboutMeDeveloper',
+
+
+	handlePersonalDetailsDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
+	},
 
 	render: function () {
 		return React.createElement(
@@ -812,7 +818,7 @@ var RegistrationAboutMeDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
 				),
 				React.createElement(
 					'div',
@@ -843,7 +849,7 @@ var RegistrationAboutMeDeveloper = React.createClass({
 
 module.exports = RegistrationAboutMeDeveloper;
 
-},{"./button.jsx":8,"react":195}],17:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":195}],17:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
