@@ -6,10 +6,13 @@ var TopBar = require('./top-bar.jsx');
 
 var FindSection = React.createClass({
 		render: function() {
-			return <div className="row img-rounded registration-email-password-wrapper">
-						 	<Checkboxes />
-						 	<Miniprofiles />
-						 </div>;
+			return 	<div>
+								<TopBar />
+								<div className="row img-rounded general-wrapper">
+								 	<Checkboxes />
+								 	<Miniprofiles />
+						 		</div>
+						 	</div>;
 		}
 	});		
 

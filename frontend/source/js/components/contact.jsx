@@ -4,7 +4,9 @@ var TopBar = require('./top-bar.jsx');
 
 var Contact = React.createClass({
 		render: function() {
-			return 	<div className="row cotact img-rounded registration-email-password-wrapper">								
+			return 	<div>
+							<TopBar />
+							<div className="row cotact img-rounded general-wrapper">								
 								<div className="col-md-12">
 								  <div className="well well-sm">
 								    <form className="form-horizontal" method="post">
@@ -53,7 +55,8 @@ var Contact = React.createClass({
 								    </form>
 								  </div>
 								</div>
-							</div>;
+							</div>
+						</div>;
 		}
 	});		
 

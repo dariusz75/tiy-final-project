@@ -129,7 +129,7 @@ var TopBar = require('./components/top-bar.jsx');
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
-ReactDOM.render(React.createElement(BackendPanelDeveloper, null), parentElement);
+ReactDOM.render(React.createElement(YouHaveRegisteredMessage, null), parentElement);
 
 },{"./components/application.jsx":5,"./components/backend-panel-developer.jsx":6,"./components/backend-panel-employer.jsx":7,"./components/button.jsx":8,"./components/check-box.jsx":9,"./components/contact.jsx":10,"./components/find-section.jsx":11,"./components/full-profile-developer.jsx":12,"./components/homepage.jsx":13,"./components/log-in.jsx":14,"./components/miniprofile.jsx":15,"./components/registration-about-me-developer.jsx":16,"./components/registration-details-developer.jsx":17,"./components/registration-email-password-developer.jsx":18,"./components/registration-email-password-employer.jsx":19,"./components/registration-skills-developer.jsx":20,"./components/top-bar.jsx":21,"./components/you-have-registered-message.jsx":22,"react":196,"react-dom":33}],5:[function(require,module,exports){
 var React = require('react');
@@ -261,41 +261,46 @@ var BackendPanelEmployer = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
-			React.createElement(
-				'p',
-				{ className: 'bold' },
-				'My bookmarked candidates'
-			),
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ id: 'candidate-link', className: 'img-rounded col-xs-10 col-sm-10 col-md-10 col-lg-10' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'p',
-					null,
-					'Name'
+					{ className: 'bold' },
+					'My bookmarked candidates'
 				),
-				' ',
 				React.createElement(
-					'p',
-					null,
-					'Job Title'
+					'div',
+					{ id: 'candidate-link', className: 'img-rounded col-xs-10 col-sm-10 col-md-10 col-lg-10' },
+					React.createElement(
+						'p',
+						null,
+						'Name'
+					),
+					' ',
+					React.createElement(
+						'p',
+						null,
+						'Job Title'
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border  hvr-pulse-grow', text: 'DELETE' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-xs-10 col-sm-10 col-md-10 col-lg-10' },
+					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
 				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border  hvr-pulse-grow', text: 'DELETE' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-10 col-sm-10 col-md-10 col-lg-10' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
 			)
 		);
 	}
@@ -373,104 +378,109 @@ var Contact = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row cotact img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'col-md-12' },
+				{ className: 'row cotact img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'well well-sm' },
+					{ className: 'col-md-12' },
 					React.createElement(
-						'form',
-						{ className: 'form-horizontal', method: 'post' },
+						'div',
+						{ className: 'well well-sm' },
 						React.createElement(
-							'fieldset',
-							null,
+							'form',
+							{ className: 'form-horizontal', method: 'post' },
 							React.createElement(
-								'legend',
-								{ className: 'text-center header' },
-								'Contact us'
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
+								'fieldset',
+								null,
 								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-user bigicon' })
+									'legend',
+									{ className: 'text-center header' },
+									'Contact us'
 								),
 								React.createElement(
 									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'fname', name: 'name', type: 'text', placeholder: 'First Name', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-user bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'lname', name: 'name', type: 'text', placeholder: 'Last Name', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-envelope-o bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'email', name: 'email', type: 'text', placeholder: 'Email Address', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-phone-square bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'phone', name: 'phone', type: 'text', placeholder: 'Phone', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-pencil-square-o bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('textarea', { className: 'form-control', id: 'message', name: 'message', placeholder: 'Enter your massage for us here. We will get back to you within 2 business days.', rows: '7' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-12 text-center' },
+									{ className: 'form-group' },
 									React.createElement(
-										'button',
-										{ type: 'submit', className: 'btn btn-primary btn-lg' },
-										'Submit'
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-user bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'fname', name: 'name', type: 'text', placeholder: 'First Name', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-user bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'lname', name: 'name', type: 'text', placeholder: 'Last Name', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-envelope-o bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'email', name: 'email', type: 'text', placeholder: 'Email Address', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-phone-square bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'phone', name: 'phone', type: 'text', placeholder: 'Phone', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-pencil-square-o bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('textarea', { className: 'form-control', id: 'message', name: 'message', placeholder: 'Enter your massage for us here. We will get back to you within 2 business days.', rows: '7' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-12 text-center' },
+										React.createElement(
+											'button',
+											{ type: 'submit', className: 'btn btn-primary btn-lg' },
+											'Submit'
+										)
 									)
 								)
 							)
@@ -496,9 +506,14 @@ var FindSection = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
-			React.createElement(Checkboxes, null),
-			React.createElement(Miniprofiles, null)
+			null,
+			React.createElement(TopBar, null),
+			React.createElement(
+				'div',
+				{ className: 'row img-rounded general-wrapper' },
+				React.createElement(Checkboxes, null),
+				React.createElement(Miniprofiles, null)
+			)
 		);
 	}
 });
@@ -516,159 +531,164 @@ var FullProfileDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
-			React.createElement(
-				'p',
-				{ className: 'bold text-center' },
-				'CANDIDATE\'S PROFILE'
-			),
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
-					'div',
-					{ className: 'basic-details-wrapper img-rounded' },
-					React.createElement(
-						'p',
-						null,
-						'John Smith'
-					),
-					React.createElement(
-						'p',
-						null,
-						'Frontend Developer'
-					),
-					React.createElement(
-						'p',
-						null,
-						'john@hotmail.com'
-					),
-					React.createElement(
-						'p',
-						null,
-						'07708473329'
-					)
+					'p',
+					{ className: 'bold text-center' },
+					'CANDIDATE\'S PROFILE'
 				),
 				React.createElement(
 					'div',
-					{ className: 'full-profile-skills-list img-rounded ' },
+					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
 					React.createElement(
-						'p',
-						null,
-						'Skills:'
+						'div',
+						{ className: 'basic-details-wrapper img-rounded' },
+						React.createElement(
+							'p',
+							null,
+							'John Smith'
+						),
+						React.createElement(
+							'p',
+							null,
+							'Frontend Developer'
+						),
+						React.createElement(
+							'p',
+							null,
+							'john@hotmail.com'
+						),
+						React.createElement(
+							'p',
+							null,
+							'07708473329'
+						)
 					),
 					React.createElement(
-						'ul',
-						null,
+						'div',
+						{ className: 'full-profile-skills-list img-rounded ' },
 						React.createElement(
-							'li',
+							'p',
 							null,
-							'HTML'
+							'Skills:'
 						),
 						React.createElement(
-							'li',
+							'ul',
 							null,
-							'CSS'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Javascript'
-						),
-						React.createElement(
-							'li',
-							null,
-							'jQuery'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Node.js'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Git'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Github'
-						)
-					)
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-					React.createElement(
-						'ul',
-						null,
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
 							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' }),
-								'LinkedIn'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
+								'li',
+								null,
+								'HTML'
+							),
 							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-github-square', 'aria-hidden': 'true' }),
+								'li',
+								null,
+								'CSS'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Javascript'
+							),
+							React.createElement(
+								'li',
+								null,
+								'jQuery'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Node.js'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Git'
+							),
+							React.createElement(
+								'li',
+								null,
 								'Github'
 							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
-							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-desktop', 'aria-hidden': 'true' }),
-								'Portfolio'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
-							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-file-pdf-o', 'aria-hidden': 'true' }),
-								'CV'
-							)
 						)
 					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-					React.createElement('img', { className: 'img-rounded', src: 'images/photo1.jpg', alt: 'Smiley face', height: '180' })
+					{ className: 'img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+						React.createElement(
+							'ul',
+							null,
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' }),
+									'LinkedIn'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-github-square', 'aria-hidden': 'true' }),
+									'Github'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-desktop', 'aria-hidden': 'true' }),
+									'Portfolio'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-file-pdf-o', 'aria-hidden': 'true' }),
+									'CV'
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+						React.createElement('img', { className: 'img-rounded', src: 'images/photo1.jpg', alt: 'Smiley face', height: '180' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12' },
+						React.createElement(
+							'p',
+							null,
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa ui officia deserunt mollit anim id est laborum.'
+						)
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12' },
-					React.createElement(
-						'p',
-						null,
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa ui officia deserunt mollit anim id est laborum.'
-					)
+					null,
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE' }),
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
 				)
-			),
-			React.createElement(
-				'div',
-				null,
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE' }),
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
 			)
 		);
 	}
@@ -733,33 +753,38 @@ var LogIn = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE' }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'LOG IN' }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+			)
 		);
 	}
 });
@@ -854,38 +879,43 @@ var RegistrationAboutMeDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
+					{ 'class': 'form-group' },
+					React.createElement(
+						'label',
+						{ className: 'margin-top', 'for': 'form-control' },
+						'Few sentences about yourself '
+					),
+					React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
 				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ 'class': 'form-group' },
-				React.createElement(
-					'label',
-					{ className: 'margin-top', 'for': 'form-control' },
-					'Few sentences about yourself '
-				),
-				React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
@@ -921,134 +951,139 @@ var RegistrationDetailsDeveloper = React.createClass({
 							render: function () {
 														return React.createElement(
 																					'div',
-																					{ className: 'row img-rounded registration-developer-wrapper' },
+																					null,
+																					React.createElement(TopBar, null),
 																					React.createElement(
 																												'div',
-																												{ className: 'row' },
+																												{ className: 'row img-rounded general-wrapper' },
 																												React.createElement(
 																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeClick })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																			{ className: 'row' },
 																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'First name'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Surname'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Job Title'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Contact number'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Email address'
-																																			),
-																																			React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Confirm email address'
-																																			),
-																																			React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Upload your CV'
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
 																																			),
 																																			React.createElement(
-																																										'span',
-																																										{ className: 'file-input btn btn-block btn-primary btn-file' },
-																																										'Browse… ',
-																																										React.createElement('input', { type: 'file', multiple: true })
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeClick })
 																																			)
 																												),
 																												React.createElement(
 																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																			{ className: 'row' },
 																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Upload your Photo'
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'First name'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 																																			),
 																																			React.createElement(
-																																										'span',
-																																										{ className: 'file-input btn btn-block btn-primary btn-file' },
-																																										'Browse… ',
-																																										React.createElement('input', { type: 'file', multiple: true })
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Surname'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 																																			)
-																												)
-																					),
-																					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-																					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Job Title'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Contact number'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+																																			)
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Email address'
+																																										),
+																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Confirm email address'
+																																										),
+																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
+																																			)
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Upload your CV'
+																																										),
+																																										React.createElement(
+																																																	'span',
+																																																	{ className: 'file-input btn btn-block btn-primary btn-file' },
+																																																	'Browse… ',
+																																																	React.createElement('input', { type: 'file', multiple: true })
+																																										)
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Upload your Photo'
+																																										),
+																																										React.createElement(
+																																																	'span',
+																																																	{ className: 'file-input btn btn-block btn-primary btn-file' },
+																																																	'Browse… ',
+																																																	React.createElement('input', { type: 'file', multiple: true })
+																																										)
+																																			)
+																												),
+																												React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+																												React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+																					)
 														);
 							}
 });
@@ -1076,57 +1111,62 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT', onClick: this.handleNextDeveloperClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT', onClick: this.handleNextDeveloperClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
@@ -1153,57 +1193,62 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE', onClick: this.handleDoneEmployerClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelEmployerClick })
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE', onClick: this.handleDoneEmployerClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelEmployerClick })
+			)
 		);
 	}
 });
@@ -1268,70 +1313,75 @@ var RegistrationSkillsDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeDeveloperClick })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-9 col-md-9 col-lg-9' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
 					),
 					React.createElement(
 						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
-					),
-					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
 					),
 					React.createElement(
 						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
-					),
-					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
-					),
-					React.createElement(
-						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeDeveloperClick })
 					)
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-9 col-md-9 col-lg-9' },
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						),
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						),
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						)
+					)
+				),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
@@ -1462,23 +1512,28 @@ var YouHaveRegisteredMessage = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'homepage-info' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
-					'h1',
-					null,
-					'You have been successfully registered and logged in.'
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'You have been successfully registered and logged in.'
+					),
+					React.createElement(
+						'h1',
+						null,
+						'Enjoy our services!'
+					)
 				),
-				React.createElement(
-					'h1',
-					null,
-					'Enjoy our services!'
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
