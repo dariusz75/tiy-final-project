@@ -801,9 +801,15 @@ module.exports = Homepage;
 var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 var LogIn = React.createClass({
 	displayName: 'LogIn',
+
+
+	handleCancelDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+	},
 
 	render: function () {
 		return React.createElement(
@@ -838,7 +844,7 @@ var LogIn = React.createClass({
 					)
 				),
 				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'LOG IN' }),
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
 			)
 		);
 	}
@@ -846,7 +852,7 @@ var LogIn = React.createClass({
 
 module.exports = LogIn;
 
-},{"./button.jsx":9,"./top-bar.jsx":23,"react":198}],16:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":9,"./top-bar.jsx":23,"react":198}],16:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var candidatesDetails = require('../stores/MiniProfilesStore.js');
