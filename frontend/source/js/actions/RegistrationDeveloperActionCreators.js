@@ -42,11 +42,19 @@ function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToFindSectionWhenGoToListOfTalents() {
+	var action = {
+		type: 'change_page_to_find_section_when_go_to_list_of_talents'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
 	changePageToRegistrationDetailsDeveloper: changePageToRegistrationDetailsDeveloper,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
-	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile
+	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
+	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents
 };

@@ -62,7 +62,9 @@ function handleAction(action) {
 	} else if (action.type === 'change_to_registration_skills_developer') {
 		setCurrentPage('RegistrationSkillsDeveloper');
 	} else if (action.type === 'change_to_about_me_developer') {
-		setCurrentPage('RegistrationAboutMeDeveloper')
+		setCurrentPage('RegistrationAboutMeDeveloper');
+	} else if (action.type === 'change_page_to_find_section_when_go_to_list_of_talents') {
+		setCurrentPage('FindSection');
 	}
 }
 

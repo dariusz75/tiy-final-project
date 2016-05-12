@@ -10,6 +10,7 @@ var BackendPanelEmployer = require('./backend-panel-employer.jsx');
 var BackendPanelDeveloper = require('./backend-panel-developer.jsx');
 var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
+var FindSection = require('./find-section.jsx');
 
 
 var Application = React.createClass({
@@ -51,6 +52,8 @@ var Application = React.createClass({
       return <BackendPanelDeveloper />;
     } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
       return <YouHaveRegisteredMessage />;
+    } else if (this.state.renderedPage === 'FindSection') {
+      return <FindSection />;
     }
 
 	}

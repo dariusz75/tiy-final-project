@@ -65,13 +65,21 @@ function changePageToYouHaveRegisteredMessageWhenClickCreateProfile() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToFindSectionWhenGoToListOfTalents() {
+	var action = {
+		type: 'change_page_to_find_section_when_go_to_list_of_talents'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
 	changePageToRegistrationDetailsDeveloper: changePageToRegistrationDetailsDeveloper,
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
-	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile
+	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
+	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents
 };
 
 },{"../dispatcher/Dispatcher.js":22}],3:[function(require,module,exports){
@@ -135,6 +143,7 @@ var BackendPanelEmployer = require('./backend-panel-employer.jsx');
 var BackendPanelDeveloper = require('./backend-panel-developer.jsx');
 var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
+var FindSection = require('./find-section.jsx');
 
 var Application = React.createClass({
   displayName: 'Application',
@@ -177,13 +186,15 @@ var Application = React.createClass({
       return React.createElement(BackendPanelDeveloper, null);
     } else if (this.state.renderedPage === 'YouHaveRegisteredMessage') {
       return React.createElement(YouHaveRegisteredMessage, null);
+    } else if (this.state.renderedPage === 'FindSection') {
+      return React.createElement(FindSection, null);
     }
   }
 });
 
 module.exports = Application;
 
-},{"../stores/ViewStore.js":25,"./backend-panel-developer.jsx":6,"./backend-panel-employer.jsx":7,"./full-profile-developer.jsx":12,"./homepage.jsx":13,"./registration-about-me-developer.jsx":16,"./registration-details-developer.jsx":17,"./registration-email-password-developer.jsx":18,"./registration-email-password-employer.jsx":19,"./registration-skills-developer.jsx":20,"./you-have-registered-message.jsx":21,"react":195}],6:[function(require,module,exports){
+},{"../stores/ViewStore.js":25,"./backend-panel-developer.jsx":6,"./backend-panel-employer.jsx":7,"./find-section.jsx":11,"./full-profile-developer.jsx":12,"./homepage.jsx":13,"./registration-about-me-developer.jsx":16,"./registration-details-developer.jsx":17,"./registration-email-password-developer.jsx":18,"./registration-email-password-employer.jsx":19,"./registration-skills-developer.jsx":20,"./you-have-registered-message.jsx":21,"react":195}],6:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 
@@ -1312,6 +1323,14 @@ var YouHaveRegisteredMessage = React.createClass({
 	displayName: 'YouHaveRegisteredMessage',
 
 
+	handleGoToListOfTalentsClick: function () {
+		RegistrationDeveloperActionCreators.changePageToFindSectionWhenGoToListOfTalents();
+	},
+
+	handleCancelDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+	},
+
 	render: function () {
 		return React.createElement(
 			'div',
@@ -1330,8 +1349,8 @@ var YouHaveRegisteredMessage = React.createClass({
 					'Enjoy our services!'
 				)
 			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents' }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out' })
+			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
+			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
 		);
 	}
 });
@@ -1460,6 +1479,8 @@ function handleAction(action) {
 		setCurrentPage('RegistrationSkillsDeveloper');
 	} else if (action.type === 'change_to_about_me_developer') {
 		setCurrentPage('RegistrationAboutMeDeveloper');
+	} else if (action.type === 'change_page_to_find_section_when_go_to_list_of_talents') {
+		setCurrentPage('FindSection');
 	}
 }
 

@@ -4,6 +4,14 @@ var RegistrationDeveloperActionCreators = require('../actions/RegistrationDevelo
 
 
 var YouHaveRegisteredMessage = React.createClass({
+
+		handleGoToListOfTalentsClick: function () {
+			RegistrationDeveloperActionCreators.changePageToFindSectionWhenGoToListOfTalents();
+		},
+
+		handleCancelDeveloperClick: function () {
+				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+		},
 		
 		render: function() {
 			return <div className="row img-rounded registration-email-password-wrapper">
@@ -11,8 +19,8 @@ var YouHaveRegisteredMessage = React.createClass({
 								<h1>You have been successfully registered and logged in.</h1>
 								<h1>Enjoy our services!</h1>
 							</div>	
-							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Go to the List of Talents" />
-							<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Log out" />	
+							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Go to the List of Talents" onClick={this.handleGoToListOfTalentsClick} />
+							<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="Log out" onClick={this.handleCancelDeveloperClick} />	
 						 </div>;
 		}
 	});		
