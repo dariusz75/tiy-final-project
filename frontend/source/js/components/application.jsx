@@ -12,6 +12,7 @@ var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 var FindSection = require('./find-section.jsx');
 var TopBar = require('./top-bar.jsx');
+var OurPartners = require('./our-partners.jsx');
 
 
 var Application = React.createClass({
@@ -55,6 +56,8 @@ var Application = React.createClass({
       return <YouHaveRegisteredMessage />;
     } else if (this.state.renderedPage === 'FindSection') {
       return <FindSection />;
+    } else if (this.state.renderedPage === 'OurPartners') {
+      return <OurPartners />;
     }
 
 	}

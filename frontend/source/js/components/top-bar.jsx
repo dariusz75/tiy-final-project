@@ -9,19 +9,19 @@ var TopBar = React.createClass({
 		},
 
 		handleListOfTalentsClick: function () {
-				HomepageActionCreators.changePageToFindSection();
+				TopBarActionCreators.changePageToFindSection();
 		},
 
 		handleOurPartnersClick: function () {
-				HomepageActionCreators.changePageToOurPartners();
+				TopBarActionCreators.changePageToOurPartners();
 		},
 
 		handleContactUsClick: function () {
-				HomepageActionCreators.changePageToContact();
+				TopBarActionCreators.changePageToContact();
 		},
 
 		handleLogInClick: function () {
-				HomepageActionCreators.changePageToLogIn();
+				TopBarActionCreators.changePageToLogIn();
 		},
 	
 		render: function() {

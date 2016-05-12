@@ -16,7 +16,8 @@ var pages = [	'Homepage',
 							'BackendPanelDeveloper',
 							'YouHaveRegisteredMessage',
 							'LogIn',
-							'Contact'
+							'Contact',
+							'OurPartners'
 						];
 
 function getCurrentPage() {
@@ -67,6 +68,10 @@ function handleAction(action) {
 		setCurrentPage('FindSection');
 	} else if (action.type === 'change_page_to_homepage') {
 		setCurrentPage('Homepage');
+	} else if (action.type === 'change_page_to_find_section') {
+		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_our_partners') {
+		setCurrentPage('OurPartners');
 	}
 }
 
