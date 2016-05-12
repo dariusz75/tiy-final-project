@@ -808,8 +808,16 @@ var RegistrationAboutMeDeveloper = React.createClass({
 		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
 	},
 
+	handleSkillsAndExperienceClick: function () {
+		RegistrationDeveloperActionCreators.changeToRegistrationSkillsDeveloper();
+	},
+
 	handleCreateProfileClick: function () {
 		RegistrationDeveloperActionCreators.changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
+	},
+
+	handleCancelDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
 	},
 
 	render: function () {
@@ -827,7 +835,7 @@ var RegistrationAboutMeDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
 				),
 				React.createElement(
 					'div',
@@ -846,7 +854,7 @@ var RegistrationAboutMeDeveloper = React.createClass({
 				React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
 			),
 			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
 		);
 	}
 });
