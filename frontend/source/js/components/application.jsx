@@ -15,6 +15,8 @@ var TopBar = require('./top-bar.jsx');
 var OurPartners = require('./our-partners.jsx');
 var Contact = require('./contact.jsx');
 var LogIn = require('./log-in.jsx');
+var YouHaveLoggedInMessage = require('./you-have-logged-in-message.jsx');
+var TopBarLogOut = require('./top-bar-log-out.jsx');
 
 
 var Application = React.createClass({
@@ -64,6 +66,10 @@ var Application = React.createClass({
       return <Contact />;
     } else if (this.state.renderedPage === 'LogIn') {
       return <LogIn />;
+    } else if (this.state.renderedPage === 'YouHaveLoggedInMessage') {
+      return <YouHaveLoggedInMessage />;
+    } else if (this.state.renderedPage === 'FullProfileDeveloper') {
+      return <FullProfileDeveloper />;
     }
 
 	}

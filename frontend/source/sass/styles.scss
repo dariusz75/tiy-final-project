@@ -104,7 +104,13 @@ body {
 
 /* ###### NAVIGATION ####### */
 .navbar-brand {
-	@include quicksand(700, 2.5rem);
+	@include quicksand(700, 2rem);
+}
+
+.nav {
+   i {
+    padding-right: 3px;
+  }
 
 }
 
@@ -286,17 +292,22 @@ textarea.form-control {
 }
 
 /* ####### PUBLIC PROFILE ######## */
-
 .skills-check {
   label {
     padding-bottom: 0;
 }
 }
 
+/* ###### OUR PARTNERS ##### */
+.partner {
+  img {
+    width: 100%;
+    vertical-align: center;
+  }
+}
+
 
 /* ###### CONTACT US ###### */
-
-
 .well {
   border: none;
   background-color: $green-pale;

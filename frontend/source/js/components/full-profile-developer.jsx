@@ -1,9 +1,16 @@
 var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
+var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
+
 
 
 var FullProfileDeveloper = React.createClass({
+
+		handleBackToListOfTalentsClick: function () {
+				TopBarActionCreators.changePageToFindSection();
+		},
+
 		render: function() {
 			return	<div>
 								<TopBar /> 
@@ -62,7 +69,7 @@ var FullProfileDeveloper = React.createClass({
 											</div>										
 			  					<div>
 			  						<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BOOKMARK THIS PROFILE" />
-										<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BACK TO LIST OF TALENTS" />
+										<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BACK TO LIST OF TALENTS" onClick={this.handleBackToListOfTalentsClick} />
 			  					</div>	
 								</div>
 							</div>;

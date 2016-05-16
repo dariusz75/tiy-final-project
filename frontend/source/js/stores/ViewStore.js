@@ -17,7 +17,8 @@ var pages = [	'Homepage',
 							'YouHaveRegisteredMessage',
 							'LogIn',
 							'Contact',
-							'OurPartners'
+							'OurPartners',
+							'YouHaveLoggedInMessage'
 						];
 
 function getCurrentPage() {
@@ -76,6 +77,10 @@ function handleAction(action) {
 		setCurrentPage('Contact');
 	} else if (action.type === 'change_page_to_log_in') {
 		setCurrentPage('LogIn');
+	} else if (action.type === 'change_page_to_you_have_logged_in') {
+		setCurrentPage('YouHaveLoggedInMessage');
+	} else if (action.type === 'change_page_to_full_profile_developer') {
+		setCurrentPage('FullProfileDeveloper');
 	}
 }
 

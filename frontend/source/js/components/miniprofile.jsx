@@ -1,9 +1,16 @@
 var React = require('react');
 var Button = require('./button.jsx');
 var candidatesDetails = require('../stores/MiniProfilesStore.js');
+var ListOfTalentsActionCreators = require('../actions/ListOfTalentsActionCreators.js');
+
 
 
 var Miniprofile = React.createClass({
+
+		handleSeeFullProfileClick: function () {
+			ListOfTalentsActionCreators.changePageToFullProfileDeveloper();
+		},
+
 		render: function() {
 			return <div className="miniprofile-wrapper row img-rounded ">
 							<div className="row">
@@ -11,7 +18,7 @@ var Miniprofile = React.createClass({
   					  	<img className=" profile-photo col-xs-12 col-sm-4 col-md-4 col-lg-4 img-responsive" src={this.props.imageSource} />
   					  </div>
   					  <div className="row">
-  					  	<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="See full profile" />
+  					  	<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="See full profile" onClick={this.handleSeeFullProfileClick} />
   					 	</div>
   					 </div>;	
 		}

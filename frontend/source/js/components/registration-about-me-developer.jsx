@@ -31,7 +31,7 @@ var RegistrationAboutMeDeveloper = React.createClass({
 			  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="PERSONAL DETAILS" onClick={this.handlePersonalDetailsDeveloperClick} />
 			  						</div>
 										<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS AND EXPERIENCE" onClick={this.handleSkillsAndExperienceClick} />
+			  							<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="SKILLS" onClick={this.handleSkillsAndExperienceClick} />
 			  						</div>
 			  						<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 			  							<Button addClass="active-link fullwidth no-border button-text-style hvr-pulse-grow" text="ABOUT ME" />

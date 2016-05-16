@@ -18,6 +18,8 @@ var Contact = require('./components/contact.jsx');
 var YouHaveRegisteredMessage = require('./components/you-have-registered-message.jsx');
 var Application = require('./components/application.jsx');
 var TopBar = require('./components/top-bar.jsx');
+var TopBarLogOut = require('./components/top-bar-log-out.jsx');
+var YouHaveLoggedInMessage = require('./components/you-have-logged-in-message.jsx');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);

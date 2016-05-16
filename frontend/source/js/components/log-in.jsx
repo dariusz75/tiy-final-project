@@ -6,6 +6,10 @@ var RegistrationDeveloperActionCreators = require('../actions/RegistrationDevelo
 
 var LogIn = React.createClass({
 
+		handleLogInDeveloperClick: function () {
+			RegistrationDeveloperActionCreators.changePageToYouHaveLoggedIn();
+		},
+
 		handleCancelDeveloperClick: function () {
 				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
 		},
@@ -24,7 +28,7 @@ var LogIn = React.createClass({
 		  							<input type="text" className="form-control" id="usr"></input>
 									</div>
 								</div>
-								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="LOG IN" />
+								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="LOG IN" onClick={this.handleLogInDeveloperClick} />
 								<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="CANCEL" onClick={this.handleCancelDeveloperClick} />	
 							</div>
 						</div>;
