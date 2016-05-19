@@ -70,6 +70,8 @@ var Application = React.createClass({
       return <YouHaveLoggedInMessage />;
     } else if (this.state.renderedPage === 'FullProfileDeveloper') {
       return <FullProfileDeveloper />;
+    } else if (this.state.renderedPage === 'BackendPanelEmployer') {
+      return <BackendPanelEmployer />;
     }
 
 	}

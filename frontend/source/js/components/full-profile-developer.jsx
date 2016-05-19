@@ -2,10 +2,14 @@ var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
 var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
-
+var ListOfTalentsActionCreators = require('../actions/ListOfTalentsActionCreators.js')
 
 
 var FullProfileDeveloper = React.createClass({
+
+		handleGoToBackendPanelEmployerClick: function () {
+				ListOfTalentsActionCreators.changePageToBackendPanelEmployer();
+		},
 
 		handleBackToListOfTalentsClick: function () {
 				TopBarActionCreators.changePageToFindSection();
@@ -68,7 +72,7 @@ var FullProfileDeveloper = React.createClass({
 												</div>
 											</div>										
 			  					<div>
-			  						<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BOOKMARK THIS PROFILE" />
+			  						<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BOOKMARK THIS PROFILE" onClick={this.handleGoToBackendPanelEmployerClick} />
 										<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow " text="BACK TO LIST OF TALENTS" onClick={this.handleBackToListOfTalentsClick} />
 			  					</div>	
 								</div>

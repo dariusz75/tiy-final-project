@@ -30,8 +30,16 @@ function changePageToFullProfileDeveloper() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToBackendPanelEmployer() {
+	var action = {
+		type: 'change_page_to_backend_panel_employer'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
-	changePageToFullProfileDeveloper: changePageToFullProfileDeveloper
+	changePageToFullProfileDeveloper: changePageToFullProfileDeveloper,
+	changePageToBackendPanelEmployer: changePageToBackendPanelEmployer
 };
 
 },{"../dispatcher/Dispatcher.js":28}],3:[function(require,module,exports){
@@ -275,6 +283,8 @@ var Application = React.createClass({
       return React.createElement(YouHaveLoggedInMessage, null);
     } else if (this.state.renderedPage === 'FullProfileDeveloper') {
       return React.createElement(FullProfileDeveloper, null);
+    } else if (this.state.renderedPage === 'BackendPanelEmployer') {
+      return React.createElement(BackendPanelEmployer, null);
     }
   }
 });
@@ -350,41 +360,54 @@ var BackendPanelEmployer = React.createClass({
 			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row img-rounded general-wrapper' },
-				React.createElement(
-					'p',
-					{ className: 'bold' },
-					'My bookmarked candidates'
-				),
+				{ className: 'img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ id: 'candidate-link', className: 'img-rounded col-xs-10 col-sm-10 col-md-10 col-lg-10' },
+					{ className: 'row' },
 					React.createElement(
 						'p',
-						null,
-						'Name'
+						{ className: 'bold' },
+						'My bookmarked candidates'
 					),
-					' ',
 					React.createElement(
-						'p',
-						null,
-						'Job Title'
+						'div',
+						{ id: 'candidate-link', className: 'img-rounded button-text-style col-xs-8 col-sm-8 col-md-8 col-lg-8' },
+						React.createElement(
+							'p',
+							null,
+							'Name'
+						),
+						' ',
+						React.createElement(
+							'p',
+							null,
+							'Job Title'
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style  hvr-pulse-grow', text: 'PROFILE' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style  hvr-pulse-grow', text: 'DELETE' })
 					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border  hvr-pulse-grow', text: 'DELETE' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-10 col-sm-10 col-md-10 col-lg-10' },
-					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-					React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-8 col-sm-8 col-md-8 col-lg-8' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-4 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
+					)
 				)
 			)
 		);
@@ -610,10 +633,15 @@ var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
 var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
+var ListOfTalentsActionCreators = require('../actions/ListOfTalentsActionCreators.js');
 
 var FullProfileDeveloper = React.createClass({
 	displayName: 'FullProfileDeveloper',
 
+
+	handleGoToBackendPanelEmployerClick: function () {
+		ListOfTalentsActionCreators.changePageToBackendPanelEmployer();
+	},
 
 	handleBackToListOfTalentsClick: function () {
 		TopBarActionCreators.changePageToFindSection();
@@ -777,7 +805,7 @@ var FullProfileDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					null,
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE' }),
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE', onClick: this.handleGoToBackendPanelEmployerClick }),
 					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS', onClick: this.handleBackToListOfTalentsClick })
 				)
 			)
@@ -787,7 +815,7 @@ var FullProfileDeveloper = React.createClass({
 
 module.exports = FullProfileDeveloper;
 
-},{"../actions/TopBarActionCreators.js":5,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],15:[function(require,module,exports){
+},{"../actions/ListOfTalentsActionCreators.js":2,"../actions/TopBarActionCreators.js":5,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],15:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var TopBar = require('./top-bar.jsx');
@@ -2100,6 +2128,8 @@ function handleAction(action) {
 		setCurrentPage('YouHaveLoggedInMessage');
 	} else if (action.type === 'change_page_to_full_profile_developer') {
 		setCurrentPage('FullProfileDeveloper');
+	} else if (action.type === 'change_page_to_backend_panel_employer') {
+		setCurrentPage('BackendPanelEmployer');
 	}
 }
 

@@ -81,6 +81,8 @@ function handleAction(action) {
 		setCurrentPage('YouHaveLoggedInMessage');
 	} else if (action.type === 'change_page_to_full_profile_developer') {
 		setCurrentPage('FullProfileDeveloper');
+	} else if (action.type === 'change_page_to_backend_panel_employer') {
+		setCurrentPage('BackendPanelEmployer');
 	}
 }
 
