@@ -1347,6 +1347,29 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 
 
 	handleNextDeveloperClick: function () {
+		var email = this.refs.email.value;
+		var confirmEmail = this.refs.confirmEmail.value;
+		var password = this.refs.password.value;
+		var confirmPassword = this.refs.confirmPassword.value;
+		var emailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+		var passwordRegex = /\w{5,10}/g;
+		var emailResult = emailRegex.test(email);
+		var confirmEmailResult = emailRegex.test(confirmEmail);
+		var passwordResult = passwordRegex.test(password);
+		var confirmPasswordResult = passwordRegex.test(confirmPassword);
+
+		if (!emailResult || email != confirmEmail) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!confirmEmail || confirmEmail != email) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!passwordResult || password != confirmPassword) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else if (!confirmPassword || confirmPassword != password) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else {
+			console.log('Well done!');
+		}
+
 		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
 	},
 
@@ -1373,7 +1396,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 							{ 'for': 'usr' },
 							'Enter email address:'
 						),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'email' })
 					),
 					React.createElement(
 						'div',
@@ -1383,7 +1406,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 							{ 'for': 'usr' },
 							'Confirm email address:'
 						),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'confirmEmail' })
 					)
 				),
 				React.createElement(
@@ -1395,9 +1418,9 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 						React.createElement(
 							'label',
 							{ 'for': 'usr' },
-							'Enter password:'
+							'Enter password.'
 						),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'password' })
 					),
 					React.createElement(
 						'div',
@@ -1407,7 +1430,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 							{ 'for': 'usr' },
 							'Confirm password:'
 						),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'confirmPassword' })
 					)
 				),
 				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT', onClick: this.handleNextDeveloperClick }),
