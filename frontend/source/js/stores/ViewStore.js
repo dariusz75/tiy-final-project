@@ -1,7 +1,6 @@
 var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
-
 var currentPage = 'Homepage';
 
 var pages = [	'Homepage', 
@@ -20,6 +19,7 @@ var pages = [	'Homepage',
 							'OurPartners',
 							'YouHaveLoggedInMessage'
 						];
+
 
 function getCurrentPage() {
 	return currentPage;

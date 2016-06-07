@@ -34,7 +34,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 		},
 
 		handleCancelDeveloperClick: function () {
-				RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+			RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
 		},
 
 		render: function() {

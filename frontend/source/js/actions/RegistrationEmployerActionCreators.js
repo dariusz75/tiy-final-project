@@ -1,4 +1,5 @@
 var Dispatcher = require('../dispatcher/Dispatcher.js');
+var ApiServices = require('../services/api.js');
 									
 function changePageToYouHaveRegisteredMessageWhenDone() {
 	var action = {
@@ -14,7 +15,22 @@ function changePageToHomepageWhenCancelled() {
 	Dispatcher.dispatch(action);
 }
 
+function registerEmployer(employer) {
+	ApiServices.registerEmployer(employer, function callback(error, data) {
+		if (error) {
+			console.log(error);
+			return;
+		} 
+		var action = {
+			type: 'register_employer'
+		};
+		Dispatcher.dispatch(action);
+
+	});
+}
+
 module.exports = {
 	changePageToYouHaveRegisteredMessageWhenDone: changePageToYouHaveRegisteredMessageWhenDone,
-	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled
+	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
+	registerEmployer: registerEmployer
 };
