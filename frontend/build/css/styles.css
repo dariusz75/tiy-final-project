@@ -69,8 +69,11 @@ body {
 /* ###### NAVIGATION ####### */
 .navbar-brand {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'Quicksand', sans-serif; }
+
+.nav i {
+  padding-right: 3px; }
 
 /* ###### HOMEPAGE ####### */
 .homepage-info h1 {
@@ -90,8 +93,18 @@ body {
 /* ###### REGISTRATION ####### */
 .registration-email-password-wrapper {
   background-color: #5EEFAA;
+  width: 80%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 30px auto 20px auto;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif; }
+
+.general-wrapper {
+  background-color: #5EEFAA;
+  width: 90%;
+  padding: 10px;
+  margin: 30px auto 20px auto;
   font-weight: 400;
   font-size: 2rem;
   font-family: 'Quicksand', sans-serif; }
@@ -234,6 +247,11 @@ textarea.form-control {
 /* ####### PUBLIC PROFILE ######## */
 .skills-check label {
   padding-bottom: 0; }
+
+/* ###### OUR PARTNERS ##### */
+.partner img {
+  width: 100%;
+  vertical-align: center; }
 
 /* ###### CONTACT US ###### */
 .well {

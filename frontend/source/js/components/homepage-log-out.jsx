@@ -1,10 +1,10 @@
 var React = require('react');
 var Button = require('./button.jsx');
-var TopBar = require('./top-bar.jsx');
+var TopBarLoggedIn = require('./top-bar.jsx');
 var HomepageActionCreators = require('../actions/HomepageActionCreators.js');
 
 
-var Homepage = React.createClass({
+var HomepageLoggedIn = React.createClass({
 		handleRegisterAsADeveloperClick: function () {
 				HomepageActionCreators.changePageToRegisterEmailPasswordDeveloper();
 		},
@@ -13,7 +13,7 @@ var Homepage = React.createClass({
 		},
 		render: function() {
 			return <div>
-							<TopBar />
+							<TopBarLogOut />
 							<div className="row img-rounded general-wrapper">
 								<div className="homepage-info">
 									<h1>Our Mission</h1>
@@ -26,4 +26,4 @@ var Homepage = React.createClass({
 		}
 	});		
 
-module.exports = Homepage;
+module.exports = HomepageLoggedIn;

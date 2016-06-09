@@ -12,6 +12,11 @@ var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 var FindSection = require('./find-section.jsx');
 var TopBar = require('./top-bar.jsx');
+var OurPartners = require('./our-partners.jsx');
+var Contact = require('./contact.jsx');
+var LogIn = require('./log-in.jsx');
+var YouHaveLoggedInMessage = require('./you-have-logged-in-message.jsx');
+var TopBarLogOut = require('./top-bar-log-out.jsx');
 
 
 var Application = React.createClass({
@@ -21,7 +26,7 @@ var Application = React.createClass({
     	renderedPage: ViewStore.getCurrentPage()
     };
   },
-
+ 
   componentDidMount: function () {
   	ViewStore.addChangeListener(this.changePage);
   },
@@ -55,6 +60,18 @@ var Application = React.createClass({
       return <YouHaveRegisteredMessage />;
     } else if (this.state.renderedPage === 'FindSection') {
       return <FindSection />;
+    } else if (this.state.renderedPage === 'OurPartners') {
+      return <OurPartners />;
+    } else if (this.state.renderedPage === 'Contact') {
+      return <Contact />;
+    } else if (this.state.renderedPage === 'LogIn') {
+      return <LogIn />;
+    } else if (this.state.renderedPage === 'YouHaveLoggedInMessage') {
+      return <YouHaveLoggedInMessage />;
+    } else if (this.state.renderedPage === 'FullProfileDeveloper') {
+      return <FullProfileDeveloper />;
+    } else if (this.state.renderedPage === 'BackendPanelEmployer') {
+      return <BackendPanelEmployer />;
     }
 
 	}

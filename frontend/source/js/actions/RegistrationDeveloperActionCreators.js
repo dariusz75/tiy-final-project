@@ -49,6 +49,13 @@ function changePageToFindSectionWhenGoToListOfTalents() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToYouHaveLoggedIn() {
+	var action = {
+		type: 'change_page_to_you_have_logged_in'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
@@ -56,5 +63,6 @@ module.exports = {
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
-	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents
+	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents,
+	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn
 };
