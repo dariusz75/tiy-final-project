@@ -22,7 +22,8 @@ function registerEmployer(employer) {
 			return;
 		} 
 		var action = {
-			type: 'register_employer'
+			type: 'set_authentication_token',
+			token: data.token
 		};
 		Dispatcher.dispatch(action);
 
