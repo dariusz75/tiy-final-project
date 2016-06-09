@@ -1,7 +1,6 @@
 var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
-
 var currentPage = 'Homepage';
 
 var pages = [	'Homepage', 
@@ -16,8 +15,11 @@ var pages = [	'Homepage',
 							'BackendPanelDeveloper',
 							'YouHaveRegisteredMessage',
 							'LogIn',
-							'Contact'
+							'Contact',
+							'OurPartners',
+							'YouHaveLoggedInMessage'
 						];
+
 
 function getCurrentPage() {
 	return currentPage;
@@ -65,6 +67,22 @@ function handleAction(action) {
 		setCurrentPage('RegistrationAboutMeDeveloper');
 	} else if (action.type === 'change_page_to_find_section_when_go_to_list_of_talents') {
 		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_homepage') {
+		setCurrentPage('Homepage');
+	} else if (action.type === 'change_page_to_find_section') {
+		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_our_partners') {
+		setCurrentPage('OurPartners');
+	} else if (action.type === 'change_page_to_contact') {
+		setCurrentPage('Contact');
+	} else if (action.type === 'change_page_to_log_in') {
+		setCurrentPage('LogIn');
+	} else if (action.type === 'change_page_to_you_have_logged_in') {
+		setCurrentPage('YouHaveLoggedInMessage');
+	} else if (action.type === 'change_page_to_full_profile_developer') {
+		setCurrentPage('FullProfileDeveloper');
+	} else if (action.type === 'change_page_to_backend_panel_employer') {
+		setCurrentPage('BackendPanelEmployer');
 	}
 }
 

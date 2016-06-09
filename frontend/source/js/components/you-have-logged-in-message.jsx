@@ -3,7 +3,7 @@ var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 var TopBarLogOut = require('./top-bar-log-out.jsx');
 
-var YouHaveRegisteredMessage = React.createClass({
+var YouHaveLoggedInMessage = React.createClass({
 
 		handleGoToListOfTalentsClick: function () {
 			RegistrationDeveloperActionCreators.changePageToFindSectionWhenGoToListOfTalents();
@@ -18,7 +18,7 @@ var YouHaveRegisteredMessage = React.createClass({
 								<TopBarLogOut />
 								<div className="row img-rounded general-wrapper">
 								<div className="homepage-info">
-								<h1>You have been successfully registered and logged in.</h1>
+								<h1>You have been successfully logged in.</h1>
 								<h1>Enjoy our services!</h1>
 								</div>	
 									<Button addClass="blue-bright fullwidth no-border button-text-style hvr-pulse-grow" text="Go to the List of Talents" onClick={this.handleGoToListOfTalentsClick} />
@@ -28,4 +28,4 @@ var YouHaveRegisteredMessage = React.createClass({
 		}
 	});		
 
-module.exports = YouHaveRegisteredMessage;
+module.exports = YouHaveLoggedInMessage;

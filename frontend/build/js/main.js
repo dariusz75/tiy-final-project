@@ -20,7 +20,29 @@ module.exports = {
 	changePageToRegisterEmailPasswordEmployer: changePageToRegisterEmailPasswordEmployer
 };
 
-},{"../dispatcher/Dispatcher.js":23}],2:[function(require,module,exports){
+},{"../dispatcher/Dispatcher.js":28}],2:[function(require,module,exports){
+var Dispatcher = require('../dispatcher/Dispatcher.js');
+
+function changePageToFullProfileDeveloper() {
+	var action = {
+		type: 'change_page_to_full_profile_developer'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToBackendPanelEmployer() {
+	var action = {
+		type: 'change_page_to_backend_panel_employer'
+	};
+	Dispatcher.dispatch(action);
+}
+
+module.exports = {
+	changePageToFullProfileDeveloper: changePageToFullProfileDeveloper,
+	changePageToBackendPanelEmployer: changePageToBackendPanelEmployer
+};
+
+},{"../dispatcher/Dispatcher.js":28}],3:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher.js');
 
 function changePageToHomepageWhenCancelled() {
@@ -72,6 +94,13 @@ function changePageToFindSectionWhenGoToListOfTalents() {
 	Dispatcher.dispatch(action);
 }
 
+function changePageToYouHaveLoggedIn() {
+	var action = {
+		type: 'change_page_to_you_have_logged_in'
+	};
+	Dispatcher.dispatch(action);
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
@@ -79,10 +108,11 @@ module.exports = {
 	changeToRegistrationSkillsDeveloper: changeToRegistrationSkillsDeveloper,
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
-	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents
+	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents,
+	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn
 };
 
-},{"../dispatcher/Dispatcher.js":23}],3:[function(require,module,exports){
+},{"../dispatcher/Dispatcher.js":28}],4:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher.js');
 
 function changePageToYouHaveRegisteredMessageWhenDone() {
@@ -104,7 +134,53 @@ module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled
 };
 
-},{"../dispatcher/Dispatcher.js":23}],4:[function(require,module,exports){
+},{"../dispatcher/Dispatcher.js":28}],5:[function(require,module,exports){
+var Dispatcher = require('../dispatcher/Dispatcher.js');
+
+function changePageToHomepage() {
+	var action = {
+		type: 'change_page_to_homepage'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToFindSection() {
+	var action = {
+		type: 'change_page_to_find_section'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToOurPartners() {
+	var action = {
+		type: 'change_page_to_our_partners'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToContact() {
+	var action = {
+		type: 'change_page_to_contact'
+	};
+	Dispatcher.dispatch(action);
+}
+
+function changePageToLogIn() {
+	var action = {
+		type: 'change_page_to_log_in'
+	};
+	Dispatcher.dispatch(action);
+}
+
+module.exports = {
+	changePageToHomepage: changePageToHomepage,
+	changePageToFindSection: changePageToFindSection,
+	changePageToOurPartners: changePageToOurPartners,
+	changePageToContact: changePageToContact,
+	changePageToLogIn: changePageToLogIn
+};
+
+},{"../dispatcher/Dispatcher.js":28}],6:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Button = require('./components/button.jsx');
@@ -125,13 +201,15 @@ var Contact = require('./components/contact.jsx');
 var YouHaveRegisteredMessage = require('./components/you-have-registered-message.jsx');
 var Application = require('./components/application.jsx');
 var TopBar = require('./components/top-bar.jsx');
+var TopBarLogOut = require('./components/top-bar-log-out.jsx');
+var YouHaveLoggedInMessage = require('./components/you-have-logged-in-message.jsx');
 
 var parentElement = document.querySelector('.target');
 var element = React.createElement(Button);
 
 ReactDOM.render(React.createElement(Application, null), parentElement);
 
-},{"./components/application.jsx":5,"./components/backend-panel-developer.jsx":6,"./components/backend-panel-employer.jsx":7,"./components/button.jsx":8,"./components/check-box.jsx":9,"./components/contact.jsx":10,"./components/find-section.jsx":11,"./components/full-profile-developer.jsx":12,"./components/homepage.jsx":13,"./components/log-in.jsx":14,"./components/miniprofile.jsx":15,"./components/registration-about-me-developer.jsx":16,"./components/registration-details-developer.jsx":17,"./components/registration-email-password-developer.jsx":18,"./components/registration-email-password-employer.jsx":19,"./components/registration-skills-developer.jsx":20,"./components/top-bar.jsx":21,"./components/you-have-registered-message.jsx":22,"react":196,"react-dom":33}],5:[function(require,module,exports){
+},{"./components/application.jsx":7,"./components/backend-panel-developer.jsx":8,"./components/backend-panel-employer.jsx":9,"./components/button.jsx":10,"./components/check-box.jsx":11,"./components/contact.jsx":12,"./components/find-section.jsx":13,"./components/full-profile-developer.jsx":14,"./components/homepage.jsx":15,"./components/log-in.jsx":16,"./components/miniprofile.jsx":17,"./components/registration-about-me-developer.jsx":19,"./components/registration-details-developer.jsx":20,"./components/registration-email-password-developer.jsx":21,"./components/registration-email-password-employer.jsx":22,"./components/registration-skills-developer.jsx":23,"./components/top-bar-log-out.jsx":24,"./components/top-bar.jsx":25,"./components/you-have-logged-in-message.jsx":26,"./components/you-have-registered-message.jsx":27,"react":201,"react-dom":38}],7:[function(require,module,exports){
 var React = require('react');
 var ViewStore = require('../stores/ViewStore.js');
 var Homepage = require('./homepage.jsx');
@@ -146,6 +224,11 @@ var FullProfileDeveloper = require('./full-profile-developer.jsx');
 var YouHaveRegisteredMessage = require('./you-have-registered-message.jsx');
 var FindSection = require('./find-section.jsx');
 var TopBar = require('./top-bar.jsx');
+var OurPartners = require('./our-partners.jsx');
+var Contact = require('./contact.jsx');
+var LogIn = require('./log-in.jsx');
+var YouHaveLoggedInMessage = require('./you-have-logged-in-message.jsx');
+var TopBarLogOut = require('./top-bar-log-out.jsx');
 
 var Application = React.createClass({
   displayName: 'Application',
@@ -190,15 +273,28 @@ var Application = React.createClass({
       return React.createElement(YouHaveRegisteredMessage, null);
     } else if (this.state.renderedPage === 'FindSection') {
       return React.createElement(FindSection, null);
+    } else if (this.state.renderedPage === 'OurPartners') {
+      return React.createElement(OurPartners, null);
+    } else if (this.state.renderedPage === 'Contact') {
+      return React.createElement(Contact, null);
+    } else if (this.state.renderedPage === 'LogIn') {
+      return React.createElement(LogIn, null);
+    } else if (this.state.renderedPage === 'YouHaveLoggedInMessage') {
+      return React.createElement(YouHaveLoggedInMessage, null);
+    } else if (this.state.renderedPage === 'FullProfileDeveloper') {
+      return React.createElement(FullProfileDeveloper, null);
+    } else if (this.state.renderedPage === 'BackendPanelEmployer') {
+      return React.createElement(BackendPanelEmployer, null);
     }
   }
 });
 
 module.exports = Application;
 
-},{"../stores/ViewStore.js":26,"./backend-panel-developer.jsx":6,"./backend-panel-employer.jsx":7,"./find-section.jsx":11,"./full-profile-developer.jsx":12,"./homepage.jsx":13,"./registration-about-me-developer.jsx":16,"./registration-details-developer.jsx":17,"./registration-email-password-developer.jsx":18,"./registration-email-password-employer.jsx":19,"./registration-skills-developer.jsx":20,"./top-bar.jsx":21,"./you-have-registered-message.jsx":22,"react":196}],6:[function(require,module,exports){
+},{"../stores/ViewStore.js":31,"./backend-panel-developer.jsx":8,"./backend-panel-employer.jsx":9,"./contact.jsx":12,"./find-section.jsx":13,"./full-profile-developer.jsx":14,"./homepage.jsx":15,"./log-in.jsx":16,"./our-partners.jsx":18,"./registration-about-me-developer.jsx":19,"./registration-details-developer.jsx":20,"./registration-email-password-developer.jsx":21,"./registration-email-password-employer.jsx":22,"./registration-skills-developer.jsx":23,"./top-bar-log-out.jsx":24,"./top-bar.jsx":25,"./you-have-logged-in-message.jsx":26,"./you-have-registered-message.jsx":27,"react":201}],8:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var BackendPanelDeveloper = React.createClass({
 	displayName: 'BackendPanelDeveloper',
@@ -206,47 +302,53 @@ var BackendPanelDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
+					{ 'class': 'form-group' },
+					React.createElement(
+						'label',
+						{ className: 'margin-top', 'for': 'form-control' },
+						'Few sentences about yourself '
+					),
+					React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
 				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ 'class': 'form-group' },
-				React.createElement(
-					'label',
-					{ className: 'margin-top', 'for': 'form-control' },
-					'Few sentences about yourself '
-				),
-				React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SAVE' }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SAVE' }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+			)
 		);
 	}
 });
 
 module.exports = BackendPanelDeveloper;
 
-},{"./button.jsx":8,"react":196}],7:[function(require,module,exports){
+},{"./button.jsx":10,"./top-bar.jsx":25,"react":201}],9:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var BackendPanelEmployer = React.createClass({
 	displayName: 'BackendPanelEmployer',
@@ -254,41 +356,59 @@ var BackendPanelEmployer = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
-			React.createElement(
-				'p',
-				{ className: 'bold' },
-				'My bookmarked candidates'
-			),
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ id: 'candidate-link', className: 'img-rounded col-xs-10 col-sm-10 col-md-10 col-lg-10' },
+				{ className: 'img-rounded general-wrapper' },
 				React.createElement(
-					'p',
-					null,
-					'Name'
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'p',
+						{ className: 'bold' },
+						'My bookmarked candidates'
+					),
+					React.createElement(
+						'div',
+						{ id: 'candidate-link', className: 'img-rounded button-text-style col-xs-8 col-sm-8 col-md-8 col-lg-8' },
+						React.createElement(
+							'p',
+							null,
+							'Name'
+						),
+						' ',
+						React.createElement(
+							'p',
+							null,
+							'Job Title'
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style  hvr-pulse-grow', text: 'PROFILE' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style  hvr-pulse-grow', text: 'DELETE' })
+					)
 				),
-				' ',
 				React.createElement(
-					'p',
-					null,
-					'Job Title'
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-8 col-sm-8 col-md-8 col-lg-8' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-4 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
+					)
 				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border  hvr-pulse-grow', text: 'DELETE' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-10 col-sm-10 col-md-10 col-lg-10' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-xs-2 col-sm-2 col-md-2 col-lg-2' },
-				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DELETE ALL' })
 			)
 		);
 	}
@@ -296,7 +416,7 @@ var BackendPanelEmployer = React.createClass({
 
 module.exports = BackendPanelEmployer;
 
-},{"./button.jsx":8,"react":196}],8:[function(require,module,exports){
+},{"./button.jsx":10,"./top-bar.jsx":25,"react":201}],10:[function(require,module,exports){
 var React = require('react');
 
 var Button = React.createClass({
@@ -313,7 +433,7 @@ var Button = React.createClass({
 
 module.exports = Button;
 
-},{"react":196}],9:[function(require,module,exports){
+},{"react":201}],11:[function(require,module,exports){
 var React = require('react');
 var listOfSkills = require('../stores/SkillsStore.js');
 
@@ -355,9 +475,10 @@ var Checkboxes = React.createClass({
 
 module.exports = Checkboxes;
 
-},{"../stores/SkillsStore.js":25,"react":196}],10:[function(require,module,exports){
+},{"../stores/SkillsStore.js":30,"react":201}],12:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var Contact = React.createClass({
 	displayName: 'Contact',
@@ -365,104 +486,109 @@ var Contact = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row cotact img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'col-md-12' },
+				{ className: 'row cotact img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'well well-sm' },
+					{ className: 'col-md-12' },
 					React.createElement(
-						'form',
-						{ className: 'form-horizontal', method: 'post' },
+						'div',
+						{ className: 'well well-sm' },
 						React.createElement(
-							'fieldset',
-							null,
+							'form',
+							{ className: 'form-horizontal', method: 'post' },
 							React.createElement(
-								'legend',
-								{ className: 'text-center header' },
-								'Contact us'
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
+								'fieldset',
+								null,
 								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-user bigicon' })
+									'legend',
+									{ className: 'text-center header' },
+									'Contact us'
 								),
 								React.createElement(
 									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'fname', name: 'name', type: 'text', placeholder: 'First Name', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-user bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'lname', name: 'name', type: 'text', placeholder: 'Last Name', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-envelope-o bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'email', name: 'email', type: 'text', placeholder: 'Email Address', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-phone-square bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('input', { id: 'phone', name: 'phone', type: 'text', placeholder: 'Phone', className: 'form-control' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'span',
-									{ className: 'col-md-1 col-md-offset-2 text-center' },
-									React.createElement('i', { className: 'fa fa-pencil-square-o bigicon' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-8' },
-									React.createElement('textarea', { className: 'form-control', id: 'message', name: 'message', placeholder: 'Enter your massage for us here. We will get back to you within 2 business days.', rows: '7' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-12 text-center' },
+									{ className: 'form-group' },
 									React.createElement(
-										'button',
-										{ type: 'submit', className: 'btn btn-primary btn-lg' },
-										'Submit'
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-user bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'fname', name: 'name', type: 'text', placeholder: 'First Name', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-user bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'lname', name: 'name', type: 'text', placeholder: 'Last Name', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-envelope-o bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'email', name: 'email', type: 'text', placeholder: 'Email Address', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-phone-square bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('input', { id: 'phone', name: 'phone', type: 'text', placeholder: 'Phone', className: 'form-control' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'span',
+										{ className: 'col-md-1 col-md-offset-2 text-center' },
+										React.createElement('i', { className: 'fa fa-pencil-square-o bigicon' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-8' },
+										React.createElement('textarea', { className: 'form-control', id: 'message', name: 'message', placeholder: 'Enter your massage for us here. We will get back to you within 2 business days.', rows: '7' })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'form-group' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-12 text-center' },
+										React.createElement(
+											'button',
+											{ type: 'submit', className: 'btn btn-primary btn-lg' },
+											'Submit'
+										)
 									)
 								)
 							)
@@ -476,10 +602,11 @@ var Contact = React.createClass({
 
 module.exports = Contact;
 
-},{"./button.jsx":8,"react":196}],11:[function(require,module,exports){
+},{"./button.jsx":10,"./top-bar.jsx":25,"react":201}],13:[function(require,module,exports){
 var React = require('react');
 var Checkboxes = require('./check-box.jsx');
 var Miniprofiles = require('./miniprofile.jsx');
+var TopBar = require('./top-bar.jsx');
 
 var FindSection = React.createClass({
 	displayName: 'FindSection',
@@ -487,178 +614,200 @@ var FindSection = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
-			React.createElement(Checkboxes, null),
-			React.createElement(Miniprofiles, null)
+			null,
+			React.createElement(TopBar, null),
+			React.createElement(
+				'div',
+				{ className: 'row img-rounded general-wrapper' },
+				React.createElement(Checkboxes, null),
+				React.createElement(Miniprofiles, null)
+			)
 		);
 	}
 });
 
 module.exports = FindSection;
 
-},{"./check-box.jsx":9,"./miniprofile.jsx":15,"react":196}],12:[function(require,module,exports){
+},{"./check-box.jsx":11,"./miniprofile.jsx":17,"./top-bar.jsx":25,"react":201}],14:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
+var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
+var ListOfTalentsActionCreators = require('../actions/ListOfTalentsActionCreators.js');
 
 var FullProfileDeveloper = React.createClass({
 	displayName: 'FullProfileDeveloper',
 
+
+	handleGoToBackendPanelEmployerClick: function () {
+		ListOfTalentsActionCreators.changePageToBackendPanelEmployer();
+	},
+
+	handleBackToListOfTalentsClick: function () {
+		TopBarActionCreators.changePageToFindSection();
+	},
+
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
-			React.createElement(
-				'p',
-				{ className: 'bold text-center' },
-				'CANDIDATE\'S PROFILE'
-			),
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
-					'div',
-					{ className: 'basic-details-wrapper img-rounded' },
-					React.createElement(
-						'p',
-						null,
-						'John Smith'
-					),
-					React.createElement(
-						'p',
-						null,
-						'Frontend Developer'
-					),
-					React.createElement(
-						'p',
-						null,
-						'john@hotmail.com'
-					),
-					React.createElement(
-						'p',
-						null,
-						'07708473329'
-					)
+					'p',
+					{ className: 'bold text-center' },
+					'CANDIDATE\'S PROFILE'
 				),
 				React.createElement(
 					'div',
-					{ className: 'full-profile-skills-list img-rounded ' },
+					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
 					React.createElement(
-						'p',
-						null,
-						'Skills:'
+						'div',
+						{ className: 'basic-details-wrapper img-rounded' },
+						React.createElement(
+							'p',
+							null,
+							'John Smith'
+						),
+						React.createElement(
+							'p',
+							null,
+							'Frontend Developer'
+						),
+						React.createElement(
+							'p',
+							null,
+							'john@hotmail.com'
+						),
+						React.createElement(
+							'p',
+							null,
+							'07708473329'
+						)
 					),
 					React.createElement(
-						'ul',
-						null,
+						'div',
+						{ className: 'full-profile-skills-list img-rounded ' },
 						React.createElement(
-							'li',
+							'p',
 							null,
-							'HTML'
+							'Skills:'
 						),
 						React.createElement(
-							'li',
+							'ul',
 							null,
-							'CSS'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Javascript'
-						),
-						React.createElement(
-							'li',
-							null,
-							'jQuery'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Node.js'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Git'
-						),
-						React.createElement(
-							'li',
-							null,
-							'Github'
-						)
-					)
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-					React.createElement(
-						'ul',
-						null,
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
 							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' }),
-								'LinkedIn'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
+								'li',
+								null,
+								'HTML'
+							),
 							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-github-square', 'aria-hidden': 'true' }),
+								'li',
+								null,
+								'CSS'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Javascript'
+							),
+							React.createElement(
+								'li',
+								null,
+								'jQuery'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Node.js'
+							),
+							React.createElement(
+								'li',
+								null,
+								'Git'
+							),
+							React.createElement(
+								'li',
+								null,
 								'Github'
 							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
-							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-desktop', 'aria-hidden': 'true' }),
-								'Portfolio'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'img-rounded' },
-							React.createElement(
-								'a',
-								{ href: '#', target: '_blank' },
-								React.createElement('i', { className: 'fa fa-file-pdf-o', 'aria-hidden': 'true' }),
-								'CV'
-							)
 						)
 					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-					React.createElement('img', { className: 'img-rounded', src: 'images/photo1.jpg', alt: 'Smiley face', height: '180' })
+					{ className: 'img-rounded righthand-side-wrapper col-xs-12 col-sm-8 col-md-8 col-lg-8' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+						React.createElement(
+							'ul',
+							null,
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' }),
+									'LinkedIn'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-github-square', 'aria-hidden': 'true' }),
+									'Github'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-desktop', 'aria-hidden': 'true' }),
+									'Portfolio'
+								)
+							),
+							React.createElement(
+								'li',
+								{ className: 'img-rounded' },
+								React.createElement(
+									'a',
+									{ href: '#', target: '_blank' },
+									React.createElement('i', { className: 'fa fa-file-pdf-o', 'aria-hidden': 'true' }),
+									'CV'
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+						React.createElement('img', { className: 'img-rounded', src: 'images/photo1.jpg', alt: 'Smiley face', height: '180' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12' },
+						React.createElement(
+							'p',
+							null,
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa ui officia deserunt mollit anim id est laborum.'
+						)
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'about-me-wrapper img-rounded col-xs-12 col-sm-12 col-md-12 col-lg-12' },
-					React.createElement(
-						'p',
-						null,
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa ui officia deserunt mollit anim id est laborum.'
-					)
+					null,
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE', onClick: this.handleGoToBackendPanelEmployerClick }),
+					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS', onClick: this.handleBackToListOfTalentsClick })
 				)
-			),
-			React.createElement(
-				'div',
-				null,
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BOOKMARK THIS PROFILE' }),
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow ', text: 'BACK TO LIST OF TALENTS' })
 			)
 		);
 	}
@@ -666,9 +815,10 @@ var FullProfileDeveloper = React.createClass({
 
 module.exports = FullProfileDeveloper;
 
-},{"./button.jsx":8,"react":196}],13:[function(require,module,exports){
+},{"../actions/ListOfTalentsActionCreators.js":2,"../actions/TopBarActionCreators.js":5,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],15:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
 var HomepageActionCreators = require('../actions/HomepageActionCreators.js');
 
 var Homepage = React.createClass({
@@ -683,79 +833,106 @@ var Homepage = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'homepage-info' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
-					'h1',
-					null,
-					'Our Mission'
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'Our Mission'
+					),
+					React.createElement(
+						'p',
+						null,
+						'Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.'
+					)
 				),
-				React.createElement(
-					'p',
-					null,
-					'Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.'
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer', onClick: this.handleRegisterAsAnEmployerClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as an Employer', onClick: this.handleRegisterAsAnEmployerClick })
+			)
 		);
 	}
 });
 
 module.exports = Homepage;
 
-},{"../actions/HomepageActionCreators.js":1,"./button.jsx":8,"react":196}],14:[function(require,module,exports){
+},{"../actions/HomepageActionCreators.js":1,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],16:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 
 var LogIn = React.createClass({
 	displayName: 'LogIn',
 
+
+	handleLogInDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToYouHaveLoggedIn();
+	},
+
+	handleCancelDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+	},
+
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password:'
+						),
+						React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE' }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'LOG IN', onClick: this.handleLogInDeveloperClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
 
 module.exports = LogIn;
 
-},{"./button.jsx":8,"react":196}],15:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],17:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var candidatesDetails = require('../stores/MiniProfilesStore.js');
+var ListOfTalentsActionCreators = require('../actions/ListOfTalentsActionCreators.js');
 
 var Miniprofile = React.createClass({
 	displayName: 'Miniprofile',
+
+
+	handleSeeFullProfileClick: function () {
+		ListOfTalentsActionCreators.changePageToFullProfileDeveloper();
+	},
 
 	render: function () {
 		return React.createElement(
@@ -785,7 +962,7 @@ var Miniprofile = React.createClass({
 			React.createElement(
 				'div',
 				{ className: 'row' },
-				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'See full profile' })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'See full profile', onClick: this.handleSeeFullProfileClick })
 			)
 		);
 	}
@@ -808,10 +985,122 @@ var ListOfMiniprofiles = React.createClass({
 
 module.exports = ListOfMiniprofiles;
 
-},{"../stores/MiniProfilesStore.js":24,"./button.jsx":8,"react":196}],16:[function(require,module,exports){
+},{"../actions/ListOfTalentsActionCreators.js":2,"../stores/MiniProfilesStore.js":29,"./button.jsx":10,"react":201}],18:[function(require,module,exports){
+var React = require('react');
+var Button = require('./button.jsx');
+var TopBar = require('./top-bar.jsx');
+var HomepageActionCreators = require('../actions/HomepageActionCreators.js');
+
+var Homepage = React.createClass({
+	displayName: 'Homepage',
+
+	handleRegisterAsADeveloperClick: function () {
+		HomepageActionCreators.changePageToRegisterEmailPasswordDeveloper();
+	},
+	handleRegisterAsAnEmployerClick: function () {
+		HomepageActionCreators.changePageToRegisterEmailPasswordEmployer();
+	},
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(TopBar, null),
+			React.createElement(
+				'div',
+				{ className: 'row img-rounded general-wrapper' },
+				React.createElement(
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'Our Hiring Partners'
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-1.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-2.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-3.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-4.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-5.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-6.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-7.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-8.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-9.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-10.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-11.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'partner col-xs-4 col-sm-3 col-md-3 col-lg-3' },
+							React.createElement('img', { src: './images/logo-12.png', 'class': 'img-responsive', alt: 'Responsive image' })
+						)
+					)
+				)
+			)
+		);
+	}
+});
+
+module.exports = Homepage;
+
+},{"../actions/HomepageActionCreators.js":1,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],19:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationAboutMeDeveloper = React.createClass({
 	displayName: 'RegistrationAboutMeDeveloper',
@@ -836,48 +1125,54 @@ var RegistrationAboutMeDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS', onClick: this.handleSkillsAndExperienceClick })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
+					{ 'class': 'form-group' },
+					React.createElement(
+						'label',
+						{ className: 'margin-top', 'for': 'form-control' },
+						'Few sentences about yourself '
+					),
+					React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
 				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ 'class': 'form-group' },
-				React.createElement(
-					'label',
-					{ className: 'margin-top', 'for': 'form-control' },
-					'Few sentences about yourself '
-				),
-				React.createElement('textarea', { className: 'form-control', placeholder: 'Max 300 characters' })
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
 
 module.exports = RegistrationAboutMeDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],17:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],20:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationDetailsDeveloper = React.createClass({
 							displayName: 'RegistrationDetailsDeveloper',
@@ -902,150 +1197,179 @@ var RegistrationDetailsDeveloper = React.createClass({
 							render: function () {
 														return React.createElement(
 																					'div',
-																					{ className: 'row img-rounded registration-developer-wrapper' },
+																					null,
+																					React.createElement(TopBar, null),
 																					React.createElement(
 																												'div',
-																												{ className: 'row' },
+																												{ className: 'row img-rounded general-wrapper' },
 																												React.createElement(
 																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE', onClick: this.handleSkillsAndExperienceClick })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-																																			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeClick })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																			{ className: 'row' },
 																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'First name'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Surname'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Job Title'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Contact number'
-																																			),
-																																			React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Email address'
-																																			),
-																																			React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Confirm email address'
-																																			),
-																																			React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																												)
-																					),
-																					React.createElement(
-																												'div',
-																												{ className: 'row' },
-																												React.createElement(
-																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Upload your CV'
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS' })
 																																			),
 																																			React.createElement(
-																																										'span',
-																																										{ className: 'file-input btn btn-block btn-primary btn-file' },
-																																										'Browse… ',
-																																										React.createElement('input', { type: 'file', multiple: true })
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS', onClick: this.handleSkillsAndExperienceClick })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+																																										React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeClick })
 																																			)
 																												),
 																												React.createElement(
 																																			'div',
-																																			{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																			{ className: 'row' },
 																																			React.createElement(
-																																										'label',
-																																										{ 'for': 'usr' },
-																																										'Upload your Photo'
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'First name'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 																																			),
 																																			React.createElement(
-																																										'span',
-																																										{ className: 'file-input btn btn-block btn-primary btn-file' },
-																																										'Browse… ',
-																																										React.createElement('input', { type: 'file', multiple: true })
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Surname'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
 																																			)
-																												)
-																					),
-																					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-																					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Job Title'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Contact number'
+																																										),
+																																										React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+																																			)
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Email address'
+																																										),
+																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Confirm email address'
+																																										),
+																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
+																																			)
+																												),
+																												React.createElement(
+																																			'div',
+																																			{ className: 'row' },
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Upload your CV'
+																																										),
+																																										React.createElement(
+																																																	'span',
+																																																	{ className: 'file-input btn btn-block btn-primary btn-file' },
+																																																	'Browse… ',
+																																																	React.createElement('input', { type: 'file', multiple: true })
+																																										)
+																																			),
+																																			React.createElement(
+																																										'div',
+																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+																																										React.createElement(
+																																																	'label',
+																																																	{ 'for': 'usr' },
+																																																	'Upload your Photo'
+																																										),
+																																										React.createElement(
+																																																	'span',
+																																																	{ className: 'file-input btn btn-block btn-primary btn-file' },
+																																																	'Browse… ',
+																																																	React.createElement('input', { type: 'file', multiple: true })
+																																										)
+																																			)
+																												),
+																												React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+																												React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+																					)
 														);
 							}
 });
 
 module.exports = RegistrationDetailsDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],18:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],21:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationEmailPasswordDeveloper = React.createClass({
 	displayName: 'RegistrationEmailPasswordDeveloper',
 
 
 	handleNextDeveloperClick: function () {
+		var email = this.refs.email.value;
+		var confirmEmail = this.refs.confirmEmail.value;
+		var password = this.refs.password.value;
+		var confirmPassword = this.refs.confirmPassword.value;
+		var emailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+		var passwordRegex = /\w{5,10}/g;
+		var emailResult = emailRegex.test(email);
+		var confirmEmailResult = emailRegex.test(confirmEmail);
+		var passwordResult = passwordRegex.test(password);
+		var confirmPasswordResult = passwordRegex.test(confirmPassword);
+
+		if (!emailResult || email != confirmEmail) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!confirmEmail || confirmEmail != email) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!passwordResult || password != confirmPassword) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else if (!confirmPassword || confirmPassword != password) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else {
+			console.log('Well done!');
+		}
+
 		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
 	},
 
@@ -1056,72 +1380,102 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'email' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm email address:'
+						),
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'confirmEmail' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password.'
+						),
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'password' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm password:'
+						),
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'confirmPassword' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT', onClick: this.handleNextDeveloperClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'NEXT', onClick: this.handleNextDeveloperClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
 
 module.exports = RegistrationEmailPasswordDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],19:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],22:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationEmployerActionCreators = require('../actions/RegistrationEmployerActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var RegistrationEmailPasswordEmployer = React.createClass({
 	displayName: 'RegistrationEmailPasswordEmployer',
 
+
 	handleDoneEmployerClick: function () {
+		var email = this.refs.email.value;
+		var confirmEmail = this.refs.confirmEmail.value;
+		var password = this.refs.password.value;
+		var confirmPassword = this.refs.confirmPassword.value;
+		var emailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+		var passwordRegex = /\w{5,10}/g;
+		var emailResult = emailRegex.test(email);
+		var confirmEmailResult = emailRegex.test(confirmEmail);
+		var passwordResult = passwordRegex.test(password);
+		var confirmPasswordResult = passwordRegex.test(confirmPassword);
+
+		if (!emailResult || email != confirmEmail) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!confirmEmail || confirmEmail != email) {
+			console.log('Please entry valid email addresses and check if they match.');
+		} else if (!passwordResult || password != confirmPassword) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else if (!confirmPassword || confirmPassword != password) {
+			console.log('Please entry valid passwords and check if they match.');
+		} else {
+			console.log('Well done!');
+		}
+
 		RegistrationEmployerActionCreators.changePageToYouHaveRegisteredMessageWhenDone();
 	},
 
@@ -1132,68 +1486,74 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter email address:'
+						),
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'email' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+					React.createElement(
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm email address:'
+						),
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'confirmEmail' })
+					)
 				),
 				React.createElement(
 					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm email address:'
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Enter password:'
+						),
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'password' })
 					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
 					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Enter password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
+						'div',
+						{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
+						React.createElement(
+							'label',
+							{ 'for': 'usr' },
+							'Confirm password:'
+						),
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'confirmPassword' })
+					)
 				),
-				React.createElement(
-					'div',
-					{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6' },
-					React.createElement(
-						'label',
-						{ 'for': 'usr' },
-						'Confirm password:'
-					),
-					React.createElement('input', { type: 'text', className: 'form-control', id: 'usr' })
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE', onClick: this.handleDoneEmployerClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelEmployerClick })
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE', onClick: this.handleDoneEmployerClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelEmployerClick })
+			)
 		);
 	}
 });
 
 module.exports = RegistrationEmailPasswordEmployer;
 
-},{"../actions/RegistrationEmployerActionCreators.js":3,"./button.jsx":8,"react":196}],20:[function(require,module,exports){
+},{"../actions/RegistrationEmployerActionCreators.js":4,"./button.jsx":10,"./top-bar.jsx":25,"react":201}],23:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var Checkboxes = require('./check-box.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBar = require('./top-bar.jsx');
 
 var skillsOptions = {
 	skillsData: [{
@@ -1246,179 +1606,393 @@ var RegistrationSkillsDeveloper = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-developer-wrapper' },
+			null,
+			React.createElement(TopBar, null),
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
 					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS AND EXPERIENCE' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
-					React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeDeveloperClick })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
-				React.createElement(
-					'div',
-					{ className: 'col-xs-12 col-sm-9 col-md-9 col-lg-9' },
+					{ className: 'row' },
 					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
+						'div',
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'PERSONAL DETAILS', onClick: this.handlePersonalDetailsDeveloperClick })
 					),
 					React.createElement(
 						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
-					),
-					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'active-link fullwidth no-border button-text-style hvr-pulse-grow', text: 'SKILLS' })
 					),
 					React.createElement(
 						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
-					),
-					React.createElement(
-						'label',
-						{ className: 'margin-top', 'for': 'basic-url' },
-						'Your LinkedIn URL'
-					),
-					React.createElement(
-						'div',
-						{ className: 'input-group' },
-						React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
-						React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						{ className: 'col-xs-12 col-sm-4 col-md-4 col-lg-4' },
+						React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'ABOUT ME', onClick: this.handleAboutMeDeveloperClick })
 					)
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
+					React.createElement(
+						'div',
+						{ className: 'col-xs-12 col-sm-9 col-md-9 col-lg-9' },
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						),
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						),
+						React.createElement(
+							'label',
+							{ className: 'margin-top', 'for': 'basic-url' },
+							'Your LinkedIn URL'
+						),
+						React.createElement(
+							'div',
+							{ className: 'input-group' },
+							React.createElement('span', { className: 'input-group-addon', id: 'basic-addon3' }),
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'basic-url', 'aria-describedby': 'basic-addon3' })
+						)
+					)
+				),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CREATE PROFILE', onClick: this.handleCreateProfileClick }),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'CANCEL', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
 
 module.exports = RegistrationSkillsDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"./check-box.jsx":9,"react":196}],21:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./check-box.jsx":11,"./top-bar.jsx":25,"react":201}],24:[function(require,module,exports){
 var React = require('react');
+var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
+
+var TopBarLogOut = React.createClass({
+		displayName: 'TopBarLogOut',
+
+
+		handleOurMissionClick: function () {
+				TopBarActionCreators.changePageToHomepage();
+		},
+
+		handleListOfTalentsClick: function () {
+				TopBarActionCreators.changePageToFindSection();
+		},
+
+		handleOurPartnersClick: function () {
+				TopBarActionCreators.changePageToOurPartners();
+		},
+
+		handleContactUsClick: function () {
+				TopBarActionCreators.changePageToContact();
+		},
+
+		handleLogOutClick: function () {
+				TopBarActionCreators.changePageToHomepage();
+		},
+
+		render: function () {
+				return React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+								'div',
+								{ className: 'navbar navbar-default navbar-fixed-top' },
+								React.createElement(
+										'div',
+										{ className: 'container-fluid' },
+										React.createElement(
+												'div',
+												{ className: 'navbar-header' },
+												React.createElement(
+														'button',
+														{ type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#navbar-content' },
+														React.createElement('span', { className: 'icon-bar' }),
+														React.createElement('span', { className: 'icon-bar' }),
+														React.createElement('span', { className: 'icon-bar' })
+												),
+												React.createElement(
+														'a',
+														{ className: 'navbar-brand scroll-link', href: '#', 'data-id': '#' },
+														'LONDON SOFTWARE JUNIORS'
+												)
+										),
+										React.createElement(
+												'div',
+												{ className: 'collapse navbar-collapse navbar-right', id: 'navbar-content' },
+												React.createElement(
+														'ul',
+														{ className: 'nav navbar-nav', id: 'ul_navigation' },
+														React.createElement(
+																'li',
+																{ className: 'active' },
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'top', href: '#', className: 'scroll-link', onClick: this.handleOurMissionClick },
+																		React.createElement('i', { className: 'fa fa-book', 'aria-hidden': 'true' }),
+																		'Our Mission'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleListOfTalentsClick },
+																		React.createElement('i', { className: 'fa fa-list', 'aria-hidden': 'true' }),
+																		'List of Talents'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleOurPartnersClick },
+																		React.createElement('i', { className: 'fa fa-thumbs-o-up', 'aria-hidden': 'true' }),
+																		'Our Partners'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleContactUsClick },
+																		React.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' }),
+																		'Contact Us'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleContactUsClick },
+																		React.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
+																		'My Account'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'span',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'contact', href: '#contact', className: 'scroll-link', onClick: this.handleLogOutClick },
+																		React.createElement(
+																				'button',
+																				{ type: 'button', className: 'btn btn-default navbar-btn' },
+																				React.createElement('i', { className: 'fa fa-list-alt', 'aria-hidden': 'true' }),
+																				'Log Out'
+																		)
+																)
+														)
+												)
+										)
+								)
+						)
+				);
+		}
+});
+
+module.exports = TopBarLogOut;
+
+},{"../actions/TopBarActionCreators.js":5,"react":201}],25:[function(require,module,exports){
+var React = require('react');
+var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
 
 var TopBar = React.createClass({
-					displayName: "TopBar",
+		displayName: 'TopBar',
 
 
-					render: function () {
-										return React.createElement(
-															"div",
-															{ "class": "navbar navbar-default navbar-fixed-top" },
-															React.createElement(
-																				"div",
-																				{ "class": "container-fluid" },
-																				React.createElement(
-																									"div",
-																									{ "class": "navbar-header" },
-																									React.createElement(
-																														"button",
-																														{ type: "button", "class": "navbar-toggle", "data-toggle": "collapse", "data-target": "#navbar-content" },
-																														React.createElement("span", { "class": "icon-bar" }),
-																														React.createElement("span", { "class": "icon-bar" }),
-																														React.createElement("span", { "class": "icon-bar" })
-																									),
-																									React.createElement(
-																														"a",
-																														{ "class": "navbar-brand", href: "#", "class": "scroll-link ", "data-id": "#" },
-																														"LONDON SOFTWARE JUNIORS"
-																									)
-																				),
-																				React.createElement(
-																									"div",
-																									{ "class": "collapse navbar-collapse navbar-right", id: "navbar-content" },
-																									React.createElement(
-																														"ul",
-																														{ "class": "nav navbar-nav", id: "ul_navigation" },
-																														React.createElement(
-																																			"li",
-																																			{ "class": "active" },
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "top", href: "#", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-book", "aria-hidden": "true" }),
-																																								"Our Mission"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-list", "aria-hidden": "true" }),
-																																								"List of Talents"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-thumbs-o-up", "aria-hidden": "true" }),
-																																								"Our Partners"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"a",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "about-me", href: "#about-me", "class": "scroll-link" },
-																																								React.createElement("i", { "class": "fa fa-envelope", "aria-hidden": "true" }),
-																																								"Contact Us"
-																																			)
-																														),
-																														React.createElement(
-																																			"li",
-																																			null,
-																																			React.createElement(
-																																								"span",
-																																								{ "data-toggle": "collapse", "data-target": ".navbar-collapse", "data-id": "contact", href: "#contact", "class": "scroll-link" },
-																																								React.createElement(
-																																													"button",
-																																													{ type: "button", "class": "btn btn-default navbar-btn" },
-																																													React.createElement("i", { "class": "fa fa-list-alt", "aria-hidden": "true" }),
-																																													"Log In"
-																																								)
-																																			)
-																														)
-																									)
-																				)
-															)
-										);
-					}
+		handleOurMissionClick: function () {
+				TopBarActionCreators.changePageToHomepage();
+		},
+
+		handleListOfTalentsClick: function () {
+				TopBarActionCreators.changePageToFindSection();
+		},
+
+		handleOurPartnersClick: function () {
+				TopBarActionCreators.changePageToOurPartners();
+		},
+
+		handleContactUsClick: function () {
+				TopBarActionCreators.changePageToContact();
+		},
+
+		handleLogInClick: function () {
+				TopBarActionCreators.changePageToLogIn();
+		},
+
+		render: function () {
+				return React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+								'div',
+								{ className: 'navbar navbar-default navbar-fixed-top' },
+								React.createElement(
+										'div',
+										{ className: 'container-fluid' },
+										React.createElement(
+												'div',
+												{ className: 'navbar-header' },
+												React.createElement(
+														'button',
+														{ type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#navbar-content' },
+														React.createElement('span', { className: 'icon-bar' }),
+														React.createElement('span', { className: 'icon-bar' }),
+														React.createElement('span', { className: 'icon-bar' })
+												),
+												React.createElement(
+														'a',
+														{ className: 'navbar-brand', href: '#', 'class': 'scroll-link ', 'data-id': '#' },
+														'LONDON SOFTWARE JUNIORS'
+												)
+										),
+										React.createElement(
+												'div',
+												{ className: 'collapse navbar-collapse navbar-right', id: 'navbar-content' },
+												React.createElement(
+														'ul',
+														{ className: 'nav navbar-nav', id: 'ul_navigation' },
+														React.createElement(
+																'li',
+																{ className: 'active' },
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'top', href: '#', className: 'scroll-link', onClick: this.handleOurMissionClick },
+																		React.createElement('i', { className: 'fa fa-book', 'aria-hidden': 'true' }),
+																		'Our Mission'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleListOfTalentsClick },
+																		React.createElement('i', { className: 'fa fa-list', 'aria-hidden': 'true' }),
+																		'List of Talents'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleOurPartnersClick },
+																		React.createElement('i', { className: 'fa fa-thumbs-o-up', 'aria-hidden': 'true' }),
+																		'Our Partners'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'a',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'about-me', href: '#about-me', className: 'scroll-link', onClick: this.handleContactUsClick },
+																		React.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' }),
+																		'Contact Us'
+																)
+														),
+														React.createElement(
+																'li',
+																null,
+																React.createElement(
+																		'span',
+																		{ 'data-toggle': 'collapse', 'data-target': '.navbar-collapse', 'data-id': 'contact', href: '#contact', className: 'scroll-link', onClick: this.handleLogInClick },
+																		React.createElement(
+																				'button',
+																				{ type: 'button', className: 'btn btn-default navbar-btn' },
+																				React.createElement('i', { className: 'fa fa-list-alt', 'aria-hidden': 'true' }),
+																				'Log In'
+																		)
+																)
+														)
+												)
+										)
+								)
+						)
+				);
+		}
 });
 
 module.exports = TopBar;
 
-},{"react":196}],22:[function(require,module,exports){
+},{"../actions/TopBarActionCreators.js":5,"react":201}],26:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBarLogOut = require('./top-bar-log-out.jsx');
+
+var YouHaveLoggedInMessage = React.createClass({
+	displayName: 'YouHaveLoggedInMessage',
+
+
+	handleGoToListOfTalentsClick: function () {
+		RegistrationDeveloperActionCreators.changePageToFindSectionWhenGoToListOfTalents();
+	},
+
+	handleCancelDeveloperClick: function () {
+		RegistrationDeveloperActionCreators.changePageToHomepageWhenCancelled();
+	},
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(TopBarLogOut, null),
+			React.createElement(
+				'div',
+				{ className: 'row img-rounded general-wrapper' },
+				React.createElement(
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'You have been successfully logged in.'
+					),
+					React.createElement(
+						'h1',
+						null,
+						'Enjoy our services!'
+					)
+				),
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
+			)
+		);
+	}
+});
+
+module.exports = YouHaveLoggedInMessage;
+
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar-log-out.jsx":24,"react":201}],27:[function(require,module,exports){
+var React = require('react');
+var Button = require('./button.jsx');
+var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
+var TopBarLogOut = require('./top-bar-log-out.jsx');
 
 var YouHaveRegisteredMessage = React.createClass({
 	displayName: 'YouHaveRegisteredMessage',
@@ -1435,35 +2009,40 @@ var YouHaveRegisteredMessage = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'row img-rounded registration-email-password-wrapper' },
+			null,
+			React.createElement(TopBarLogOut, null),
 			React.createElement(
 				'div',
-				{ className: 'homepage-info' },
+				{ className: 'row img-rounded general-wrapper' },
 				React.createElement(
-					'h1',
-					null,
-					'You have been successfully registered and logged in.'
+					'div',
+					{ className: 'homepage-info' },
+					React.createElement(
+						'h1',
+						null,
+						'You have been successfully registered and logged in.'
+					),
+					React.createElement(
+						'h1',
+						null,
+						'Enjoy our services!'
+					)
 				),
-				React.createElement(
-					'h1',
-					null,
-					'Enjoy our services!'
-				)
-			),
-			React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
-			React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
+				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Go to the List of Talents', onClick: this.handleGoToListOfTalentsClick }),
+				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'Log out', onClick: this.handleCancelDeveloperClick })
+			)
 		);
 	}
 });
 
 module.exports = YouHaveRegisteredMessage;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":2,"./button.jsx":8,"react":196}],23:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar-log-out.jsx":24,"react":201}],28:[function(require,module,exports){
 var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":29}],24:[function(require,module,exports){
+},{"flux":34}],29:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
@@ -1492,7 +2071,7 @@ var candidatesDetails = {
 
 module.exports = candidatesDetails;
 
-},{"../dispatcher/Dispatcher":23,"events":27,"object-assign":32}],25:[function(require,module,exports){
+},{"../dispatcher/Dispatcher":28,"events":32,"object-assign":37}],30:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
@@ -1527,14 +2106,14 @@ var listOfSkills = {
 
 module.exports = listOfSkills;
 
-},{"../dispatcher/Dispatcher":23,"events":27,"object-assign":32}],26:[function(require,module,exports){
+},{"../dispatcher/Dispatcher":28,"events":32,"object-assign":37}],31:[function(require,module,exports){
 var Dispatcher = require('../dispatcher/Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var objectAssign = require('object-assign');
 
 var currentPage = 'Homepage';
 
-var pages = ['Homepage', 'RegistrationEmailPasswordDeveloper', 'RegistrationDetailsDeveloper', 'RegistrationSkillsDeveloper', 'RegistrationAboutMeDeveloper', 'RegistrationEmailPasswordEmployer', 'FindSection', 'BackendPanelEmployer', 'FullProfileDeveloper', 'BackendPanelDeveloper', 'YouHaveRegisteredMessage', 'LogIn', 'Contact'];
+var pages = ['Homepage', 'RegistrationEmailPasswordDeveloper', 'RegistrationDetailsDeveloper', 'RegistrationSkillsDeveloper', 'RegistrationAboutMeDeveloper', 'RegistrationEmailPasswordEmployer', 'FindSection', 'BackendPanelEmployer', 'FullProfileDeveloper', 'BackendPanelDeveloper', 'YouHaveRegisteredMessage', 'LogIn', 'Contact', 'OurPartners', 'YouHaveLoggedInMessage'];
 
 function getCurrentPage() {
 	return currentPage;
@@ -1582,13 +2161,29 @@ function handleAction(action) {
 		setCurrentPage('RegistrationAboutMeDeveloper');
 	} else if (action.type === 'change_page_to_find_section_when_go_to_list_of_talents') {
 		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_homepage') {
+		setCurrentPage('Homepage');
+	} else if (action.type === 'change_page_to_find_section') {
+		setCurrentPage('FindSection');
+	} else if (action.type === 'change_page_to_our_partners') {
+		setCurrentPage('OurPartners');
+	} else if (action.type === 'change_page_to_contact') {
+		setCurrentPage('Contact');
+	} else if (action.type === 'change_page_to_log_in') {
+		setCurrentPage('LogIn');
+	} else if (action.type === 'change_page_to_you_have_logged_in') {
+		setCurrentPage('YouHaveLoggedInMessage');
+	} else if (action.type === 'change_page_to_full_profile_developer') {
+		setCurrentPage('FullProfileDeveloper');
+	} else if (action.type === 'change_page_to_backend_panel_employer') {
+		setCurrentPage('BackendPanelEmployer');
 	}
 }
 
 Dispatcher.register(handleAction);
 module.exports = ViewStore;
 
-},{"../dispatcher/Dispatcher":23,"events":27,"object-assign":32}],27:[function(require,module,exports){
+},{"../dispatcher/Dispatcher":28,"events":32,"object-assign":37}],32:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1888,7 +2483,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],28:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -1981,7 +2576,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],29:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -1993,7 +2588,7 @@ process.umask = function() { return 0; };
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-},{"./lib/Dispatcher":30}],30:[function(require,module,exports){
+},{"./lib/Dispatcher":35}],35:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -2227,7 +2822,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":31}],31:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":36}],36:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -2279,7 +2874,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":28}],32:[function(require,module,exports){
+},{"_process":33}],37:[function(require,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -2364,12 +2959,12 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],33:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":67}],34:[function(require,module,exports){
+},{"react/lib/ReactDOM":72}],39:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2394,7 +2989,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":71,"fbjs/lib/focusNode":178}],35:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"fbjs/lib/focusNode":183}],40:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -2783,7 +3378,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":48,"./EventPropagators":52,"./FallbackCompositionState":53,"./SyntheticCompositionEvent":127,"./SyntheticInputEvent":131,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/keyOf":188}],36:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPropagators":57,"./FallbackCompositionState":58,"./SyntheticCompositionEvent":132,"./SyntheticInputEvent":136,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/keyOf":193}],41:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2932,7 +3527,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],37:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3140,7 +3735,7 @@ ReactPerf.measureMethods(CSSPropertyOperations, 'CSSPropertyOperations', {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":36,"./ReactPerf":112,"./dangerousStyleValue":144,"_process":28,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/camelizeStyleName":172,"fbjs/lib/hyphenateStyleName":183,"fbjs/lib/memoizeStringOnly":190,"fbjs/lib/warning":194}],38:[function(require,module,exports){
+},{"./CSSProperty":41,"./ReactPerf":117,"./dangerousStyleValue":149,"_process":33,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/camelizeStyleName":177,"fbjs/lib/hyphenateStyleName":188,"fbjs/lib/memoizeStringOnly":195,"fbjs/lib/warning":199}],43:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3248,7 +3843,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./PooledClass":56,"_process":28,"fbjs/lib/invariant":184,"object-assign":195}],39:[function(require,module,exports){
+},{"./PooledClass":61,"_process":33,"fbjs/lib/invariant":189,"object-assign":200}],44:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3574,7 +4169,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":48,"./EventPluginHub":49,"./EventPropagators":52,"./ReactDOMComponentTree":71,"./ReactUpdates":120,"./SyntheticEvent":129,"./getEventTarget":152,"./isEventSupported":159,"./isTextInputElement":160,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/keyOf":188}],40:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPluginHub":54,"./EventPropagators":57,"./ReactDOMComponentTree":76,"./ReactUpdates":125,"./SyntheticEvent":134,"./getEventTarget":157,"./isEventSupported":164,"./isTextInputElement":165,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/keyOf":193}],45:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3734,7 +4329,7 @@ ReactPerf.measureMethods(DOMChildrenOperations, 'DOMChildrenOperations', {
 });
 
 module.exports = DOMChildrenOperations;
-},{"./DOMLazyTree":41,"./Danger":45,"./ReactMultiChildUpdateTypes":107,"./ReactPerf":112,"./createMicrosoftUnsafeLocalFunction":143,"./setInnerHTML":164,"./setTextContent":165}],41:[function(require,module,exports){
+},{"./DOMLazyTree":46,"./Danger":50,"./ReactMultiChildUpdateTypes":112,"./ReactPerf":117,"./createMicrosoftUnsafeLocalFunction":148,"./setInnerHTML":169,"./setTextContent":170}],46:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -3840,7 +4435,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./createMicrosoftUnsafeLocalFunction":143,"./setTextContent":165}],42:[function(require,module,exports){
+},{"./createMicrosoftUnsafeLocalFunction":148,"./setTextContent":170}],47:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3861,7 +4456,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],43:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4077,7 +4672,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],44:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],49:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4293,7 +4888,7 @@ ReactPerf.measureMethods(DOMPropertyOperations, 'DOMPropertyOperations', {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":43,"./ReactDOMInstrumentation":79,"./ReactPerf":112,"./quoteAttributeValueForBrowser":162,"_process":28,"fbjs/lib/warning":194}],45:[function(require,module,exports){
+},{"./DOMProperty":48,"./ReactDOMInstrumentation":84,"./ReactPerf":117,"./quoteAttributeValueForBrowser":167,"_process":33,"fbjs/lib/warning":199}],50:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4440,7 +5035,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":41,"_process":28,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/createNodesFromMarkup":175,"fbjs/lib/emptyFunction":176,"fbjs/lib/getMarkupWrap":180,"fbjs/lib/invariant":184}],46:[function(require,module,exports){
+},{"./DOMLazyTree":46,"_process":33,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/createNodesFromMarkup":180,"fbjs/lib/emptyFunction":181,"fbjs/lib/getMarkupWrap":185,"fbjs/lib/invariant":189}],51:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4468,7 +5063,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":188}],47:[function(require,module,exports){
+},{"fbjs/lib/keyOf":193}],52:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4574,7 +5169,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":48,"./EventPropagators":52,"./ReactDOMComponentTree":71,"./SyntheticMouseEvent":133,"fbjs/lib/keyOf":188}],48:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPropagators":57,"./ReactDOMComponentTree":76,"./SyntheticMouseEvent":138,"fbjs/lib/keyOf":193}],53:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4672,7 +5267,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":187}],49:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":192}],54:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4910,7 +5505,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":50,"./EventPluginUtils":51,"./ReactErrorUtils":95,"./accumulateInto":140,"./forEachAccumulated":148,"_process":28,"fbjs/lib/invariant":184}],50:[function(require,module,exports){
+},{"./EventPluginRegistry":55,"./EventPluginUtils":56,"./ReactErrorUtils":100,"./accumulateInto":145,"./forEachAccumulated":153,"_process":33,"fbjs/lib/invariant":189}],55:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5154,7 +5749,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],51:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],56:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5384,7 +5979,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":48,"./ReactErrorUtils":95,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],52:[function(require,module,exports){
+},{"./EventConstants":53,"./ReactErrorUtils":100,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],57:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5524,7 +6119,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":48,"./EventPluginHub":49,"./EventPluginUtils":51,"./accumulateInto":140,"./forEachAccumulated":148,"_process":28,"fbjs/lib/warning":194}],53:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPluginHub":54,"./EventPluginUtils":56,"./accumulateInto":145,"./forEachAccumulated":153,"_process":33,"fbjs/lib/warning":199}],58:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5620,7 +6215,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":56,"./getTextContentAccessor":156,"object-assign":195}],54:[function(require,module,exports){
+},{"./PooledClass":61,"./getTextContentAccessor":161,"object-assign":200}],59:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5830,7 +6425,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":43}],55:[function(require,module,exports){
+},{"./DOMProperty":48}],60:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5966,7 +6561,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":114,"./ReactPropTypes":115,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],56:[function(require,module,exports){
+},{"./ReactPropTypeLocations":119,"./ReactPropTypes":120,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],61:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -6088,7 +6683,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],57:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],62:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -6178,7 +6773,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":60,"./ReactClass":61,"./ReactComponent":62,"./ReactDOMFactories":75,"./ReactElement":92,"./ReactElementValidator":93,"./ReactPropTypes":115,"./ReactVersion":121,"./onlyChild":161,"_process":28,"fbjs/lib/warning":194,"object-assign":195}],58:[function(require,module,exports){
+},{"./ReactChildren":65,"./ReactClass":66,"./ReactComponent":67,"./ReactDOMFactories":80,"./ReactElement":97,"./ReactElementValidator":98,"./ReactPropTypes":120,"./ReactVersion":126,"./onlyChild":166,"_process":33,"fbjs/lib/warning":199,"object-assign":200}],63:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6496,7 +7091,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":48,"./EventPluginRegistry":50,"./ReactEventEmitterMixin":96,"./ViewportMetrics":139,"./getVendorPrefixedEventName":157,"./isEventSupported":159,"object-assign":195}],59:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPluginRegistry":55,"./ReactEventEmitterMixin":101,"./ViewportMetrics":144,"./getVendorPrefixedEventName":162,"./isEventSupported":164,"object-assign":200}],64:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -6623,7 +7218,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./ReactReconciler":117,"./instantiateReactComponent":158,"./shouldUpdateReactComponent":166,"./traverseAllChildren":167,"_process":28,"fbjs/lib/warning":194}],60:[function(require,module,exports){
+},{"./ReactReconciler":122,"./instantiateReactComponent":163,"./shouldUpdateReactComponent":171,"./traverseAllChildren":172,"_process":33,"fbjs/lib/warning":199}],65:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6807,7 +7402,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":56,"./ReactElement":92,"./traverseAllChildren":167,"fbjs/lib/emptyFunction":176}],61:[function(require,module,exports){
+},{"./PooledClass":61,"./ReactElement":97,"./traverseAllChildren":172,"fbjs/lib/emptyFunction":181}],66:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7533,7 +8128,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":62,"./ReactElement":92,"./ReactNoopUpdateQueue":110,"./ReactPropTypeLocationNames":113,"./ReactPropTypeLocations":114,"_process":28,"fbjs/lib/emptyObject":177,"fbjs/lib/invariant":184,"fbjs/lib/keyMirror":187,"fbjs/lib/keyOf":188,"fbjs/lib/warning":194,"object-assign":195}],62:[function(require,module,exports){
+},{"./ReactComponent":67,"./ReactElement":97,"./ReactNoopUpdateQueue":115,"./ReactPropTypeLocationNames":118,"./ReactPropTypeLocations":119,"_process":33,"fbjs/lib/emptyObject":182,"fbjs/lib/invariant":189,"fbjs/lib/keyMirror":192,"fbjs/lib/keyOf":193,"fbjs/lib/warning":199,"object-assign":200}],67:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7657,7 +8252,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":102,"./ReactNoopUpdateQueue":110,"./canDefineProperty":142,"_process":28,"fbjs/lib/emptyObject":177,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],63:[function(require,module,exports){
+},{"./ReactInstrumentation":107,"./ReactNoopUpdateQueue":115,"./canDefineProperty":147,"_process":33,"fbjs/lib/emptyObject":182,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],68:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7702,7 +8297,7 @@ ReactPerf.measureMethods(ReactComponentBrowserEnvironment, 'ReactComponentBrowse
 });
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":40,"./ReactDOMIDOperations":77,"./ReactPerf":112}],64:[function(require,module,exports){
+},{"./DOMChildrenOperations":45,"./ReactDOMIDOperations":82,"./ReactPerf":117}],69:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -7756,7 +8351,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],65:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],70:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8545,7 +9140,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":64,"./ReactCurrentOwner":66,"./ReactElement":92,"./ReactErrorUtils":95,"./ReactInstanceMap":101,"./ReactInstrumentation":102,"./ReactNodeTypes":109,"./ReactPerf":112,"./ReactPropTypeLocationNames":113,"./ReactPropTypeLocations":114,"./ReactReconciler":117,"./ReactUpdateQueue":119,"./shouldUpdateReactComponent":166,"_process":28,"fbjs/lib/emptyObject":177,"fbjs/lib/invariant":184,"fbjs/lib/warning":194,"object-assign":195}],66:[function(require,module,exports){
+},{"./ReactComponentEnvironment":69,"./ReactCurrentOwner":71,"./ReactElement":97,"./ReactErrorUtils":100,"./ReactInstanceMap":106,"./ReactInstrumentation":107,"./ReactNodeTypes":114,"./ReactPerf":117,"./ReactPropTypeLocationNames":118,"./ReactPropTypeLocations":119,"./ReactReconciler":122,"./ReactUpdateQueue":124,"./shouldUpdateReactComponent":171,"_process":33,"fbjs/lib/emptyObject":182,"fbjs/lib/invariant":189,"fbjs/lib/warning":199,"object-assign":200}],71:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8577,7 +9172,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],67:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8684,7 +9279,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":71,"./ReactDefaultInjection":89,"./ReactMount":105,"./ReactPerf":112,"./ReactReconciler":117,"./ReactUpdates":120,"./ReactVersion":121,"./findDOMNode":146,"./getNativeComponentFromComposite":154,"./renderSubtreeIntoContainer":163,"_process":28,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/warning":194}],68:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"./ReactDefaultInjection":94,"./ReactMount":110,"./ReactPerf":117,"./ReactReconciler":122,"./ReactUpdates":125,"./ReactVersion":126,"./findDOMNode":151,"./getNativeComponentFromComposite":159,"./renderSubtreeIntoContainer":168,"_process":33,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/warning":199}],73:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8735,7 +9330,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{}],69:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9643,7 +10238,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":34,"./CSSPropertyOperations":37,"./DOMLazyTree":41,"./DOMNamespaces":42,"./DOMProperty":43,"./DOMPropertyOperations":44,"./EventConstants":48,"./EventPluginHub":49,"./EventPluginRegistry":50,"./ReactBrowserEventEmitter":58,"./ReactComponentBrowserEnvironment":63,"./ReactDOMButton":68,"./ReactDOMComponentFlags":70,"./ReactDOMComponentTree":71,"./ReactDOMInput":78,"./ReactDOMOption":80,"./ReactDOMSelect":81,"./ReactDOMTextarea":84,"./ReactMultiChild":106,"./ReactPerf":112,"./escapeTextContentForBrowser":145,"./isEventSupported":159,"./validateDOMNesting":168,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/keyOf":188,"fbjs/lib/shallowEqual":193,"fbjs/lib/warning":194,"object-assign":195}],70:[function(require,module,exports){
+},{"./AutoFocusUtils":39,"./CSSPropertyOperations":42,"./DOMLazyTree":46,"./DOMNamespaces":47,"./DOMProperty":48,"./DOMPropertyOperations":49,"./EventConstants":53,"./EventPluginHub":54,"./EventPluginRegistry":55,"./ReactBrowserEventEmitter":63,"./ReactComponentBrowserEnvironment":68,"./ReactDOMButton":73,"./ReactDOMComponentFlags":75,"./ReactDOMComponentTree":76,"./ReactDOMInput":83,"./ReactDOMOption":85,"./ReactDOMSelect":86,"./ReactDOMTextarea":89,"./ReactMultiChild":111,"./ReactPerf":117,"./escapeTextContentForBrowser":150,"./isEventSupported":164,"./validateDOMNesting":173,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/keyOf":193,"fbjs/lib/shallowEqual":198,"fbjs/lib/warning":199,"object-assign":200}],75:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -9662,7 +10257,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],71:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9851,7 +10446,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":43,"./ReactDOMComponentFlags":70,"_process":28,"fbjs/lib/invariant":184}],72:[function(require,module,exports){
+},{"./DOMProperty":48,"./ReactDOMComponentFlags":75,"_process":33,"fbjs/lib/invariant":189}],77:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9886,7 +10481,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":168,"_process":28}],73:[function(require,module,exports){
+},{"./validateDOMNesting":173,"_process":33}],78:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9950,7 +10545,7 @@ ReactDOMDebugTool.addDevtool(ReactDOMUnknownPropertyDevtool);
 
 module.exports = ReactDOMDebugTool;
 }).call(this,require('_process'))
-},{"./ReactDOMUnknownPropertyDevtool":86,"_process":28,"fbjs/lib/warning":194}],74:[function(require,module,exports){
+},{"./ReactDOMUnknownPropertyDevtool":91,"_process":33,"fbjs/lib/warning":199}],79:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -10011,7 +10606,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":41,"./ReactDOMComponentTree":71,"object-assign":195}],75:[function(require,module,exports){
+},{"./DOMLazyTree":46,"./ReactDOMComponentTree":76,"object-assign":200}],80:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10190,7 +10785,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":92,"./ReactElementValidator":93,"_process":28,"fbjs/lib/mapObject":189}],76:[function(require,module,exports){
+},{"./ReactElement":97,"./ReactElementValidator":98,"_process":33,"fbjs/lib/mapObject":194}],81:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10209,7 +10804,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],77:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10249,7 +10844,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 });
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":40,"./ReactDOMComponentTree":71,"./ReactPerf":112}],78:[function(require,module,exports){
+},{"./DOMChildrenOperations":45,"./ReactDOMComponentTree":76,"./ReactPerf":117}],83:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10455,7 +11050,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":44,"./LinkedValueUtils":55,"./ReactDOMComponentTree":71,"./ReactUpdates":120,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194,"object-assign":195}],79:[function(require,module,exports){
+},{"./DOMPropertyOperations":49,"./LinkedValueUtils":60,"./ReactDOMComponentTree":76,"./ReactUpdates":125,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199,"object-assign":200}],84:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10472,7 +11067,7 @@ module.exports = ReactDOMInput;
 var ReactDOMDebugTool = require('./ReactDOMDebugTool');
 
 module.exports = { debugTool: ReactDOMDebugTool };
-},{"./ReactDOMDebugTool":73}],80:[function(require,module,exports){
+},{"./ReactDOMDebugTool":78}],85:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10576,7 +11171,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactChildren":60,"./ReactDOMComponentTree":71,"./ReactDOMSelect":81,"_process":28,"fbjs/lib/warning":194,"object-assign":195}],81:[function(require,module,exports){
+},{"./ReactChildren":65,"./ReactDOMComponentTree":76,"./ReactDOMSelect":86,"_process":33,"fbjs/lib/warning":199,"object-assign":200}],86:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10791,7 +11386,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":55,"./ReactDOMComponentTree":71,"./ReactUpdates":120,"_process":28,"fbjs/lib/warning":194,"object-assign":195}],82:[function(require,module,exports){
+},{"./LinkedValueUtils":60,"./ReactDOMComponentTree":76,"./ReactUpdates":125,"_process":33,"fbjs/lib/warning":199,"object-assign":200}],87:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11004,7 +11599,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":155,"./getTextContentAccessor":156,"fbjs/lib/ExecutionEnvironment":170}],83:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":160,"./getTextContentAccessor":161,"fbjs/lib/ExecutionEnvironment":175}],88:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11176,7 +11771,7 @@ ReactPerf.measureMethods(ReactDOMTextComponent.prototype, 'ReactDOMTextComponent
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":40,"./DOMLazyTree":41,"./ReactDOMComponentTree":71,"./ReactPerf":112,"./escapeTextContentForBrowser":145,"./validateDOMNesting":168,"_process":28,"fbjs/lib/invariant":184,"object-assign":195}],84:[function(require,module,exports){
+},{"./DOMChildrenOperations":45,"./DOMLazyTree":46,"./ReactDOMComponentTree":76,"./ReactPerf":117,"./escapeTextContentForBrowser":150,"./validateDOMNesting":173,"_process":33,"fbjs/lib/invariant":189,"object-assign":200}],89:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11320,7 +11915,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":44,"./LinkedValueUtils":55,"./ReactDOMComponentTree":71,"./ReactUpdates":120,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194,"object-assign":195}],85:[function(require,module,exports){
+},{"./DOMPropertyOperations":49,"./LinkedValueUtils":60,"./ReactDOMComponentTree":76,"./ReactUpdates":125,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199,"object-assign":200}],90:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -11457,7 +12052,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],86:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],91:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11524,7 +12119,7 @@ var ReactDOMUnknownPropertyDevtool = {
 
 module.exports = ReactDOMUnknownPropertyDevtool;
 }).call(this,require('_process'))
-},{"./DOMProperty":43,"./EventPluginRegistry":50,"_process":28,"fbjs/lib/warning":194}],87:[function(require,module,exports){
+},{"./DOMProperty":48,"./EventPluginRegistry":55,"_process":33,"fbjs/lib/warning":199}],92:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -11599,7 +12194,7 @@ ReactDebugTool.addDevtool(ReactInvalidSetStateWarningDevTool);
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactInvalidSetStateWarningDevTool":103,"_process":28,"fbjs/lib/warning":194}],88:[function(require,module,exports){
+},{"./ReactInvalidSetStateWarningDevTool":108,"_process":33,"fbjs/lib/warning":199}],93:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11668,7 +12263,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":120,"./Transaction":138,"fbjs/lib/emptyFunction":176,"object-assign":195}],89:[function(require,module,exports){
+},{"./ReactUpdates":125,"./Transaction":143,"fbjs/lib/emptyFunction":181,"object-assign":200}],94:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11764,7 +12359,7 @@ module.exports = {
   inject: inject
 };
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":35,"./ChangeEventPlugin":39,"./DefaultEventPluginOrder":46,"./EnterLeaveEventPlugin":47,"./HTMLDOMPropertyConfig":54,"./ReactComponentBrowserEnvironment":63,"./ReactDOMComponent":69,"./ReactDOMComponentTree":71,"./ReactDOMEmptyComponent":74,"./ReactDOMTextComponent":83,"./ReactDOMTreeTraversal":85,"./ReactDefaultBatchingStrategy":88,"./ReactDefaultPerf":90,"./ReactEventListener":97,"./ReactInjection":99,"./ReactReconcileTransaction":116,"./SVGDOMPropertyConfig":122,"./SelectEventPlugin":123,"./SimpleEventPlugin":124,"_process":28,"fbjs/lib/ExecutionEnvironment":170}],90:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":40,"./ChangeEventPlugin":44,"./DefaultEventPluginOrder":51,"./EnterLeaveEventPlugin":52,"./HTMLDOMPropertyConfig":59,"./ReactComponentBrowserEnvironment":68,"./ReactDOMComponent":74,"./ReactDOMComponentTree":76,"./ReactDOMEmptyComponent":79,"./ReactDOMTextComponent":88,"./ReactDOMTreeTraversal":90,"./ReactDefaultBatchingStrategy":93,"./ReactDefaultPerf":95,"./ReactEventListener":102,"./ReactInjection":104,"./ReactReconcileTransaction":121,"./SVGDOMPropertyConfig":127,"./SelectEventPlugin":128,"./SimpleEventPlugin":129,"_process":33,"fbjs/lib/ExecutionEnvironment":175}],95:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12083,7 +12678,7 @@ var ReactDefaultPerf = {
 
 module.exports = ReactDefaultPerf;
 }).call(this,require('_process'))
-},{"./DOMProperty":43,"./ReactDOMComponentTree":71,"./ReactDefaultPerfAnalysis":91,"./ReactMount":105,"./ReactPerf":112,"_process":28,"fbjs/lib/performanceNow":192,"fbjs/lib/warning":194}],91:[function(require,module,exports){
+},{"./DOMProperty":48,"./ReactDOMComponentTree":76,"./ReactDefaultPerfAnalysis":96,"./ReactMount":110,"./ReactPerf":117,"_process":33,"fbjs/lib/performanceNow":197,"fbjs/lib/warning":199}],96:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12293,7 +12888,7 @@ var ReactDefaultPerfAnalysis = {
 };
 
 module.exports = ReactDefaultPerfAnalysis;
-},{"object-assign":195}],92:[function(require,module,exports){
+},{"object-assign":200}],97:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -12583,7 +13178,7 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":66,"./canDefineProperty":142,"_process":28,"fbjs/lib/warning":194,"object-assign":195}],93:[function(require,module,exports){
+},{"./ReactCurrentOwner":71,"./canDefineProperty":147,"_process":33,"fbjs/lib/warning":199,"object-assign":200}],98:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -12867,7 +13462,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":66,"./ReactElement":92,"./ReactPropTypeLocationNames":113,"./ReactPropTypeLocations":114,"./canDefineProperty":142,"./getIteratorFn":153,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],94:[function(require,module,exports){
+},{"./ReactCurrentOwner":71,"./ReactElement":97,"./ReactPropTypeLocationNames":118,"./ReactPropTypeLocations":119,"./canDefineProperty":147,"./getIteratorFn":158,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],99:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -12898,7 +13493,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],95:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12977,7 +13572,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":28}],96:[function(require,module,exports){
+},{"_process":33}],101:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13011,7 +13606,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":49}],97:[function(require,module,exports){
+},{"./EventPluginHub":54}],102:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13169,7 +13764,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":56,"./ReactDOMComponentTree":71,"./ReactUpdates":120,"./getEventTarget":152,"fbjs/lib/EventListener":169,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/getUnboundedScrollPosition":181,"object-assign":195}],98:[function(require,module,exports){
+},{"./PooledClass":61,"./ReactDOMComponentTree":76,"./ReactUpdates":125,"./getEventTarget":157,"fbjs/lib/EventListener":174,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/getUnboundedScrollPosition":186,"object-assign":200}],103:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13191,7 +13786,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],99:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13230,7 +13825,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":43,"./EventPluginHub":49,"./EventPluginUtils":51,"./ReactBrowserEventEmitter":58,"./ReactClass":61,"./ReactComponentEnvironment":64,"./ReactEmptyComponent":94,"./ReactNativeComponent":108,"./ReactPerf":112,"./ReactUpdates":120}],100:[function(require,module,exports){
+},{"./DOMProperty":48,"./EventPluginHub":54,"./EventPluginUtils":56,"./ReactBrowserEventEmitter":63,"./ReactClass":66,"./ReactComponentEnvironment":69,"./ReactEmptyComponent":99,"./ReactNativeComponent":113,"./ReactPerf":117,"./ReactUpdates":125}],105:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13355,7 +13950,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":82,"fbjs/lib/containsNode":173,"fbjs/lib/focusNode":178,"fbjs/lib/getActiveElement":179}],101:[function(require,module,exports){
+},{"./ReactDOMSelection":87,"fbjs/lib/containsNode":178,"fbjs/lib/focusNode":183,"fbjs/lib/getActiveElement":184}],106:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13404,7 +13999,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],102:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -13421,7 +14016,7 @@ module.exports = ReactInstanceMap;
 var ReactDebugTool = require('./ReactDebugTool');
 
 module.exports = { debugTool: ReactDebugTool };
-},{"./ReactDebugTool":87}],103:[function(require,module,exports){
+},{"./ReactDebugTool":92}],108:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -13460,7 +14055,7 @@ var ReactInvalidSetStateWarningDevTool = {
 
 module.exports = ReactInvalidSetStateWarningDevTool;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/warning":194}],104:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/warning":199}],109:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13511,7 +14106,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":141}],105:[function(require,module,exports){
+},{"./adler32":146}],110:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13992,7 +14587,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":41,"./DOMProperty":43,"./ReactBrowserEventEmitter":58,"./ReactCurrentOwner":66,"./ReactDOMComponentTree":71,"./ReactDOMContainerInfo":72,"./ReactDOMFeatureFlags":76,"./ReactElement":92,"./ReactFeatureFlags":98,"./ReactInstrumentation":102,"./ReactMarkupChecksum":104,"./ReactPerf":112,"./ReactReconciler":117,"./ReactUpdateQueue":119,"./ReactUpdates":120,"./instantiateReactComponent":158,"./setInnerHTML":164,"./shouldUpdateReactComponent":166,"_process":28,"fbjs/lib/emptyObject":177,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],106:[function(require,module,exports){
+},{"./DOMLazyTree":46,"./DOMProperty":48,"./ReactBrowserEventEmitter":63,"./ReactCurrentOwner":71,"./ReactDOMComponentTree":76,"./ReactDOMContainerInfo":77,"./ReactDOMFeatureFlags":81,"./ReactElement":97,"./ReactFeatureFlags":103,"./ReactInstrumentation":107,"./ReactMarkupChecksum":109,"./ReactPerf":117,"./ReactReconciler":122,"./ReactUpdateQueue":124,"./ReactUpdates":125,"./instantiateReactComponent":163,"./setInnerHTML":169,"./shouldUpdateReactComponent":171,"_process":33,"fbjs/lib/emptyObject":182,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],111:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14397,7 +14992,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":59,"./ReactComponentEnvironment":64,"./ReactCurrentOwner":66,"./ReactMultiChildUpdateTypes":107,"./ReactReconciler":117,"./flattenChildren":147,"_process":28,"fbjs/lib/invariant":184}],107:[function(require,module,exports){
+},{"./ReactChildReconciler":64,"./ReactComponentEnvironment":69,"./ReactCurrentOwner":71,"./ReactMultiChildUpdateTypes":112,"./ReactReconciler":122,"./flattenChildren":152,"_process":33,"fbjs/lib/invariant":189}],112:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14430,7 +15025,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":187}],108:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":192}],113:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -14528,7 +15123,7 @@ var ReactNativeComponent = {
 
 module.exports = ReactNativeComponent;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184,"object-assign":195}],109:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189,"object-assign":200}],114:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14568,7 +15163,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":92,"_process":28,"fbjs/lib/invariant":184}],110:[function(require,module,exports){
+},{"./ReactElement":97,"_process":33,"fbjs/lib/invariant":189}],115:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -14666,7 +15261,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/warning":194}],111:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/warning":199}],116:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14761,7 +15356,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],112:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],117:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14860,7 +15455,7 @@ function _noMeasure(objName, fnName, func) {
 
 module.exports = ReactPerf;
 }).call(this,require('_process'))
-},{"_process":28}],113:[function(require,module,exports){
+},{"_process":33}],118:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14887,7 +15482,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":28}],114:[function(require,module,exports){
+},{"_process":33}],119:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14910,7 +15505,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":187}],115:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":192}],120:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15291,7 +15886,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":92,"./ReactPropTypeLocationNames":113,"./getIteratorFn":153,"fbjs/lib/emptyFunction":176}],116:[function(require,module,exports){
+},{"./ReactElement":97,"./ReactPropTypeLocationNames":118,"./getIteratorFn":158,"fbjs/lib/emptyFunction":181}],121:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15454,7 +16049,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":38,"./PooledClass":56,"./ReactBrowserEventEmitter":58,"./ReactInputSelection":100,"./Transaction":138,"object-assign":195}],117:[function(require,module,exports){
+},{"./CallbackQueue":43,"./PooledClass":61,"./ReactBrowserEventEmitter":63,"./ReactInputSelection":105,"./Transaction":143,"object-assign":200}],122:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15587,7 +16182,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":102,"./ReactRef":118,"_process":28}],118:[function(require,module,exports){
+},{"./ReactInstrumentation":107,"./ReactRef":123,"_process":33}],123:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15666,7 +16261,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":111}],119:[function(require,module,exports){
+},{"./ReactOwner":116}],124:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -15884,7 +16479,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":66,"./ReactInstanceMap":101,"./ReactUpdates":120,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],120:[function(require,module,exports){
+},{"./ReactCurrentOwner":71,"./ReactInstanceMap":106,"./ReactUpdates":125,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],125:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16128,7 +16723,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":38,"./PooledClass":56,"./ReactFeatureFlags":98,"./ReactPerf":112,"./ReactReconciler":117,"./Transaction":138,"_process":28,"fbjs/lib/invariant":184,"object-assign":195}],121:[function(require,module,exports){
+},{"./CallbackQueue":43,"./PooledClass":61,"./ReactFeatureFlags":103,"./ReactPerf":117,"./ReactReconciler":122,"./Transaction":143,"_process":33,"fbjs/lib/invariant":189,"object-assign":200}],126:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16143,7 +16738,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.0.1';
-},{}],122:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16444,7 +17039,7 @@ Object.keys(ATTRS).map(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],123:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16641,7 +17236,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":48,"./EventPropagators":52,"./ReactDOMComponentTree":71,"./ReactInputSelection":100,"./SyntheticEvent":129,"./isTextInputElement":160,"fbjs/lib/ExecutionEnvironment":170,"fbjs/lib/getActiveElement":179,"fbjs/lib/keyOf":188,"fbjs/lib/shallowEqual":193}],124:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPropagators":57,"./ReactDOMComponentTree":76,"./ReactInputSelection":105,"./SyntheticEvent":134,"./isTextInputElement":165,"fbjs/lib/ExecutionEnvironment":175,"fbjs/lib/getActiveElement":184,"fbjs/lib/keyOf":193,"fbjs/lib/shallowEqual":198}],129:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17271,7 +17866,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":48,"./EventPropagators":52,"./ReactDOMComponentTree":71,"./SyntheticAnimationEvent":125,"./SyntheticClipboardEvent":126,"./SyntheticDragEvent":128,"./SyntheticEvent":129,"./SyntheticFocusEvent":130,"./SyntheticKeyboardEvent":132,"./SyntheticMouseEvent":133,"./SyntheticTouchEvent":134,"./SyntheticTransitionEvent":135,"./SyntheticUIEvent":136,"./SyntheticWheelEvent":137,"./getEventCharCode":149,"_process":28,"fbjs/lib/EventListener":169,"fbjs/lib/emptyFunction":176,"fbjs/lib/invariant":184,"fbjs/lib/keyOf":188}],125:[function(require,module,exports){
+},{"./EventConstants":53,"./EventPropagators":57,"./ReactDOMComponentTree":76,"./SyntheticAnimationEvent":130,"./SyntheticClipboardEvent":131,"./SyntheticDragEvent":133,"./SyntheticEvent":134,"./SyntheticFocusEvent":135,"./SyntheticKeyboardEvent":137,"./SyntheticMouseEvent":138,"./SyntheticTouchEvent":139,"./SyntheticTransitionEvent":140,"./SyntheticUIEvent":141,"./SyntheticWheelEvent":142,"./getEventCharCode":154,"_process":33,"fbjs/lib/EventListener":174,"fbjs/lib/emptyFunction":181,"fbjs/lib/invariant":189,"fbjs/lib/keyOf":193}],130:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17311,7 +17906,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":129}],126:[function(require,module,exports){
+},{"./SyntheticEvent":134}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17350,7 +17945,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":129}],127:[function(require,module,exports){
+},{"./SyntheticEvent":134}],132:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17387,7 +17982,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":129}],128:[function(require,module,exports){
+},{"./SyntheticEvent":134}],133:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17424,7 +18019,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":133}],129:[function(require,module,exports){
+},{"./SyntheticMouseEvent":138}],134:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17688,7 +18283,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":56,"_process":28,"fbjs/lib/emptyFunction":176,"fbjs/lib/warning":194,"object-assign":195}],130:[function(require,module,exports){
+},{"./PooledClass":61,"_process":33,"fbjs/lib/emptyFunction":181,"fbjs/lib/warning":199,"object-assign":200}],135:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17725,7 +18320,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":136}],131:[function(require,module,exports){
+},{"./SyntheticUIEvent":141}],136:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17763,7 +18358,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":129}],132:[function(require,module,exports){
+},{"./SyntheticEvent":134}],137:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17848,7 +18443,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":136,"./getEventCharCode":149,"./getEventKey":150,"./getEventModifierState":151}],133:[function(require,module,exports){
+},{"./SyntheticUIEvent":141,"./getEventCharCode":154,"./getEventKey":155,"./getEventModifierState":156}],138:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17921,7 +18516,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":136,"./ViewportMetrics":139,"./getEventModifierState":151}],134:[function(require,module,exports){
+},{"./SyntheticUIEvent":141,"./ViewportMetrics":144,"./getEventModifierState":156}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17967,7 +18562,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":136,"./getEventModifierState":151}],135:[function(require,module,exports){
+},{"./SyntheticUIEvent":141,"./getEventModifierState":156}],140:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18007,7 +18602,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":129}],136:[function(require,module,exports){
+},{"./SyntheticEvent":134}],141:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18067,7 +18662,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":129,"./getEventTarget":152}],137:[function(require,module,exports){
+},{"./SyntheticEvent":134,"./getEventTarget":157}],142:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18122,7 +18717,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":133}],138:[function(require,module,exports){
+},{"./SyntheticMouseEvent":138}],143:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18356,7 +18951,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],139:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],144:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18384,7 +18979,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],140:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -18446,7 +19041,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":184}],141:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":189}],146:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18490,7 +19085,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],142:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18517,7 +19112,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":28}],143:[function(require,module,exports){
+},{"_process":33}],148:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18550,7 +19145,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],144:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18630,7 +19225,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":36,"_process":28,"fbjs/lib/warning":194}],145:[function(require,module,exports){
+},{"./CSSProperty":41,"_process":33,"fbjs/lib/warning":199}],150:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18669,7 +19264,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],146:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18728,7 +19323,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":66,"./ReactDOMComponentTree":71,"./ReactInstanceMap":101,"./getNativeComponentFromComposite":154,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],147:[function(require,module,exports){
+},{"./ReactCurrentOwner":71,"./ReactDOMComponentTree":76,"./ReactInstanceMap":106,"./getNativeComponentFromComposite":159,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],152:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18779,7 +19374,7 @@ function flattenChildren(children) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./traverseAllChildren":167,"_process":28,"fbjs/lib/warning":194}],148:[function(require,module,exports){
+},{"./traverseAllChildren":172,"_process":33,"fbjs/lib/warning":199}],153:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18810,7 +19405,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-},{}],149:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18861,7 +19456,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],150:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18964,7 +19559,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":149}],151:[function(require,module,exports){
+},{"./getEventCharCode":154}],156:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19008,7 +19603,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],152:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19044,7 +19639,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],153:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19085,7 +19680,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],154:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19116,7 +19711,7 @@ function getNativeComponentFromComposite(inst) {
 }
 
 module.exports = getNativeComponentFromComposite;
-},{"./ReactNodeTypes":109}],155:[function(require,module,exports){
+},{"./ReactNodeTypes":114}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19191,7 +19786,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],156:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19225,7 +19820,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":170}],157:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":175}],162:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19327,7 +19922,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":170}],158:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":175}],163:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19441,7 +20036,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":65,"./ReactEmptyComponent":94,"./ReactNativeComponent":108,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194,"object-assign":195}],159:[function(require,module,exports){
+},{"./ReactCompositeComponent":70,"./ReactEmptyComponent":99,"./ReactNativeComponent":113,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199,"object-assign":200}],164:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19502,7 +20097,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":170}],160:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":175}],165:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19544,7 +20139,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],161:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19580,7 +20175,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":92,"_process":28,"fbjs/lib/invariant":184}],162:[function(require,module,exports){
+},{"./ReactElement":97,"_process":33,"fbjs/lib/invariant":189}],167:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19607,7 +20202,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":145}],163:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":150}],168:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19624,7 +20219,7 @@ module.exports = quoteAttributeValueForBrowser;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":105}],164:[function(require,module,exports){
+},{"./ReactMount":110}],169:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19707,7 +20302,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./createMicrosoftUnsafeLocalFunction":143,"fbjs/lib/ExecutionEnvironment":170}],165:[function(require,module,exports){
+},{"./createMicrosoftUnsafeLocalFunction":148,"fbjs/lib/ExecutionEnvironment":175}],170:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19748,7 +20343,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":145,"./setInnerHTML":164,"fbjs/lib/ExecutionEnvironment":170}],166:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":150,"./setInnerHTML":169,"fbjs/lib/ExecutionEnvironment":175}],171:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19791,7 +20386,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],167:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19983,7 +20578,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":66,"./ReactElement":92,"./getIteratorFn":153,"_process":28,"fbjs/lib/invariant":184,"fbjs/lib/warning":194}],168:[function(require,module,exports){
+},{"./ReactCurrentOwner":71,"./ReactElement":97,"./getIteratorFn":158,"_process":33,"fbjs/lib/invariant":189,"fbjs/lib/warning":199}],173:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -20354,7 +20949,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/emptyFunction":176,"fbjs/lib/warning":194,"object-assign":195}],169:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/emptyFunction":181,"fbjs/lib/warning":199,"object-assign":200}],174:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20440,7 +21035,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":176,"_process":28}],170:[function(require,module,exports){
+},{"./emptyFunction":181,"_process":33}],175:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20476,7 +21071,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],171:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 "use strict";
 
 /**
@@ -20508,7 +21103,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],172:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20548,7 +21143,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":171}],173:[function(require,module,exports){
+},{"./camelize":176}],178:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20592,7 +21187,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":186}],174:[function(require,module,exports){
+},{"./isTextNode":191}],179:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20721,7 +21316,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":184,"_process":28}],175:[function(require,module,exports){
+},{"./invariant":189,"_process":33}],180:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20807,7 +21402,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":170,"./createArrayFromMixed":174,"./getMarkupWrap":180,"./invariant":184,"_process":28}],176:[function(require,module,exports){
+},{"./ExecutionEnvironment":175,"./createArrayFromMixed":179,"./getMarkupWrap":185,"./invariant":189,"_process":33}],181:[function(require,module,exports){
 "use strict";
 
 /**
@@ -20845,7 +21440,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],177:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -20867,7 +21462,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":28}],178:[function(require,module,exports){
+},{"_process":33}],183:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20894,7 +21489,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],179:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20929,7 +21524,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],180:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -21026,7 +21621,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":170,"./invariant":184,"_process":28}],181:[function(require,module,exports){
+},{"./ExecutionEnvironment":175,"./invariant":189,"_process":33}],186:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21065,7 +21660,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],182:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 'use strict';
 
 /**
@@ -21098,7 +21693,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],183:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21137,7 +21732,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":182}],184:[function(require,module,exports){
+},{"./hyphenate":187}],189:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -21189,7 +21784,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":28}],185:[function(require,module,exports){
+},{"_process":33}],190:[function(require,module,exports){
 'use strict';
 
 /**
@@ -21212,7 +21807,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],186:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 'use strict';
 
 /**
@@ -21237,7 +21832,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":185}],187:[function(require,module,exports){
+},{"./isNode":190}],192:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -21287,7 +21882,7 @@ var keyMirror = function (obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":184,"_process":28}],188:[function(require,module,exports){
+},{"./invariant":189,"_process":33}],193:[function(require,module,exports){
 "use strict";
 
 /**
@@ -21322,7 +21917,7 @@ var keyOf = function (oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],189:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21373,7 +21968,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],190:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21405,7 +22000,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],191:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21428,7 +22023,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":170}],192:[function(require,module,exports){
+},{"./ExecutionEnvironment":175}],197:[function(require,module,exports){
 'use strict';
 
 /**
@@ -21462,7 +22057,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":191}],193:[function(require,module,exports){
+},{"./performance":196}],198:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21529,7 +22124,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],194:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -21588,7 +22183,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":176,"_process":28}],195:[function(require,module,exports){
+},{"./emptyFunction":181,"_process":33}],200:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -21629,9 +22224,9 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],196:[function(require,module,exports){
+},{}],201:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":57}]},{},[4]);
+},{"./lib/React":62}]},{},[6]);

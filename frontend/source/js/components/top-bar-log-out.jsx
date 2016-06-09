@@ -2,7 +2,7 @@ var React = require('react');
 var TopBarActionCreators = require('../actions/TopBarActionCreators.js');
 
 
-var TopBar = React.createClass({
+var TopBarLogOut = React.createClass({
 
 		handleOurMissionClick: function () {
 				TopBarActionCreators.changePageToHomepage();
@@ -20,8 +20,8 @@ var TopBar = React.createClass({
 				TopBarActionCreators.changePageToContact();
 		},
 
-		handleLogInClick: function () {
-				TopBarActionCreators.changePageToLogIn();
+		handleLogOutClick: function () {
+				TopBarActionCreators.changePageToHomepage();
 		},
 	
 		render: function() {
@@ -34,7 +34,7 @@ var TopBar = React.createClass({
 					         <span className="icon-bar"></span> 
 					         <span className="icon-bar"></span>  
 					        </button>          
-					        <a className="navbar-brand" href="#" class="scroll-link " data-id="#">LONDON SOFTWARE JUNIORS</a>
+					        <a className="navbar-brand scroll-link" href="#" data-id="#">LONDON SOFTWARE JUNIORS</a>
 					      </div>      
 
 					      <div className="collapse navbar-collapse navbar-right" id="navbar-content">
@@ -47,8 +47,10 @@ var TopBar = React.createClass({
 										Our Partners</a></li>
 										<li ><a data-toggle="collapse" data-target=".navbar-collapse" data-id="about-me" href="#about-me" className="scroll-link" onClick={this.handleContactUsClick} ><i className="fa fa-envelope" aria-hidden="true"></i>
 										Contact Us</a></li>
-					          <li><span data-toggle="collapse" data-target=".navbar-collapse" data-id="contact" href="#contact" className="scroll-link" onClick={this.handleLogInClick} ><button type="button" className="btn btn-default navbar-btn"><i className="fa fa-list-alt" aria-hidden="true"></i>
-										Log In</button></span></li>
+										<li ><a data-toggle="collapse" data-target=".navbar-collapse" data-id="about-me" href="#about-me" className="scroll-link" onClick={this.handleContactUsClick} ><i className="fa fa-user" aria-hidden="true"></i>
+										My Account</a></li>
+					          <li><span data-toggle="collapse" data-target=".navbar-collapse" data-id="contact" href="#contact" className="scroll-link" onClick={this.handleLogOutClick} ><button type="button" className="btn btn-default navbar-btn"><i className="fa fa-list-alt" aria-hidden="true"></i>
+										Log Out</button></span></li>
 					        </ul>          
 					      </div>
 					    </div>
@@ -58,4 +60,4 @@ var TopBar = React.createClass({
 		}
 	});		
 
-module.exports = TopBar;
+module.exports = TopBarLogOut;
