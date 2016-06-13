@@ -2,7 +2,7 @@ var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationEmployerActionCreators = require('../actions/RegistrationEmployerActionCreators.js');
 var TopBar = require('./top-bar.jsx');
-
+var uuid = require('node-uuid');
 
 var RegistrationEmailPasswordEmployer = React.createClass({
 
@@ -17,6 +17,11 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 			var confirmEmailResult = emailRegex.test(confirmEmail);
 			var passwordResult = passwordRegex.test(password);
 			var confirmPasswordResult = passwordRegex.test(confirmPassword);
+			var employer = {
+				id: uuid.v4(),
+				email: email,
+				password: password
+			};
 
 			if (!emailResult || email != confirmEmail) {
 				console.log('Please entry valid email addresses and check if they match.');
@@ -26,11 +31,11 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 				console.log('Please entry valid passwords and check if they match.');
 			} else if (!confirmPassword || confirmPassword != password) {
 				console.log('Please entry valid passwords and check if they match.');
-			} else {
+			} else {	
+				RegistrationEmployerActionCreators.registerEmployer(employer);
 				console.log('Well done!');
 			}
 
-			RegistrationEmployerActionCreators.changePageToYouHaveRegisteredMessageWhenDone();
 		},
 
 		handleCancelEmployerClick: function () {

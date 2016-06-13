@@ -26,6 +26,7 @@ function registerEmployer(employer) {
 			token: data.token
 		};
 		Dispatcher.dispatch(action);
+		changePageToYouHaveRegisteredMessageWhenDone();
 
 	});
 }
