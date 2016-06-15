@@ -1,7 +1,7 @@
 # tiy-final-projects
 
 ##The idea
-The idea is to create (design and code) a web site where London based Junior Developers can advertise and share their skills so London companies can hire them directly.
+The idea is to create (design and code) a website where London based Junior Developers can advertise and share their skills so potential employers London can hire them directly.
 
 ##User stories
 1. As a Developer I want to share my skills so an employer can see my profile and I can find a job in London.

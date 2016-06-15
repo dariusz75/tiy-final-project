@@ -32,7 +32,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 			} else if (!confirmPassword || confirmPassword != password) {
 				console.log('Please entry valid passwords and check if they match.');
 			} else {
-				RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloperWhenNext();
+				RegistrationDeveloperActionCreators.registerDeveloper(developer);
 				console.log('Well done!');
 			}
 
