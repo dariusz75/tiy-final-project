@@ -22,7 +22,7 @@ var listOfSkills = {
 	},
 	{
 		value: 'javascript',
-		title: 'Javascript'
+		title: 'JavaScript'
 	},
 	{
 		value: 'jquery',

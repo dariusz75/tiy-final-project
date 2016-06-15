@@ -37,12 +37,31 @@ var skillsOptions = {
 	},
 	{
 		value: 'nodejs',
-		title: 'node.JS'
+		title: 'NodeJS'
 	},
 	]
-}
+};
 
 var RegistrationSkillsDeveloper = React.createClass({
+
+	getInitialState: function () {
+		return {
+			html: false,
+			css: false,
+			less: false,
+			sass: false,
+			javascript: false,
+			jquery: false,
+			reactjs: false,
+			nodejs: false
+		};
+	},
+
+	handleCheckboxChange: function (skillName) {
+		var updatedState = {};
+		updatedState[skillName] = ! this.state[skillName];
+		this.setState(updatedState);
+	},
 
 		handlePersonalDetailsDeveloperClick: function () {
 			RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
@@ -76,7 +95,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 			  						</div>
 									</div>
 									<div className="row">
-										<Checkboxes skillsData={skillsOptions.skillsData} />
+										<Checkboxes handleCheckboxChange={this.handleCheckboxChange} skillsData={skillsOptions.skillsData} skillsChecked={this.state} />
 										<div className="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 											<label className="margin-top" for="basic-url">Your LinkedIn URL</label>
 											<div className="input-group">

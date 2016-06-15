@@ -2,7 +2,7 @@ var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 var TopBar = require('./top-bar.jsx');
-
+var uuid = require('node-uuid');
 
 var RegistrationEmailPasswordDeveloper = React.createClass({
 	
@@ -17,6 +17,11 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 			var confirmEmailResult = emailRegex.test(confirmEmail);
 			var passwordResult = passwordRegex.test(password);
 			var confirmPasswordResult = passwordRegex.test(confirmPassword);
+			var developer = {
+				id: uuid.v4(),
+				email: email,
+				password: password
+			};
 
 			if (!emailResult || email != confirmEmail) {
 				console.log('Please entry valid email addresses and check if they match.');

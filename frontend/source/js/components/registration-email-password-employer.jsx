@@ -49,21 +49,21 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 								<div className="row">
 									<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6">
 		  							<label for="usr">Enter email address:</label>
-		  							<input type="email" className="form-control" ref="email"></input>
+		  							<input type="email" className="form-control" ref="email" required></input>
 									</div>
 									<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6">
 		  							<label for="usr">Confirm email address:</label>
-		  							<input type="email" className="form-control" ref="confirmEmail"></input>
+		  							<input type="email" className="form-control" ref="confirmEmail" required></input>
 									</div>
 								</div>
 								<div className="row">
 									<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6">
 		  							<label for="usr">Enter password:</label>
-		  							<input type="password" className="form-control" ref="password"></input>
+		  							<input type="password" className="form-control" ref="password" required></input>
 									</div>
 									<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xlg-6">
 		  							<label for="usr">Confirm password:</label>
-		  							<input type="password" className="form-control" ref="confirmPassword"></input>
+		  							<input type="password" className="form-control" ref="confirmPassword" required></input>
 									</div>
 								</div>	
 									<Button addClass="blue-dark fullwidth no-border button-text-style hvr-pulse-grow" text="DONE" onClick={this.handleDoneEmployerClick} />

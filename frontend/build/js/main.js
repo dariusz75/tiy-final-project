@@ -101,6 +101,21 @@ function changePageToYouHaveLoggedIn() {
 	Dispatcher.dispatch(action);
 }
 
+function registerDeveloper(developer) {
+	ApiServices.registerDeveloper(developer, function callback(error, data) {
+		if (error) {
+			console.log(error);
+			return;
+		}
+		var action = {
+			type: 'set_authentication_token',
+			token: data.token
+		};
+		Dispatcher.dispatch(action);
+		changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
+	});
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
@@ -109,7 +124,8 @@ module.exports = {
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
 	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents,
-	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn
+	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn,
+	registerDeveloper: registerDeveloper
 };
 
 },{"../dispatcher/Dispatcher.js":28}],4:[function(require,module,exports){
@@ -457,6 +473,11 @@ var listOfSkills = require('../stores/SkillsStore.js');
 var SingleCheckBox = React.createClass({
 	displayName: 'SingleCheckBox',
 
+
+	handleChange: function (changeEvent) {
+		this.props.onChange(changeEvent.target.value);
+	},
+
 	render: function () {
 		return React.createElement(
 			'div',
@@ -464,7 +485,7 @@ var SingleCheckBox = React.createClass({
 			React.createElement(
 				'label',
 				null,
-				React.createElement('input', { type: 'checkbox', value: this.props.value }),
+				React.createElement('input', { type: 'checkbox', value: this.props.value, onChange: this.handleChange, checked: this.props.isChecked }),
 				React.createElement(
 					'p',
 					null,
@@ -478,10 +499,12 @@ var SingleCheckBox = React.createClass({
 var Checkboxes = React.createClass({
 	displayName: 'Checkboxes',
 
+
 	render: function () {
 		var list = listOfSkills.skillsData.map(function (listProps) {
-			return React.createElement(SingleCheckBox, { value: listProps.value, title: listProps.title, key: listProps.value });
-		});
+			var isChecked = this.props.skillsChecked[listProps.value];
+			return React.createElement(SingleCheckBox, { onChange: this.props.handleCheckboxChange, value: listProps.value, isChecked: isChecked, title: listProps.title, key: listProps.value });
+		}.bind(this));
 		return React.createElement(
 			'div',
 			{ className: 'list-container img-rounded col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xlg-3' },
@@ -866,7 +889,9 @@ var Homepage = React.createClass({
 					React.createElement(
 						'p',
 						null,
-						'Consectetur adipisicing elit. Id ut fuga reprehenderit inventore laudantium obcaecati earum rerum, dolore dolor. Cum neque illum culpa, animi? Reiciendis explicabo repudiandae unde quasi eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui tempore sunt blanditiis voluptas, accusamus, commodi repellat doloribus nostrum officiis fugit non iste beatae, culpa unde sapiente eligendi, maiores odit eum.'
+						'Welcome to London Software Juniors! ',
+						React.createElement('br', null),
+						'Our mission is to provide a job saerch service where London based Junior Developers and gratuates can advertise and share their skills so potential employers can hire them directly.'
 					)
 				),
 				React.createElement(Button, { addClass: 'blue-bright fullwidth no-border button-text-style hvr-pulse-grow', text: 'Register as a Developer', onClick: this.handleRegisterAsADeveloperClick }),
@@ -1295,30 +1320,6 @@ var RegistrationDetailsDeveloper = React.createClass({
 																																										React.createElement(
 																																																	'label',
 																																																	{ 'for': 'usr' },
-																																																	'Email address'
-																																										),
-																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																																			),
-																																			React.createElement(
-																																										'div',
-																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																										React.createElement(
-																																																	'label',
-																																																	{ 'for': 'usr' },
-																																																	'Confirm email address'
-																																										),
-																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																																			)
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'row' },
-																																			React.createElement(
-																																										'div',
-																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																										React.createElement(
-																																																	'label',
-																																																	{ 'for': 'usr' },
 																																																	'Upload your CV'
 																																										),
 																																										React.createElement(
@@ -1358,6 +1359,7 @@ var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationDeveloperActionCreators = require('../actions/RegistrationDeveloperActionCreators.js');
 var TopBar = require('./top-bar.jsx');
+var uuid = require('node-uuid');
 
 var RegistrationEmailPasswordDeveloper = React.createClass({
 	displayName: 'RegistrationEmailPasswordDeveloper',
@@ -1374,6 +1376,11 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 		var confirmEmailResult = emailRegex.test(confirmEmail);
 		var passwordResult = passwordRegex.test(password);
 		var confirmPasswordResult = passwordRegex.test(confirmPassword);
+		var developer = {
+			id: uuid.v4(),
+			email: email,
+			password: password
+		};
 
 		if (!emailResult || email != confirmEmail) {
 			console.log('Please entry valid email addresses and check if they match.');
@@ -1458,7 +1465,7 @@ var RegistrationEmailPasswordDeveloper = React.createClass({
 
 module.exports = RegistrationEmailPasswordDeveloper;
 
-},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"react":421}],22:[function(require,module,exports){
+},{"../actions/RegistrationDeveloperActionCreators.js":3,"./button.jsx":10,"./top-bar.jsx":25,"node-uuid":256,"react":421}],22:[function(require,module,exports){
 var React = require('react');
 var Button = require('./button.jsx');
 var RegistrationEmployerActionCreators = require('../actions/RegistrationEmployerActionCreators.js');
@@ -1523,7 +1530,7 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 							{ 'for': 'usr' },
 							'Enter email address:'
 						),
-						React.createElement('input', { type: 'email', className: 'form-control', ref: 'email' })
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'email', required: true })
 					),
 					React.createElement(
 						'div',
@@ -1533,7 +1540,7 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 							{ 'for': 'usr' },
 							'Confirm email address:'
 						),
-						React.createElement('input', { type: 'email', className: 'form-control', ref: 'confirmEmail' })
+						React.createElement('input', { type: 'email', className: 'form-control', ref: 'confirmEmail', required: true })
 					)
 				),
 				React.createElement(
@@ -1547,7 +1554,7 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 							{ 'for': 'usr' },
 							'Enter password:'
 						),
-						React.createElement('input', { type: 'password', className: 'form-control', ref: 'password' })
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'password', required: true })
 					),
 					React.createElement(
 						'div',
@@ -1557,7 +1564,7 @@ var RegistrationEmailPasswordEmployer = React.createClass({
 							{ 'for': 'usr' },
 							'Confirm password:'
 						),
-						React.createElement('input', { type: 'password', className: 'form-control', ref: 'confirmPassword' })
+						React.createElement('input', { type: 'password', className: 'form-control', ref: 'confirmPassword', required: true })
 					)
 				),
 				React.createElement(Button, { addClass: 'blue-dark fullwidth no-border button-text-style hvr-pulse-grow', text: 'DONE', onClick: this.handleDoneEmployerClick }),
@@ -1600,13 +1607,32 @@ var skillsOptions = {
 		title: 'ReactJS'
 	}, {
 		value: 'nodejs',
-		title: 'node.JS'
+		title: 'NodeJS'
 	}]
 };
 
 var RegistrationSkillsDeveloper = React.createClass({
 	displayName: 'RegistrationSkillsDeveloper',
 
+
+	getInitialState: function () {
+		return {
+			html: false,
+			css: false,
+			less: false,
+			sass: false,
+			javascript: false,
+			jquery: false,
+			reactjs: false,
+			nodejs: false
+		};
+	},
+
+	handleCheckboxChange: function (skillName) {
+		var updatedState = {};
+		updatedState[skillName] = !this.state[skillName];
+		this.setState(updatedState);
+	},
 
 	handlePersonalDetailsDeveloperClick: function () {
 		RegistrationDeveloperActionCreators.changePageToRegistrationDetailsDeveloper();
@@ -1654,7 +1680,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'row' },
-					React.createElement(Checkboxes, { skillsData: skillsOptions.skillsData }),
+					React.createElement(Checkboxes, { handleCheckboxChange: this.handleCheckboxChange, skillsData: skillsOptions.skillsData, skillsChecked: this.state }),
 					React.createElement(
 						'div',
 						{ className: 'col-xs-12 col-sm-9 col-md-9 col-lg-9' },
@@ -2139,7 +2165,7 @@ var listOfSkills = {
 		title: 'SASS'
 	}, {
 		value: 'javascript',
-		title: 'Javascript'
+		title: 'JavaScript'
 	}, {
 		value: 'jquery',
 		title: 'jQuery'

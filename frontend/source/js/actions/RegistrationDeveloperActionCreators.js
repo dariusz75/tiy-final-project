@@ -56,6 +56,22 @@ function changePageToYouHaveLoggedIn() {
 	Dispatcher.dispatch(action);
 }
 
+function registerDeveloper(developer) {
+	ApiServices.registerDeveloper(developer, function callback(error, data) {
+		if (error) {
+			console.log(error);
+			return;
+		} 
+		var action = {
+			type: 'set_authentication_token',
+			token: data.token
+		};
+		Dispatcher.dispatch(action);
+		changePageToYouHaveRegisteredMessageWhenClickCreateProfile();
+
+	});
+}
+
 module.exports = {
 	changePageToHomepageWhenCancelled: changePageToHomepageWhenCancelled,
 	changePageToRegistrationDetailsDeveloperWhenNext: changePageToRegistrationDetailsDeveloperWhenNext,
@@ -64,5 +80,6 @@ module.exports = {
 	changeToAboutMeDeveloper: changeToAboutMeDeveloper,
 	changePageToYouHaveRegisteredMessageWhenClickCreateProfile: changePageToYouHaveRegisteredMessageWhenClickCreateProfile,
 	changePageToFindSectionWhenGoToListOfTalents: changePageToFindSectionWhenGoToListOfTalents,
-	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn
+	changePageToYouHaveLoggedIn: changePageToYouHaveLoggedIn,
+	registerDeveloper: registerDeveloper
 };

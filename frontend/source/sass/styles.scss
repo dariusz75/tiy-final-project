@@ -114,6 +114,10 @@ body {
 
 }
 
+#ul_navigation {
+  @include quicksand(700, 1.5rem);
+}
+
 /* ###### HOMEPAGE ####### */
 .homepage-info h1 {
 	@include quicksand(400, 4rem);
