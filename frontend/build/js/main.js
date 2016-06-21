@@ -1294,30 +1294,6 @@ var RegistrationDetailsDeveloper = React.createClass({
 																																										React.createElement(
 																																																	'label',
 																																																	{ 'for': 'usr' },
-																																																	'Email address'
-																																										),
-																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																																			),
-																																			React.createElement(
-																																										'div',
-																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																										React.createElement(
-																																																	'label',
-																																																	{ 'for': 'usr' },
-																																																	'Confirm email address'
-																																										),
-																																										React.createElement('input', { type: 'email', className: 'form-control', id: 'exampleInputEmail1' })
-																																			)
-																												),
-																												React.createElement(
-																																			'div',
-																																			{ className: 'row' },
-																																			React.createElement(
-																																										'div',
-																																										{ className: 'form-group col-xs-12 col-sm-6 col-md-6 col-lg-6' },
-																																										React.createElement(
-																																																	'label',
-																																																	{ 'for': 'usr' },
 																																																	'Upload your CV'
 																																										),
 																																										React.createElement(

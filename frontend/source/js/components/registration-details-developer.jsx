@@ -59,16 +59,6 @@ var RegistrationDetailsDeveloper = React.createClass({
 									</div>
 									<div className="row">
 										<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			  							<label for="usr">Email address</label>
-			  							<input type="email" className="form-control" id="exampleInputEmail1"></input>
-										</div>
-										<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			  							<label for="usr">Confirm email address</label>
-			  							<input type="email" className="form-control" id="exampleInputEmail1"></input>
-										</div>
-									</div>
-									<div className="row">
-										<div className="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			          			<label for="usr">Upload your CV</label>
 			          			<span className="file-input btn btn-block btn-primary btn-file">
 			              	Browse&hellip; <input type="file" multiple></input>
