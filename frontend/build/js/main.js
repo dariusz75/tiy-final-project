@@ -1643,7 +1643,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 						React.createElement(
 							'label',
 							{ className: 'margin-top', 'for': 'basic-url' },
-							'Your LinkedIn URL'
+							'Your Portfolio URL'
 						),
 						React.createElement(
 							'div',
@@ -1654,7 +1654,7 @@ var RegistrationSkillsDeveloper = React.createClass({
 						React.createElement(
 							'label',
 							{ className: 'margin-top', 'for': 'basic-url' },
-							'Your LinkedIn URL'
+							'Your Github URL'
 						),
 						React.createElement(
 							'div',

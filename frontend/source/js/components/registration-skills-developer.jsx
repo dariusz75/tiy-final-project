@@ -83,12 +83,12 @@ var RegistrationSkillsDeveloper = React.createClass({
 		  									<span className="input-group-addon" id="basic-addon3"></span>
 		  									<input type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
 											</div>
-											<label className="margin-top" for="basic-url">Your LinkedIn URL</label>
+											<label className="margin-top" for="basic-url">Your Portfolio URL</label>
 											<div className="input-group">
 		  									<span className="input-group-addon" id="basic-addon3"></span>
 		  									<input type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
 											</div>
-											<label className="margin-top" for="basic-url">Your LinkedIn URL</label>
+											<label className="margin-top" for="basic-url">Your Github URL</label>
 											<div className="input-group">
 		  									<span className="input-group-addon" id="basic-addon3"></span>
 		  									<input type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
